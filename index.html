@@ -72,6 +72,15 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .ac-count{padding:8px 14px;font-size:11px;color:var(--ink-faint);text-align:center;border-bottom:1px solid #F5F0EB}
 .info-banner{background:linear-gradient(135deg,rgba(196,133,60,.08),rgba(196,133,60,.04));border:1px solid rgba(196,133,60,.2);border-radius:12px;padding:14px 16px;margin-top:20px;font-size:13px;color:var(--ink-light);line-height:1.7}
 .info-banner strong{color:var(--accent-dark)}
+/* Shopee Trust Carousel */
+.trust-carousel{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:16px;padding-bottom:4px}
+.trust-carousel::-webkit-scrollbar{display:none}
+.trust-carousel .trust-slide{flex:0 0 78%;scroll-snap-align:center;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px var(--shadow)}
+.trust-carousel .trust-slide img{width:100%;display:block}
+.trust-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+.trust-dots .dot{width:7px;height:7px;border-radius:50%;background:var(--border);transition:all .2s}
+.trust-dots .dot.active{background:var(--accent);width:18px;border-radius:4px}
+@media(min-width:520px){.trust-carousel .trust-slide{flex:0 0 calc(33.33% - 7px)}.trust-dots{display:none}}
 /* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.show{opacity:1;pointer-events:all}
@@ -112,6 +121,15 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   <div class="info-banner">
     🏷️ 官網限定 <strong>95 折</strong>｜運費 <strong>$38</strong><br>
     🎉 滿 <strong>$1,000</strong> 免運費！｜🏪 7-ELEVEN 門市取貨
+  </div>
+
+  <div class="trust-carousel" id="trust-carousel">
+    <div class="trust-slide"><img src="shopee-1.png" alt="OLOMO 專業烘豆機 x 高精度智能色選機"></div>
+    <div class="trust-slide"><img src="shopee-2.png" alt="開業超過5年，5星好評25,000+"></div>
+    <div class="trust-slide"><img src="shopee-3.png" alt="安心認證，品質保證"></div>
+  </div>
+  <div class="trust-dots" id="trust-dots">
+    <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
   </div>
 
   <div class="section-label">☕ 選擇咖啡豆</div>
@@ -401,6 +419,19 @@ function copyOrder(){
 }
 
 render();
+
+/* Trust carousel dot indicator */
+(function(){
+  const carousel=document.getElementById('trust-carousel');
+  const dots=document.querySelectorAll('#trust-dots .dot');
+  if(!carousel||!dots.length)return;
+  carousel.addEventListener('scroll',function(){
+    const scrollLeft=carousel.scrollLeft;
+    const slideW=carousel.querySelector('.trust-slide').offsetWidth+10;
+    const idx=Math.round(scrollLeft/slideW);
+    dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+  });
+})();
 </script>
 </body>
 </html>
