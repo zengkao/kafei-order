@@ -31,6 +31,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .product-info{flex:1;min-width:0}.product-name{font-size:15px;font-weight:700;line-height:1.4;margin-bottom:2px}
 .product-origin{font-size:12px;color:var(--ink-light);margin-bottom:2px}.product-flavor{display:flex;flex-wrap:wrap;gap:4px}
 .flavor-tag{background:#F0EBE5;border-radius:4px;padding:1px 6px;font-size:11px;white-space:nowrap;color:var(--ink-faint)}
+.low-stock-tag{background:rgba(194,80,64,.1);color:var(--red);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap}
 .product-price{font-size:18px;font-weight:900;color:var(--accent-dark);white-space:nowrap}.product-price small{font-size:11px;font-weight:400;color:var(--ink-faint)}
 .product-right{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
 .qty-stepper{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:10px;overflow:hidden}
@@ -117,8 +118,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   <a href="about.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">關於卡啡</a>
   <a href="contact.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">聯絡我們</a>
   <a href="suppliers.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">供應商夥伴</a>
-  <a href="gallery.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">相簿</a>
   <a href="special-process.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">關於特殊處理</a>
+  <a href="gallery.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">相簿</a>
 </div>
 
 <div class="container">
@@ -193,7 +194,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       <input class="form-input" type="text" id="inp-note" placeholder="特殊需求可填寫於此">
     </div>
   </div>
-  <div class="footer"><a href="about.html" style="color:#C4853C;text-decoration:none">KAFE' 卡啡</a> — 自家烘焙精品咖啡<br>7-ELEVEN 超商取貨｜<a href="about.html" style="color:#C4853C;text-decoration:none">關於卡啡</a>｜<a href="contact.html" style="color:#C4853C;text-decoration:none">聯絡我們</a>｜<a href="suppliers.html" style="color:#C4853C;text-decoration:none">供應商夥伴</a>｜<a href="gallery.html" style="color:#C4853C;text-decoration:none">相簿</a>｜<a href="special-process.html" style="color:#C4853C;text-decoration:none">關於特殊處理</a></div>
+  <div class="footer"><a href="about.html" style="color:#C4853C;text-decoration:none">KAFE' 卡啡</a> — 自家烘焙精品咖啡<br>7-ELEVEN 超商取貨｜<a href="about.html" style="color:#C4853C;text-decoration:none">關於卡啡</a>｜<a href="contact.html" style="color:#C4853C;text-decoration:none">聯絡我們</a>｜<a href="suppliers.html" style="color:#C4853C;text-decoration:none">供應商夥伴</a>｜<a href="special-process.html" style="color:#C4853C;text-decoration:none">關於特殊處理</a>｜<a href="gallery.html" style="color:#C4853C;text-decoration:none">相簿</a></div>
 </div>
 
 <!-- Summary Bar -->
@@ -286,7 +287,7 @@ function render(){
       <div class="product-info">
         <div class="product-name">${p.name}</div>
         <div class="product-origin">${[p.origin,p.roast].filter(x=>x).join('｜')}</div>
-        <div class="product-flavor">${p.flavors.map(f=>`<span class="flavor-tag">${f}</span>`).join('')}</div>
+        <div class="product-flavor">${p.flavors.map(f=>`<span class="flavor-tag">${f}</span>`).join('')}${p.stock<10?`<span class="low-stock-tag">剩餘 ${p.stock}</span>`:''}</div>
       </div>
       <div class="product-right">
         <div class="product-price">$${p.price}<small>/${p.unit}</small></div>
