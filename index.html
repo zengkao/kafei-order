@@ -240,11 +240,28 @@ const SHIP=38,FREE=1000,DISC=0.95,Q={};
 let curCat='beans',stockLoaded=false;
 P.forEach(p=>Q[p.id]=0);
 
-// ── 即時庫存：從 Google Sheets 讀取 ──
-fetch(GAS_URL+'?action=stock').then(r=>r.json()).then(stockMap=>{
-  let changed=false;
-  P.forEach(p=>{if(p.id in stockMap){p.stock=stockMap[p.id];changed=true;}});
-  if(changed){stockLoaded=true;render();}
+// ── 從 Google Sheets 讀取完整商品資料（支援 Sheet 新增商品）──
+function mapCat(c){var m={'精品豆':'beans','100g':'beans','特選豆單':'special','半磅':'special','家庭號':'family','1500g':'family'};return m[c]||c||'beans';}
+fetch(GAS_URL+'?action=products').then(r=>r.json()).then(sp=>{
+  if(!Array.isArray(sp)||!sp.length)return;
+  var sheetIds={};
+  sp.forEach(s=>{
+    sheetIds[s.id]=true;
+    var ex=P.find(p=>p.id===s.id);
+    if(ex){
+      ex.stock=s.stock;
+      if(s.name)ex.name=s.name;
+      if(s.price)ex.price=s.price;
+      if(s.unit)ex.unit=s.unit;
+      if(s.category)ex.category=mapCat(s.category);
+      if(s.flavors)ex.flavors=s.flavors.split(/[、,，]+/).filter(f=>f.trim()).map(f=>f.trim());
+    }else if(s.stock>0){
+      P.push({id:s.id,name:s.name||'',origin:'',flavors:s.flavors?s.flavors.split(/[、,，]+/).filter(f=>f.trim()).map(f=>f.trim()):[],price:s.price||0,stock:s.stock||0,roast:'',category:mapCat(s.category),unit:s.unit||'100g'});
+      Q[s.id]=0;
+    }
+  });
+  P.forEach(p=>{if(!sheetIds[p.id])p.stock=0;});
+  stockLoaded=true;render();
 }).catch(()=>{/* 讀不到就用 HTML 內建的庫存 */});
 
 function switchCat(cat){
@@ -266,7 +283,7 @@ function render(){
     return`<div class="product-card ${has?'has-qty':''}">
       <div class="product-info">
         <div class="product-name">${p.name}</div>
-        <div class="product-origin">${p.origin}｜${p.roast}</div>
+        <div class="product-origin">${[p.origin,p.roast].filter(x=>x).join('｜')}</div>
         <div class="product-flavor">${p.flavors.map(f=>`<span class="flavor-tag">${f}</span>`).join('')}</div>
       </div>
       <div class="product-right">
