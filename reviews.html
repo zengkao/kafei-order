@@ -52,6 +52,13 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   .lightbox-nav{background:rgba(0,0,0,.5)}
 }
 
+/* Quote highlights */
+.quote-list{margin-top:14px}
+.quote-card{background:var(--card);border-radius:14px;padding:16px 20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both;position:relative}
+.quote-card::before{content:'\201C';position:absolute;top:8px;left:12px;font-family:'Playfair Display',serif;font-size:40px;color:var(--accent);opacity:.2;line-height:1}
+.quote-text{font-size:14px;color:var(--ink);line-height:1.7;padding-left:16px;font-style:italic}
+.quote-author{font-size:12px;color:var(--ink-faint);text-align:right;margin-top:6px;font-style:normal}
+
 .footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
 .footer a{color:var(--accent);text-decoration:none}
 .footer a:hover{text-decoration:underline}
@@ -91,6 +98,31 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     <div class="stat">
       <div class="stat-num">LINE</div>
       <div class="stat-label">真實社群</div>
+    </div>
+  </div>
+
+  <div class="section-label">HIGHLIGHTS</div>
+
+  <div class="quote-list">
+    <div class="quote-card">
+      <div class="quote-text">沒有瑕疵烘焙就已經這麼頂了，認真買過這麼多家，老闆賣的真的是最好喝的。</div>
+      <div class="quote-author">— 光佐</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">桃桃藝伎 SOE 做成冰美式實在爆炸好喝，空氣中都是水蜜桃的味道。</div>
+      <div class="quote-author">— 小手</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">老闆咖啡頂的，怎麼泡怎麼好喝。</div>
+      <div class="quote-author">— 光佐</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">壓濃縮做冰美式很好喝啊，還好我有不小心下單兩次。</div>
+      <div class="quote-author">— AC</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">喝過炸裂草莓，其他草莓感覺都少一味。</div>
+      <div class="quote-author">— 馬卡巴卡</div>
     </div>
   </div>
 
