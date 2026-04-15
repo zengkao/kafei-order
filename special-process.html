@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>關於特殊處理 ｜ KAFE' Coffee Roastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--green-light:#E8F5E8;--red:#C25040;--border:#DDD4CA;--shadow:rgba(44,36,32,.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+.hero *{position:relative}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
+.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
+.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
+.back-link:hover{background:rgba(196,133,60,.15)}
+
+/* Container */
+.container{max-width:600px;margin:0 auto;padding:0 16px 60px}
+
+/* Section Labels */
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+
+/* Quote Block */
+.quote-block{position:relative;background:var(--card);border-radius:14px;padding:28px 24px;margin-top:20px;box-shadow:0 1px 4px var(--shadow);text-align:center}
+.quote-block::before{content:'\201C';position:absolute;top:8px;left:16px;font-family:'Playfair Display',serif;font-size:60px;color:var(--accent);opacity:.2;line-height:1}
+.quote-text{font-size:18px;font-weight:700;line-height:1.8;color:var(--ink)}
+.quote-text em{font-style:normal;color:var(--accent-dark)}
+
+/* Content Cards */
+.content-card{background:var(--card);border-radius:14px;padding:20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both}
+.content-card:nth-child(2){animation-delay:.05s}
+.content-card:nth-child(3){animation-delay:.1s}
+.content-card:nth-child(4){animation-delay:.15s}
+.content-card h3{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.content-card h3 .icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.content-card p{font-size:13px;color:var(--ink-light);line-height:1.75}
+
+/* Result Highlight */
+.result-banner{background:var(--green-light);border:1.5px solid #B5D8B5;border-radius:14px;padding:20px;margin-top:20px;text-align:center;animation:fadeUp .4s ease both}
+.result-badge{display:inline-block;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+.result-big{font-size:28px;font-weight:900;color:var(--green);margin-bottom:4px}
+.result-detail{font-size:13px;color:var(--ink-light)}
+
+/* Info Table */
+.info-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.info-table td{padding:6px 0;border-bottom:1px solid #F0EBE5}
+.info-table td:first-child{color:var(--ink-faint);width:90px;white-space:nowrap}
+.info-table td:last-child{font-weight:500}
+
+/* Report Gallery */
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+@media(max-width:400px){.report-grid{grid-template-columns:1fr}}
+.report-page{border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.1);cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative}
+.report-page:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.report-page img{width:100%;display:block}
+.report-page-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:11px;font-weight:500;padding:16px 10px 6px;text-align:center}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lightbox.show{opacity:1;pointer-events:all}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:90vw;max-height:85vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.4);transform:scale(.9);transition:transform .35s cubic-bezier(.32,.72,0,1)}
+.lightbox.show .lightbox-img{transform:scale(1)}
+.lightbox-caption{text-align:center;color:rgba(255,255,255,.8);font-size:14px;margin-top:12px;font-weight:500}
+.lightbox-close{position:absolute;top:-40px;right:0;width:36px;height:36px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:20px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:22px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav.prev{left:-56px}
+.lightbox-nav.next{right:-56px}
+@media(max-width:600px){
+  .lightbox-nav.prev{left:8px}
+  .lightbox-nav.next{right:8px}
+  .lightbox-nav{background:rgba(0,0,0,.5)}
+}
+
+/* Disclaimer */
+.disclaimer{background:#F8F5F0;border-radius:10px;padding:14px 16px;margin-top:20px;font-size:12px;color:var(--ink-faint);line-height:1.7}
+
+/* Footer */
+.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">SPECIAL PROCESS</div>
+  <h1>KAFE' <span>卡啡</span></h1>
+  <div class="hero-sub">關於特殊處理 ・ 用科學說話</div>
+  <a href="index.html" class="back-link">← 前往訂購</a>
+</div>
+
+<div class="container">
+
+  <!-- 核心訊息 -->
+  <div class="quote-block">
+    <div class="quote-text">
+      你可以選擇不喝特殊處理，<br>
+      但請不要將它與<em>香精豆</em>畫上等號。
+    </div>
+  </div>
+
+  <!-- 什麼是特殊處理 -->
+  <div class="section-label">WHAT IS SPECIAL PROCESS</div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F5E6D0,#EDDCC4)">🧬</span> 特殊處理是什麼？</h3>
+    <p>特殊處理（Special Process）是精品咖啡產業中，透過控制發酵環境來引導風味發展的後製技術。常見的方式包括厭氧發酵、雙重厭氧、乳酸發酵、酒桶發酵等，目的是讓咖啡果實在特定的溫度、濕度與氧氣條件下，發展出獨特的風味層次。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E8F0E4,#D4E4CC)">🌿</span> 天然發酵，不是添加香精</h3>
+    <p>特殊處理的風味來自微生物在發酵過程中產生的天然代謝物 — 酯類、醇類與有機酸。這和人工添加的「丙二醇類香精」有本質上的不同。丙二醇（Propylene Glycol）是一種常見的食品級香精載體，若咖啡生豆檢測出丙二醇，即代表可能有外添香精的疑慮。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E0E8F5,#D0DCEE)">🔬</span> 我們選擇用檢驗證明</h3>
+    <p>與其在網路上爭論，我們更相信科學。卡啡的合作夥伴<strong>井井咖啡</strong>，主動將雙重厭氧製程的咖啡生豆送交 <strong>SGS 食品實驗室</strong>進行丙二醇檢測，以公正的第三方數據回應質疑。</p>
+  </div>
+
+  <!-- 檢測結果 -->
+  <div class="section-label">SGS TEST RESULT</div>
+
+  <div class="result-banner">
+    <div class="result-badge">SGS 檢測結果</div>
+    <div class="result-big">1,2-丙二醇：未檢出</div>
+    <div class="result-detail">定量極限 75 mg/kg ・ 檢測方法 GB5009.251-2016</div>
+  </div>
+
+  <div class="content-card" style="margin-top:10px">
+    <table class="info-table">
+      <tr><td>報告編號</td><td>AVA25705260</td></tr>
+      <tr><td>送驗單位</td><td>卡啡商行</td></tr>
+      <tr><td>產品名稱</td><td>井井咖啡 雙重厭氧系列 咖啡生豆</td></tr>
+      <tr><td>生產廠商</td><td>井井咖啡</td></tr>
+      <tr><td>原產地</td><td>哥倫比亞</td></tr>
+      <tr><td>製造日期</td><td>2025/06/01</td></tr>
+      <tr><td>報告日期</td><td>2025/07/31</td></tr>
+      <tr><td>檢測機構</td><td>SGS 台灣 ・ 食品實驗室（高雄）</td></tr>
+    </table>
+  </div>
+
+  <!-- SGS 報告原文 -->
+  <div class="section-label">FULL REPORT</div>
+
+  <div class="report-grid">
+    <div class="report-page" onclick="openLB(0)">
+      <img src="sgs-report-p1.jpg" alt="SGS 報告第 1 頁" loading="lazy">
+      <div class="report-page-label">第 1 頁 ・ 報告封面</div>
+    </div>
+    <div class="report-page" onclick="openLB(1)">
+      <img src="sgs-report-p2.jpg" alt="SGS 報告第 2 頁" loading="lazy">
+      <div class="report-page-label">第 2 頁 ・ 檢測結果</div>
+    </div>
+    <div class="report-page" onclick="openLB(2)">
+      <img src="sgs-report-p3.jpg" alt="SGS 報告第 3 頁" loading="lazy">
+      <div class="report-page-label">第 3 頁 ・ 樣品照片</div>
+    </div>
+    <div class="report-page" onclick="openLB(3)">
+      <img src="sgs-report-p4.jpg" alt="SGS 報告第 4 頁" loading="lazy">
+      <div class="report-page-label">第 4 頁 ・ 檢測方法</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    本檢測報告由 SGS 台灣檢驗科技股份有限公司出具，報告編號 AVA25705260。檢測結果僅對送驗樣品負責，不對產品合法性做判斷。完整報告可至 <a href="https://www.sgs.com.tw" target="_blank" style="color:var(--accent)">SGS 官網</a> 查詢驗證。
+  </div>
+
+  <div class="footer">
+    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
+    <a href="index.html">← 回到訂購單</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="gallery.html">相簿</a>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLB()">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLB()">&times;</button>
+    <button class="lightbox-nav prev" onclick="navLB(-1)">&#8249;</button>
+    <button class="lightbox-nav next" onclick="navLB(1)">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-cap"></div>
+  </div>
+</div>
+
+<script>
+const pages=[
+  {src:'sgs-report-p1.jpg',cap:'SGS 報告 第 1 頁 — 報告封面'},
+  {src:'sgs-report-p2.jpg',cap:'SGS 報告 第 2 頁 — 檢測結果：1,2-丙二醇 未檢出'},
+  {src:'sgs-report-p3.jpg',cap:'SGS 報告 第 3 頁 — 樣品照片'},
+  {src:'sgs-report-p4.jpg',cap:'SGS 報告 第 4 頁 — 檢測方法'}
+];
+let cur=0;
+function openLB(i){
+  cur=i;showLB();
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('show');
+  document.body.style.overflow='';
+}
+function navLB(d){cur=(cur+d+pages.length)%pages.length;showLB();}
+function showLB(){
+  document.getElementById('lb-img').src=pages[cur].src;
+  document.getElementById('lb-cap').textContent=pages[cur].cap;
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('show'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')navLB(-1);
+  if(e.key==='ArrowRight')navLB(1);
+});
+</script>
+</body>
+</html>
