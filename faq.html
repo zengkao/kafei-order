@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>常見問題 ｜ KAFE' Coffee Roastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--green-light:#E8F5E8;--red:#C25040;--border:#DDD4CA;--shadow:rgba(44,36,32,.08);--seven:#E95504}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+.hero *{position:relative}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
+.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
+.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
+.back-link:hover{background:rgba(196,133,60,.15)}
+
+.container{max-width:600px;margin:0 auto;padding:0 16px 60px}
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+
+/* Order Lookup */
+.lookup-section{background:var(--card);border-radius:14px;padding:20px;margin-top:20px;box-shadow:0 1px 4px var(--shadow)}
+.lookup-title{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.lookup-row{display:flex;gap:8px}
+.lookup-input{flex:1;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:'Noto Sans TC',sans-serif;color:var(--ink);background:#FAFAF8;-webkit-appearance:none}
+.lookup-input:focus{outline:none;border-color:var(--accent)}
+.lookup-btn{padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans TC',sans-serif;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.lookup-btn:active{opacity:.85}
+.lookup-btn:disabled{background:var(--ink-faint);cursor:wait}
+.lookup-result{margin-top:14px;display:none}
+.lookup-result.show{display:block}
+.order-item{background:#F8F5F0;border-radius:10px;padding:12px 14px;margin-bottom:8px;font-size:13px;line-height:1.7}
+.order-item:last-child{margin-bottom:0}
+.order-status{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700}
+.order-status.s-pending{background:rgba(196,133,60,.12);color:var(--accent-dark)}
+.order-status.s-exported{background:rgba(90,140,90,.12);color:var(--green)}
+.order-status.s-notified{background:rgba(90,140,90,.2);color:var(--green)}
+.order-empty{text-align:center;padding:16px;color:var(--ink-faint);font-size:13px}
+
+/* FAQ Cards */
+.faq-card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both}
+.faq-card:nth-child(2){animation-delay:.05s}
+.faq-card:nth-child(3){animation-delay:.1s}
+.faq-card:nth-child(4){animation-delay:.15s}
+.faq-card:nth-child(5){animation-delay:.2s}
+.faq-q{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:flex-start;gap:8px}
+.faq-q::before{content:'Q';flex-shrink:0;display:inline-flex;width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;font-size:13px;font-weight:900;align-items:center;justify-content:center}
+.faq-a{font-size:13px;color:var(--ink-light);line-height:1.75;padding-left:32px}
+.faq-a strong{color:var(--ink);font-weight:700}
+
+.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:4px}
+</style>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAFE' 卡啡">
+<meta property="og:title" content="常見問題 + 訂單查詢 — KAFE' 卡啡">
+<meta property="og:description" content="出貨時間、取貨方式、訂單查詢，所有問題一次解答。">
+<meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
+<meta property="og:url" content="https://zengkao.github.io/kafei-order/faq.html">
+<meta name="description" content="出貨時間、取貨方式、訂單查詢，所有問題一次解答。">
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">FAQ &amp; ORDER STATUS</div>
+  <h1>KAFE' <span>卡啡</span></h1>
+  <div class="hero-sub">常見問題 ・ 訂單查詢</div>
+  <a href="index.html" class="back-link">← 前往訂購</a>
+</div>
+
+<div class="container">
+
+  <!-- 訂單查詢 -->
+  <div class="section-label">ORDER STATUS</div>
+
+  <div class="lookup-section">
+    <div class="lookup-title">📦 查詢訂單狀態</div>
+    <div class="lookup-row">
+      <input class="lookup-input" type="tel" id="inp-phone" placeholder="輸入手機號碼（09 開頭）" maxlength="10" inputmode="numeric">
+      <button class="lookup-btn" id="btn-lookup" onclick="lookupOrder()">查詢</button>
+    </div>
+    <div class="lookup-result" id="lookup-result"></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-label">FREQUENTLY ASKED</div>
+
+  <div class="faq-card">
+    <div class="faq-q">出貨時間？</div>
+    <div class="faq-a"><strong>每天晚上 10 點統一出貨。</strong><br>當日 22:00 前的訂單會在當天寄出，之後的訂單隔天處理。</div>
+  </div>
+
+  <div class="faq-card">
+    <div class="faq-q">怎麼取貨？</div>
+    <div class="faq-a">商品寄達 7-ELEVEN 後，您會收到簡訊通知。<br><strong>到門市報手機號碼後 3 碼，付費取貨</strong>即可。</div>
+  </div>
+
+  <div class="faq-card">
+    <div class="faq-q">可以磨粉嗎？</div>
+    <div class="faq-a"><strong>不提供磨粉服務。</strong><br>我們只販售原豆，建議您自行使用磨豆機現磨，風味最佳。</div>
+  </div>
+
+  <div class="faq-card">
+    <div class="faq-q">退換貨怎麼處理？</div>
+    <div class="faq-a">收到商品如有任何問題，請透過 <a href="contact.html" style="color:var(--accent);font-weight:700">任何聯絡管道</a> 與我們反映。<br><strong>確認後直接退款，不需退回貨物。</strong></div>
+  </div>
+
+  <div class="faq-card">
+    <div class="faq-q">運費怎麼算？</div>
+    <div class="faq-a">7-ELEVEN 超商取貨運費 <strong>$38</strong>。<br>官網訂購享 <strong>95 折</strong>，滿 <strong>$1,000 免運費</strong>。</div>
+  </div>
+
+  <div class="footer">
+    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
+    <a href="index.html">← 回到訂購單</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="special-process.html">關於特殊處理</a>｜<a href="gallery.html">相簿</a>
+  </div>
+</div>
+
+<script>
+const GAS_URL="https://script.google.com/macros/s/AKfycbyWcAS56c83kq76RqX1llRjnqNyAhZeNqDpwUhVt4sC1LrVcUlJWKhYTDAxBoqHpHXi/exec";
+
+function lookupOrder(){
+  var phone=document.getElementById('inp-phone').value.trim().replace(/\D/g,'');
+  if(!/^09\d{8}$/.test(phone)){alert('請輸入正確的手機號碼（09開頭10碼）');return;}
+  var btn=document.getElementById('btn-lookup');
+  var box=document.getElementById('lookup-result');
+  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>查詢中';
+  fetch(GAS_URL+'?action=orderStatus&phone='+phone)
+    .then(r=>r.json())
+    .then(data=>{
+      btn.disabled=false;btn.textContent='查詢';
+      if(!data.orders||!data.orders.length){
+        box.innerHTML='<div class="order-empty">查無訂單紀錄<br><span style="font-size:11px">請確認手機號碼是否正確</span></div>';
+      }else{
+        var h='';
+        data.orders.forEach(o=>{
+          var sc='s-pending',sl=o.status;
+          if(sl==='已匯出'){sc='s-exported';sl='已出貨';}
+          else if(sl==='已通知'){sc='s-notified';sl='已送達門市';}
+          else if(sl==='處理中'){sc='s-pending';}
+          h+='<div class="order-item">';
+          h+='<span class="order-status '+sc+'">'+sl+'</span> ';
+          h+='<strong>$'+o.total+'</strong><br>';
+          h+=o.items+'<br>';
+          h+='<span style="color:var(--ink-faint)">'+o.time+' ・ 7-11 '+o.store+'</span>';
+          h+='</div>';
+        });
+        box.innerHTML=h;
+      }
+      box.classList.add('show');
+    })
+    .catch(()=>{
+      btn.disabled=false;btn.textContent='查詢';
+      box.innerHTML='<div class="order-empty">查詢失敗，請稍後再試</div>';
+      box.classList.add('show');
+    });
+}
+document.getElementById('inp-phone').addEventListener('keydown',e=>{if(e.key==='Enter')lookupOrder();});
+</script>
+</body>
+</html>
