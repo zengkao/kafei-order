@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>相簿 ｜ KAFE' Coffee Roastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--border:#DDD4CA;--shadow:rgba(44,36,32,.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+.hero *{position:relative}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
+.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
+.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
+.back-link:hover{background:rgba(196,133,60,.15)}
+
+/* Container */
+.container{max-width:680px;margin:0 auto;padding:0 16px 60px}
+
+/* Section Labels */
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+
+/* Gallery Grid */
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:400px){.gallery-grid{grid-template-columns:1fr}}
+
+.gallery-item{position:relative;border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 1px 4px var(--shadow);cursor:pointer;animation:fadeUp .4s ease both;transition:transform .2s,box-shadow .2s}
+.gallery-item:nth-child(1){animation-delay:0s}
+.gallery-item:nth-child(2){animation-delay:.06s}
+.gallery-item:nth-child(3){animation-delay:.12s}
+.gallery-item:nth-child(4){animation-delay:.18s}
+.gallery-item:nth-child(5){animation-delay:.24s}
+.gallery-item:nth-child(6){animation-delay:.30s}
+.gallery-item:nth-child(7){animation-delay:.36s}
+.gallery-item:nth-child(8){animation-delay:.42s}
+.gallery-item:nth-child(9){animation-delay:.48s}
+.gallery-item:nth-child(10){animation-delay:.54s}
+.gallery-item:nth-child(11){animation-delay:.60s}
+.gallery-item:nth-child(12){animation-delay:.66s}
+.gallery-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(44,36,32,.12)}
+.gallery-item:active{transform:scale(.98)}
+
+.gallery-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s}
+.gallery-item:hover .gallery-img{transform:scale(1.03)}
+
+.gallery-caption{padding:10px 14px}
+.gallery-caption-title{font-size:14px;font-weight:700;line-height:1.4}
+.gallery-caption-desc{font-size:12px;color:var(--ink-faint);margin-top:2px}
+
+/* Featured (first photo spans full width) */
+.gallery-featured{grid-column:1/-1}
+.gallery-featured .gallery-img{aspect-ratio:16/9}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lightbox.show{opacity:1;pointer-events:all}
+.lightbox-inner{position:relative;max-width:90vw;max-height:85vh}
+.lightbox-img{max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.4);transform:scale(.9);transition:transform .35s cubic-bezier(.32,.72,0,1)}
+.lightbox.show .lightbox-img{transform:scale(1)}
+.lightbox-caption{text-align:center;color:rgba(255,255,255,.8);font-size:14px;margin-top:14px;font-weight:500}
+.lightbox-close{position:absolute;top:-40px;right:0;width:36px;height:36px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:20px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:22px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav.prev{left:-56px}
+.lightbox-nav.next{right:-56px}
+@media(max-width:600px){
+  .lightbox-nav.prev{left:8px}
+  .lightbox-nav.next{right:8px}
+  .lightbox-nav{background:rgba(0,0,0,.5)}
+}
+
+/* Footer */
+.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">GALLERY</div>
+  <h1>KAFE' <span>卡啡</span></h1>
+  <div class="hero-sub">日常紀錄 ・ 咖啡手作</div>
+  <a href="index.html" class="back-link">← 前往訂購</a>
+</div>
+
+<div class="container">
+  <div class="section-label">DAILY BREW</div>
+
+  <div class="gallery-grid">
+
+    <!-- 精選：咖啡豆特寫 -->
+    <div class="gallery-item gallery-featured" onclick="openLB(0)">
+      <img class="gallery-img" src="gallery/roasted-beans-thumb.jpg" data-full="gallery/roasted-beans.jpg" alt="烘焙豆" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">自家烘焙</div>
+        <div class="gallery-caption-desc">每一顆豆子都是精心挑選的風味旅程</div>
+      </div>
+    </div>
+
+    <!-- 拉花雙連 -->
+    <div class="gallery-item" onclick="openLB(1)">
+      <img class="gallery-img" src="gallery/latte-tulip-thumb.jpg" data-full="gallery/latte-tulip.jpg" alt="拿鐵鬱金香" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">鬱金香拉花</div>
+        <div class="gallery-caption-desc">層層堆疊的奶泡藝術</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(2)">
+      <img class="gallery-img" src="gallery/latte-art-thumb.jpg" data-full="gallery/latte-art.jpg" alt="拿鐵拉花" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">愛心拉花</div>
+        <div class="gallery-caption-desc">奶泡與 crema 的溫柔交會</div>
+      </div>
+    </div>
+
+    <!-- Dirty 精選 -->
+    <div class="gallery-item gallery-featured" onclick="openLB(3)">
+      <img class="gallery-img" src="gallery/dirty-coffee-thumb.jpg" data-full="gallery/dirty-coffee.jpg" alt="Dirty Coffee" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Dirty Coffee</div>
+        <div class="gallery-caption-desc">濃縮與鮮奶的漸層對話 ・ 視覺與味覺的衝擊</div>
+      </div>
+    </div>
+
+    <!-- 義式萃取雙連 -->
+    <div class="gallery-item" onclick="openLB(4)">
+      <img class="gallery-img" src="gallery/espresso-ceramic-thumb.jpg" data-full="gallery/espresso-ceramic.jpg" alt="義式萃取" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">義式萃取</div>
+        <div class="gallery-caption-desc">金黃液體注入手作陶杯</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(5)">
+      <img class="gallery-img" src="gallery/espresso-ceramic-mat-thumb.jpg" data-full="gallery/espresso-ceramic-mat.jpg" alt="陶杯濃縮" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">陶杯濃縮</div>
+        <div class="gallery-caption-desc">厚實 crema ・ 手作陶杯的溫度</div>
+      </div>
+    </div>
+
+    <!-- 手沖雙連 -->
+    <div class="gallery-item" onclick="openLB(6)">
+      <img class="gallery-img" src="gallery/pourover-bloom-thumb.jpg" data-full="gallery/pourover-bloom.jpg" alt="手沖注水" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">手沖注水</div>
+        <div class="gallery-caption-desc">悶蒸綻放 ・ 細水慢沖的專注</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(7)">
+      <img class="gallery-img" src="gallery/pourover-top-thumb.jpg" data-full="gallery/pourover-top.jpg" alt="濾杯俯瞰" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">濾杯俯瞰</div>
+        <div class="gallery-caption-desc">咖啡粉層的細膩紋理</div>
+      </div>
+    </div>
+
+    <!-- 杯測 + Crema -->
+    <div class="gallery-item" onclick="openLB(8)">
+      <img class="gallery-img" src="gallery/cupping-bowls-thumb.jpg" data-full="gallery/cupping-bowls.jpg" alt="杯測" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">杯測品評</div>
+        <div class="gallery-caption-desc">國際標準杯測 ・ 找尋風味密碼</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(9)">
+      <img class="gallery-img" src="gallery/crema-closeup-thumb.jpg" data-full="gallery/crema-closeup.jpg" alt="Crema 特寫" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Crema 特寫</div>
+        <div class="gallery-caption-desc">細緻如絲的油脂紋理</div>
+      </div>
+    </div>
+
+    <!-- 雙流萃取 + Coffee Review -->
+    <div class="gallery-item" onclick="openLB(10)">
+      <img class="gallery-img" src="gallery/espresso-flow-thumb.jpg" data-full="gallery/espresso-flow.jpg" alt="雙流萃取" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">雙流萃取</div>
+        <div class="gallery-caption-desc">萃取的瞬間藝術</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(11)">
+      <img class="gallery-img" src="gallery/coffee-review-badge-thumb.jpg" data-full="gallery/coffee-review-badge.jpg" alt="Coffee Review 88 分" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Coffee Review 88 分</div>
+        <div class="gallery-caption-desc">2024 國際評鑑認證</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
+    <a href="index.html">← 回到訂購單</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="suppliers.html">供應商夥伴</a>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLB()">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLB()">&times;</button>
+    <button class="lightbox-nav prev" onclick="navLB(-1)">&#8249;</button>
+    <button class="lightbox-nav next" onclick="navLB(1)">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-cap"></div>
+  </div>
+</div>
+
+<script>
+const items=document.querySelectorAll('.gallery-item');
+const photos=[];
+items.forEach(el=>{
+  const img=el.querySelector('.gallery-img');
+  const cap=el.querySelector('.gallery-caption-title');
+  photos.push({full:img.dataset.full,caption:cap?cap.textContent:''});
+});
+let cur=0;
+function openLB(i){
+  cur=i;showLB();
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('show');
+  document.body.style.overflow='';
+}
+function navLB(d){cur=(cur+d+photos.length)%photos.length;showLB();}
+function showLB(){
+  document.getElementById('lb-img').src=photos[cur].full;
+  document.getElementById('lb-cap').textContent=photos[cur].caption;
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('show'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')navLB(-1);
+  if(e.key==='ArrowRight')navLB(1);
+});
+</script>
+</body>
+</html>
