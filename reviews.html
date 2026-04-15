@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>顧客好評 ｜ KAFE' Coffee Roastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--border:#DDD4CA;--shadow:rgba(44,36,32,.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+.hero *{position:relative}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
+.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
+.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
+.back-link:hover{background:rgba(196,133,60,.15)}
+
+.container{max-width:520px;margin:0 auto;padding:0 16px 60px}
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+
+/* Stats */
+.stats-bar{display:flex;justify-content:center;gap:24px;margin-top:20px;padding:16px;background:var(--card);border-radius:14px;box-shadow:0 1px 4px var(--shadow)}
+.stat{text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--accent-dark)}
+.stat-label{font-size:11px;color:var(--ink-faint);margin-top:-2px}
+
+/* Masonry-like review cards */
+.review-list{margin-top:14px}
+.review-card{background:var(--card);border-radius:14px;overflow:hidden;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.review-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(44,36,32,.12)}
+.review-card img{width:100%;display:block}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lightbox.show{opacity:1;pointer-events:all}
+.lightbox-inner{position:relative;max-width:92vw;max-height:90vh}
+.lightbox-img{max-width:92vw;max-height:85vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.4);transform:scale(.9);transition:transform .35s cubic-bezier(.32,.72,0,1)}
+.lightbox.show .lightbox-img{transform:scale(1)}
+.lightbox-close{position:absolute;top:-40px;right:0;width:36px;height:36px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:20px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:22px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav.prev{left:-56px}
+.lightbox-nav.next{right:-56px}
+@media(max-width:600px){
+  .lightbox-nav.prev{left:8px}
+  .lightbox-nav.next{right:8px}
+  .lightbox-nav{background:rgba(0,0,0,.5)}
+}
+
+.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAFE' 卡啡">
+<meta property="og:title" content="顧客好評 — KAFE' 卡啡">
+<meta property="og:description" content="來自 LINE 社群的真實回饋，每一句「好喝」都是我們繼續烘焙的動力。">
+<meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
+<meta property="og:url" content="https://zengkao.github.io/kafei-order/reviews.html">
+<meta name="description" content="來自 LINE 社群的真實回饋，每一句「好喝」都是我們繼續烘焙的動力。">
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">REVIEWS</div>
+  <h1>KAFE' <span>卡啡</span></h1>
+  <div class="hero-sub">顧客真實回饋</div>
+  <a href="index.html" class="back-link">← 前往訂購</a>
+</div>
+
+<div class="container">
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">15</div>
+      <div class="stat-label">則好評</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">好喝率</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">LINE</div>
+      <div class="stat-label">真實社群</div>
+    </div>
+  </div>
+
+  <div class="section-label">REAL FEEDBACK</div>
+
+  <div class="review-list">
+    <div class="review-card" onclick="openLB(0)"><img src="reviews/review-11.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(1)"><img src="reviews/review-13.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(2)"><img src="reviews/review-09.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(3)"><img src="reviews/review-07.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(4)"><img src="reviews/review-01.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(5)"><img src="reviews/review-06.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(6)"><img src="reviews/review-15.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(7)"><img src="reviews/review-03.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(8)"><img src="reviews/review-12.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(9)"><img src="reviews/review-02.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(10)"><img src="reviews/review-05.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(11)"><img src="reviews/review-08.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(12)"><img src="reviews/review-10.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(13)"><img src="reviews/review-04.jpg" alt="好評" loading="lazy"></div>
+    <div class="review-card" onclick="openLB(14)"><img src="reviews/review-14.jpg" alt="好評" loading="lazy"></div>
+  </div>
+
+  <div class="footer">
+    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
+    <a href="index.html">← 回到訂購單</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="special-process.html">關於特殊處理</a>｜<a href="faq.html">常見問題</a>｜<a href="gallery.html">相簿</a>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLB()">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLB()">&times;</button>
+    <button class="lightbox-nav prev" onclick="navLB(-1)">&#8249;</button>
+    <button class="lightbox-nav next" onclick="navLB(1)">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+  </div>
+</div>
+
+<script>
+const imgs=[];
+document.querySelectorAll('.review-card img').forEach(el=>imgs.push(el.src));
+let cur=0;
+function openLB(i){cur=i;document.getElementById('lb-img').src=imgs[cur];document.getElementById('lb').classList.add('show');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lb').classList.remove('show');document.body.style.overflow='';}
+function navLB(d){cur=(cur+d+imgs.length)%imgs.length;document.getElementById('lb-img').src=imgs[cur];}
+document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('show'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')navLB(-1);if(e.key==='ArrowRight')navLB(1);});
+</script>
+</body>
+</html>
