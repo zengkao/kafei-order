@@ -179,7 +179,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
   <div class="section-label">☕ 選擇咖啡豆</div>
   <div class="cat-tabs" id="cat-tabs">
-    <button class="cat-tab active" data-cat="beans">精品豆<small>100g</small></button>
+    <button class="cat-tab active" data-cat="beans">精品常規豆<small>100g</small></button>
     <button class="cat-tab" data-cat="special">特選豆單<small>半磅</small></button>
     <button class="cat-tab" data-cat="family">家庭號<small>1500g</small></button>
   </div>
@@ -280,7 +280,7 @@ let curCat='beans',stockLoaded=false;
 P.forEach(p=>Q[p.id]=0);
 
 // ── 從 Google Sheets 讀取完整商品資料（支援 Sheet 新增商品）──
-function mapCat(c){var m={'精品豆':'beans','100g':'beans','特選豆單':'special','半磅':'special','家庭號':'family','1500g':'family'};return m[c]||c||'beans';}
+function mapCat(c){var m={'精品豆':'beans','精品常規豆':'beans','100g':'beans','特選豆單':'special','半磅':'special','家庭號':'family','1500g':'family'};return m[c]||c||'beans';}
 fetch(GAS_URL+'?action=products').then(r=>r.json()).then(sp=>{
   if(!Array.isArray(sp)||!sp.length)return;
   var sheetIds={};
