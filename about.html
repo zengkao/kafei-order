@@ -86,6 +86,25 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .footer a{color:var(--accent);text-decoration:none}
 .footer a:hover{text-decoration:underline}
 
+/* Honor Card */
+.honor-card{position:relative;background:linear-gradient(135deg,#2C2420 0%,#3D2E22 50%,#2C2420 100%);border-radius:16px;padding:22px 20px 20px;margin-bottom:10px;box-shadow:0 4px 16px rgba(44,36,32,.18);overflow:hidden;animation:fadeUp .4s ease both}
+.honor-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(232,168,76,.22),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(196,133,60,.18),transparent 50%);pointer-events:none}
+.honor-card *{position:relative}
+.honor-ribbon{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:2px;color:#E8A84C;border:1px solid rgba(232,168,76,.4);padding:3px 12px;border-radius:14px;margin-bottom:14px;font-weight:700}
+.honor-ribbon svg{width:12px;height:12px;fill:#E8A84C}
+.honor-title{font-size:20px;font-weight:900;color:#F5F0EB;letter-spacing:.5px;margin-bottom:6px}
+.honor-stars{display:flex;gap:3px;margin:8px 0 12px}
+.honor-stars svg{width:18px;height:18px;fill:#E8A84C;filter:drop-shadow(0 1px 2px rgba(232,168,76,.5))}
+.honor-highlight{display:flex;align-items:baseline;gap:8px;background:linear-gradient(135deg,rgba(232,168,76,.12),rgba(196,133,60,.06));border:1px solid rgba(232,168,76,.25);border-radius:12px;padding:14px 16px;margin:10px 0 14px;flex-wrap:wrap}
+.honor-highlight-label{font-size:13px;color:rgba(245,240,235,.85);font-weight:500}
+.honor-highlight-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#E8A84C;line-height:1;text-shadow:0 0 20px rgba(232,168,76,.4)}
+.honor-highlight-unit{font-size:14px;color:#E8A84C;font-weight:700;margin-left:-2px}
+.honor-highlight-emph{font-size:13px;color:#F5F0EB;font-weight:700;letter-spacing:.5px}
+.honor-desc{font-size:13px;color:rgba(245,240,235,.65);line-height:1.65;margin-bottom:14px}
+.honor-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#E8A84C,#C4853C);color:#2C2420;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:22px;box-shadow:0 2px 10px rgba(232,168,76,.3);transition:all .2s}
+.honor-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(232,168,76,.5)}
+.honor-btn svg{width:14px;height:14px;fill:#2C2420}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* Responsive */
@@ -120,6 +139,34 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     <img src="kafe-avatar.jpg" alt="卡啡 Kafe" class="avatar-img">
     <div class="avatar-name">卡啡 Kafe'</div>
     <div class="avatar-title">咖啡豆的品管工程師</div>
+  </div>
+
+  <!-- Special Honor -->
+  <div class="section-label">🏆 特殊殊榮</div>
+
+  <div class="honor-card">
+    <div class="honor-ribbon">
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      TAIWAN NO.1
+    </div>
+    <div class="honor-title">咖啡烘烘烘 星級評鑑</div>
+    <div class="honor-stars">
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    </div>
+    <div class="honor-highlight">
+      <span class="honor-highlight-label">全台第一高分</span>
+      <span class="honor-highlight-emph">連續維持</span>
+      <span class="honor-highlight-num">6</span><span class="honor-highlight-unit">屆</span>
+    </div>
+    <div class="honor-desc">由國內權威「咖啡烘烘烘」星級評鑑連續六屆給予全台第一高分，實力獲業界與評審團一致肯定。</div>
+    <a href="kafei-roastery-202502.pdf" target="_blank" rel="noopener" class="honor-btn">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+      查看 2025.02 評鑑報告
+    </a>
   </div>
 
   <!-- Philosophy -->
