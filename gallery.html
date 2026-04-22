@@ -49,7 +49,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .gallery-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(44,36,32,.12)}
 .gallery-item:active{transform:scale(.98)}
 
-.gallery-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s}
+.gallery-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .3s}
 .gallery-item:hover .gallery-img{transform:scale(1.03)}
 
 .gallery-caption{padding:10px 14px}
@@ -58,7 +58,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
 /* Featured (first photo spans full width) */
 .gallery-featured{grid-column:1/-1}
-.gallery-featured .gallery-img{aspect-ratio:16/9}
+.gallery-featured .gallery-img{aspect-ratio:1/1}
 
 /* Lightbox */
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
