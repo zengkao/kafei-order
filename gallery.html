@@ -48,6 +48,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .gallery-item:nth-child(12){animation-delay:.66s}
 .gallery-item:nth-child(13){animation-delay:.72s}
 .gallery-item:nth-child(14){animation-delay:.78s}
+.gallery-item:nth-child(15){animation-delay:.84s}
+.gallery-item:nth-child(16){animation-delay:.90s}
+.gallery-item:nth-child(17){animation-delay:.96s}
+.gallery-item:nth-child(18){animation-delay:1.02s}
+.gallery-item:nth-child(19){animation-delay:1.08s}
 .gallery-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(44,36,32,.12)}
 .gallery-item:active{transform:scale(.98)}
 
@@ -113,8 +118,41 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
   <div class="gallery-grid">
 
+    <!-- 萃取觀察（新圖） -->
+    <div class="gallery-item" onclick="openLB(this)">
+      <img class="gallery-img" src="gallery/naked-portafilter-flow-thumb.jpg" data-full="gallery/naked-portafilter-flow.jpg" alt="裸把萃取流速" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">裸把萃取</div>
+        <div class="gallery-caption-desc">Crema 流線與通道狀態的即時觀察</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(this)">
+      <img class="gallery-img" src="gallery/ceramic-cup-extraction-thumb.jpg" data-full="gallery/ceramic-cup-extraction.jpg" alt="陶杯承接義式濃縮" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">陶杯承接</div>
+        <div class="gallery-caption-desc">細流落入手作陶杯 ・ 厚實 crema 慢慢堆疊</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(this)">
+      <img class="gallery-img" src="gallery/espresso-ceramic-flow-thumb.jpg" data-full="gallery/espresso-ceramic-flow.jpg" alt="陶杯萃取近景" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">陶杯萃取近景</div>
+        <div class="gallery-caption-desc">金黃液柱穿過 crema ・ 觀察萃取節奏</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLB(this)">
+      <img class="gallery-img" src="gallery/coffee-puck-prep-thumb.jpg" data-full="gallery/coffee-puck-prep.jpg" alt="咖啡粉餅準備" loading="lazy">
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">粉餅準備</div>
+        <div class="gallery-caption-desc">研磨、佈粉與填壓後的表面狀態</div>
+      </div>
+    </div>
+
     <!-- 蕭邦圓舞曲（新品） -->
-    <div class="gallery-item gallery-featured" onclick="openLB(0)">
+    <div class="gallery-item gallery-featured" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/chopin-waltz-thumb.jpg" data-full="gallery/chopin-waltz.jpg" alt="蕭邦圓舞曲｜黑金 哥斯大黎加" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">蕭邦圓舞曲｜哥斯大黎加</div>
@@ -123,7 +161,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 邪修手沖實驗 -->
-    <div class="gallery-item gallery-featured" onclick="openLB(1)">
+    <div class="gallery-item gallery-featured" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/heretical-pourover-thumb.jpg" data-full="gallery/heretical-pourover.jpg" alt="邪修手沖實驗" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">邪修手沖實驗</div>
@@ -132,7 +170,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 基礎特調 V01 -->
-    <div class="gallery-item gallery-featured" onclick="openLB(2)">
+    <div class="gallery-item gallery-featured" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/signature-blend-thumb.jpg" data-full="gallery/signature-blend.jpg" alt="基礎特調 V01" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">基礎特調 V01</div>
@@ -141,7 +179,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 精選：咖啡豆特寫 -->
-    <div class="gallery-item gallery-featured" onclick="openLB(3)">
+    <div class="gallery-item gallery-featured" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/roasted-beans-thumb.jpg" data-full="gallery/roasted-beans.jpg" alt="烘焙豆" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">自家烘焙</div>
@@ -150,7 +188,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 拉花雙連 -->
-    <div class="gallery-item" onclick="openLB(4)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/latte-tulip-thumb.jpg" data-full="gallery/latte-tulip.jpg" alt="拿鐵鬱金香" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">鬱金香拉花</div>
@@ -158,7 +196,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </div>
     </div>
 
-    <div class="gallery-item" onclick="openLB(5)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/latte-art-thumb.jpg" data-full="gallery/latte-art.jpg" alt="拿鐵拉花" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">愛心拉花</div>
@@ -167,7 +205,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- Dirty 精選 -->
-    <div class="gallery-item gallery-featured" onclick="openLB(6)">
+    <div class="gallery-item gallery-featured" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/dirty-coffee-thumb.jpg" data-full="gallery/dirty-coffee.jpg" alt="Dirty Coffee" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">Dirty Coffee</div>
@@ -176,7 +214,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 義式萃取雙連 -->
-    <div class="gallery-item" onclick="openLB(7)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/espresso-ceramic-thumb.jpg" data-full="gallery/espresso-ceramic.jpg" alt="義式萃取" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">義式萃取</div>
@@ -184,7 +222,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </div>
     </div>
 
-    <div class="gallery-item" onclick="openLB(8)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/espresso-ceramic-mat-thumb.jpg" data-full="gallery/espresso-ceramic-mat.jpg" alt="陶杯濃縮" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">陶杯濃縮</div>
@@ -193,7 +231,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 手沖雙連 -->
-    <div class="gallery-item" onclick="openLB(9)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/pourover-bloom-thumb.jpg" data-full="gallery/pourover-bloom.jpg" alt="手沖注水" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">手沖注水</div>
@@ -201,7 +239,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </div>
     </div>
 
-    <div class="gallery-item" onclick="openLB(10)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/pourover-top-thumb.jpg" data-full="gallery/pourover-top.jpg" alt="濾杯俯瞰" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">濾杯俯瞰</div>
@@ -210,7 +248,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 杯測 + Crema -->
-    <div class="gallery-item" onclick="openLB(11)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/cupping-bowls-thumb.jpg" data-full="gallery/cupping-bowls.jpg" alt="杯測" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">杯測品評</div>
@@ -218,7 +256,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </div>
     </div>
 
-    <div class="gallery-item" onclick="openLB(12)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/crema-closeup-thumb.jpg" data-full="gallery/crema-closeup.jpg" alt="Crema 特寫" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">Crema 特寫</div>
@@ -227,7 +265,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <!-- 雙流萃取 + Coffee Review -->
-    <div class="gallery-item" onclick="openLB(13)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/espresso-flow-thumb.jpg" data-full="gallery/espresso-flow.jpg" alt="雙流萃取" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">雙流萃取</div>
@@ -235,7 +273,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </div>
     </div>
 
-    <div class="gallery-item" onclick="openLB(14)">
+    <div class="gallery-item" onclick="openLB(this)">
       <img class="gallery-img" src="gallery/coffee-review-badge-thumb.jpg" data-full="gallery/coffee-review-badge.jpg" alt="Coffee Review 88 分" loading="lazy">
       <div class="gallery-caption">
         <div class="gallery-caption-title">Coffee Review 88 分</div>
@@ -271,8 +309,10 @@ items.forEach(el=>{
   photos.push({full:img.dataset.full,caption:cap?cap.textContent:''});
 });
 let cur=0;
-function openLB(i){
-  cur=i;showLB();
+function openLB(target){
+  cur=typeof target==='number'?target:Array.prototype.indexOf.call(items,target);
+  if(cur<0)cur=0;
+  showLB();
   document.getElementById('lb').classList.add('show');
   document.body.style.overflow='hidden';
 }
