@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zengkao.github.io/kafei-order/sitemap.xml
