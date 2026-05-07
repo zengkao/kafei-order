@@ -83,6 +83,21 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   .lightbox-nav{background:rgba(0,0,0,.5)}
 }
 
+/* Card lists & flavor table */
+.content-card ul.card-list{margin:8px 0;padding-left:20px;font-size:13px;color:var(--ink-light);line-height:1.85}
+.content-card ul.card-list li{margin-bottom:4px}
+.content-card .sub-label{font-weight:700;color:var(--ink);font-size:13px;margin:14px 0 6px}
+.content-card .sub-label:first-of-type{margin-top:6px}
+.flavor-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;border-radius:8px;overflow:hidden}
+.flavor-table thead{background:#2C2420;color:#F5F0EB}
+.flavor-table th{padding:8px 10px;font-weight:600;font-size:12px;letter-spacing:.5px;text-align:left}
+.flavor-table td{padding:8px 10px;border-bottom:1px solid #F0EBE5;color:var(--ink-light)}
+.flavor-table tr:last-child td{border-bottom:none}
+.flavor-table td:first-child{font-weight:700;color:var(--ink)}
+@media(max-width:480px){.flavor-table th,.flavor-table td{padding:6px 6px;font-size:11px}}
+.boundary-card{background:linear-gradient(135deg,#F8F5F0,#FDF9F4);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:13px;color:var(--ink-light);line-height:1.8}
+.boundary-card strong{color:var(--accent-dark)}
+
 /* Disclaimer */
 .disclaimer{background:#F8F5F0;border-radius:10px;padding:14px 16px;margin-top:20px;font-size:12px;color:var(--ink-faint);line-height:1.7}
 
@@ -97,18 +112,26 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KAFE' 卡啡">
-<meta property="og:title" content="關於特殊處理 — KAFE' 卡啡">
-<meta property="og:description" content="特殊處理不等於香精豆。SGS 檢測報告實證：雙重厭氧生豆 1,2-丙二醇未檢出。">
+<meta property="og:title" content="關於特殊處理 — 厭氧處理咖啡完整指南｜KAFE' 卡啡">
+<meta property="og:description" content="精品咖啡特殊處理完整指南：常見類型、厭氧發酵原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。">
 <meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
 <meta property="og:url" content="https://zengkao.github.io/kafei-order/special-process.html">
-<meta name="description" content="特殊處理不等於香精豆。SGS 檢測報告實證：雙重厭氧生豆 1,2-丙二醇未檢出。">
+<meta name="description" content="精品咖啡特殊處理完整指南：常見類型、厭氧發酵原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。">
 <link rel="canonical" href="https://zengkao.github.io/kafei-order/special-process.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "關於特殊處理 — 用科學說話：SGS 檢測證實丙二醇未檢出",
-  "description": "特殊處理（厭氧發酵、雙重厭氧、乳酸發酵等）不等於香精豆。卡啡與井井咖啡聯合送 SGS 檢驗，雙重厭氧生豆 1,2-丙二醇未檢出。",
+  "headline": "關於特殊處理 — 厭氧處理咖啡完整指南",
+  "description": "精品咖啡特殊處理完整指南：常見類型（厭氧、雙重厭氧、乳酸、酒桶、酵母）、厭氧發酵的科學原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。",
+  "articleSection": [
+    "常見的特殊處理類型",
+    "厭氧發酵的科學原理",
+    "風味比較",
+    "為什麼送驗丙二醇",
+    "SGS 檢測結果",
+    "怎麼挑選與沖煮特殊處理咖啡"
+  ],
   "image": [
     "https://zengkao.github.io/kafei-order/sgs-report-p1.jpg",
     "https://zengkao.github.io/kafei-order/sgs-report-p2.jpg",
@@ -167,17 +190,61 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
   <div class="content-card">
     <h3><span class="icon" style="background:linear-gradient(135deg,#F5E6D0,#EDDCC4)">🧬</span> 特殊處理是什麼？</h3>
-    <p>特殊處理（Special Process）是精品咖啡產業中，透過控制發酵環境來引導風味發展的後製技術。常見的方式包括厭氧發酵、雙重厭氧、乳酸發酵、酒桶發酵等，目的是讓咖啡果實在特定的溫度、濕度與氧氣條件下，發展出獨特的風味層次。</p>
+    <p>特殊處理（Special Process）是精品咖啡產業中，透過控制發酵環境來引導風味發展的後製技術。目的是讓咖啡果實在特定的溫度、濕度與氧氣條件下，發展出獨特的風味層次。</p>
   </div>
 
   <div class="content-card">
-    <h3><span class="icon" style="background:linear-gradient(135deg,#E8F0E4,#D4E4CC)">🌿</span> 天然發酵，不是添加香精</h3>
-    <p>特殊處理的風味來自微生物在發酵過程中產生的天然代謝物 — 酯類、醇類與有機酸。這和人工添加的「丙二醇類香精」有本質上的不同。丙二醇（Propylene Glycol）是一種常見的食品級香精載體，若咖啡生豆檢測出丙二醇，即代表可能有外添香精的疑慮。</p>
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F0E6F5,#E0D4EE)">📚</span> 常見的特殊處理類型</h3>
+    <p>除了傳統的水洗（Washed）與日曬（Natural）以外，業界常見的特殊處理包含：</p>
+    <ul class="card-list">
+      <li><strong>厭氧發酵</strong>（Anaerobic）：密封容器排除氧氣，由厭氧菌主導發酵</li>
+      <li><strong>雙重厭氧</strong>（Double Anaerobic）：先帶果厭氧、去果皮再二次厭氧，層次更複雜</li>
+      <li><strong>乳酸發酵</strong>（Lactic）：刻意培養乳酸菌，產生乳製品般甜潤口感</li>
+      <li><strong>酒桶／二氧化碳浸漬</strong>（Barrel-Aged / Carbonic Maceration）：借用葡萄酒、威士忌橡木桶的風土延伸</li>
+      <li><strong>酵母發酵</strong>（Yeast-Inoculated）：接種特定酵母菌株，讓風味結果更可預測</li>
+    </ul>
+    <p>這些技術的共通邏輯是<strong>「控制微生物與發酵環境」</strong>，引導咖啡果實在特定條件下發展風味——而不是事後添加任何香料。</p>
   </div>
 
   <div class="content-card">
-    <h3><span class="icon" style="background:linear-gradient(135deg,#E0E8F5,#D0DCEE)">🔬</span> 我們選擇用檢驗證明</h3>
-    <p>與其在網路上爭論，我們更相信科學。<strong>卡啡</strong>與合作夥伴<strong>井井咖啡</strong>聯合將雙重厭氧製程的咖啡生豆送交 <strong>SGS 食品實驗室</strong>進行丙二醇檢測，以公正的第三方數據回應質疑。</p>
+    <h3><span class="icon" style="background:linear-gradient(135deg,#FCE4D2,#F5D2BE)">🧪</span> 厭氧發酵的科學原理</h3>
+    <p>當咖啡果實處在無氧環境，需氧菌活動受抑制，厭氧菌（如乳酸菌、酵母菌）反而成為主導者。這些微生物在分解果膠與糖分時，會產生大量代謝副產物：</p>
+    <ul class="card-list">
+      <li><strong>酯類（Esters）</strong>：水果香、花香的主要來源（草莓、莓果、熱帶水果）</li>
+      <li><strong>醇類（Alcohols）</strong>：增加酒感、層次與綿長尾韻</li>
+      <li><strong>有機酸（Organic Acids）</strong>：構成明亮酸質與立體甜感</li>
+    </ul>
+    <p>發酵時間越長、環境變因控制越精細，杯中風味就越複雜。<strong>雙重厭氧</strong>之所以受推崇，正因為它把這個發酵過程做了兩次，把風味層次推到極致。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E8DFE0,#D8CDD0)">📊</span> 風味比較</h3>
+    <table class="flavor-table">
+      <thead>
+        <tr><th>處理法</th><th>風味特徵</th><th>酸質</th><th>甜感</th><th>複雜度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>水洗</td><td>乾淨、明亮、焦點清晰</td><td>高</td><td>中</td><td>低</td></tr>
+        <tr><td>日曬</td><td>飽滿、莓果、酒感</td><td>中高</td><td>高</td><td>中</td></tr>
+        <tr><td>厭氧</td><td>發酵風、果汁感</td><td>中</td><td>高</td><td>高</td></tr>
+        <tr><td>雙重厭氧</td><td>強烈水果調、爆發力</td><td>中</td><td>極高</td><td>極高</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px">每位飲者對「層次」的偏好不同，沒有絕對好壞——但若把特殊處理直接等同於「添加香料」，那是對工藝本身的誤解。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E8F0E4,#D4E4CC)">🌿</span> 天然發酵，不是添加香料</h3>
+    <p>特殊處理的風味來自微生物在發酵過程中產生的天然代謝物——酯類、醇類與有機酸。這和人工添加香料的咖啡有本質上的差異：前者是發酵的化學產物，後者是事後外加的物質。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E0E8F5,#D0DCEE)">🔬</span> 為什麼送驗丙二醇？</h3>
+    <p>先講清楚一個事實：<strong>「香精咖啡」在精品咖啡圈裡，目前仍是爭議很大的議題</strong>。咖啡產業並沒有官方統一的香精豆檢驗標準清單，正反兩方各有立場，業界共識還沒形成。</p>
+    <p>更現實的問題是——<strong>生豆的加工過程，供應商往往無法完全公開透明地展示</strong>。發酵的環境變因、菌種來源、是否使用人工添加物，外人很難全程目擊與監控。這是整個咖啡後製產業共同面對的限制，不是單一品牌的問題。</p>
+    <p>那卡啡能做什麼？我們的選擇是：<strong>在後段驗證</strong>。</p>
+    <p>合作之初，<strong>井井咖啡</strong>向卡啡明確敘述：「我們的雙重厭氧製程，沒有添加丙二醇這一類的香精溶劑」。這是井井方面的說法。我們無法回到產地全程監看，但我們可以把成品送到第三方公正單位驗給數據看。</p>
+    <p>於是卡啡將井井提供的雙重厭氧生豆，送至 <strong>SGS 食品實驗室</strong>，依照 <strong>GB 5009.251-2016</strong>（食品中乙二醇與丙二醇的測定方法）進行檢驗。</p>
   </div>
 
   <!-- 檢測結果 -->
@@ -200,6 +267,12 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       <tr><td>報告日期</td><td>2025/07/31</td></tr>
       <tr><td>檢測機構</td><td>SGS 台灣 ・ 食品實驗室（高雄）</td></tr>
     </table>
+  </div>
+
+  <div class="boundary-card">
+    這份報告的意義，<strong>不是</strong>「卡啡證明特殊處理絕對乾淨」，也不是「整個產業都該這樣驗」。它就是——<br><br>
+    <strong>井井所敘述的「沒添加丙二醇類香精」，在後段驗證中與檢驗結果相符、並無差異。</strong><br><br>
+    我們承認這個方法的侷限：它無法回溯產地過程，也無法窮盡所有可能的添加物。但在我們能做到的範圍內，這是最直接、最公正、最可被任何人查證的方式。爭議或許會繼續，但至少這份報告的數據——是公開的、可查證的、不靠話術的。
   </div>
 
   <!-- SGS 報告原文 -->
@@ -226,6 +299,26 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
   <div class="disclaimer">
     本檢測報告由 SGS 台灣檢驗科技股份有限公司出具，報告編號 AVA25705260。檢測結果僅對送驗樣品負責，不對產品合法性做判斷。完整報告可至 <a href="https://www.sgs.com.tw" target="_blank" style="color:var(--accent)">SGS 官網</a> 查詢驗證。
+  </div>
+
+  <!-- 怎麼挑選與沖煮 -->
+  <div class="section-label">HOW TO ENJOY</div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F5E6D0,#EDDCC4)">☕</span> 怎麼挑選與沖煮特殊處理咖啡</h3>
+    <div class="sub-label">挑選建議</div>
+    <ul class="card-list">
+      <li><strong>入門飲者</strong>：建議從乳酸或酵母發酵的品項開始，風味較收斂</li>
+      <li><strong>想挑戰風味極限</strong>：選擇雙重厭氧或長時厭氧</li>
+      <li><strong>對發酵風味敏感</strong>：可從厭氧蜜處理（風味最溫和的厭氧分支）入門</li>
+    </ul>
+    <div class="sub-label">沖煮建議</div>
+    <ul class="card-list">
+      <li><strong>水溫</strong>：建議 90-92 度，避免發酵酸過於尖銳</li>
+      <li><strong>粉水比</strong>：1:15-1:16，保留風味厚度與層次</li>
+      <li><strong>手法</strong>：一刀流可維持風味純粹、不過度抽取</li>
+    </ul>
+    <p style="margin-top:14px;font-size:13px"><a href="index.html" style="color:var(--accent-dark);font-weight:600;text-decoration:none">→ 來看卡啡的特殊處理咖啡品項</a> ・ <a href="faq.html" style="color:var(--accent-dark);font-weight:600;text-decoration:none">更多常見問題</a></p>
   </div>
 
   <div class="footer">
