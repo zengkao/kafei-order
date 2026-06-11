@@ -51,6 +51,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .oos-badge{font-size:10px;font-weight:700;color:var(--red);background:rgba(194,80,64,.08);padding:2px 8px;border-radius:6px}
 .summary-bar{position:fixed;bottom:0;left:0;right:0;background:#2C2420;color:#F5F0EB;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,.2);transition:transform .3s}
 .summary-bar.hidden{transform:translateY(100%)}
+.ship-progress{height:3px;background:rgba(245,240,235,.12)}
+.ship-progress-fill{height:100%;width:0;background:linear-gradient(90deg,#C4853C,#E8A84C);transition:width .35s ease}
+.ship-progress-fill.done{background:#7CBA7C}
+.summary-text .ship-need{display:inline-block;margin-left:8px;color:#E8A84C;font-size:12px;font-weight:700}
 .summary-inner{max-width:520px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .summary-text{font-size:13px;line-height:1.5}.summary-text strong{font-size:20px;color:var(--accent-glow)}
 .summary-text .free-ship{color:#7CBA7C;font-size:11px;font-weight:700}.summary-text .ship-cost{font-size:11px;color:rgba(245,240,235,.5)}
@@ -82,6 +86,12 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .ac-count{padding:8px 14px;font-size:11px;color:var(--ink-faint);text-align:center;border-bottom:1px solid #F5F0EB}
 .info-banner{background:linear-gradient(135deg,rgba(196,133,60,.08),rgba(196,133,60,.04));border:1px solid rgba(196,133,60,.2);border-radius:12px;padding:14px 16px;margin-top:20px;font-size:13px;color:var(--ink-light);line-height:1.7}
 .info-banner strong{color:var(--accent-dark)}
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.offer-item{display:flex;align-items:flex-start;gap:8px;background:var(--card);border:1px solid rgba(196,133,60,.18);border-radius:10px;padding:10px 11px}
+.offer-item svg{flex-shrink:0;margin-top:2px}
+.offer-title{font-size:13px;font-weight:700;color:var(--accent-dark);line-height:1.35}
+.offer-sub{font-size:11px;color:var(--ink-light);margin-top:2px;line-height:1.45}
+.offer-note{font-size:11px;color:var(--ink-faint);text-align:center;margin-top:10px}
 .brand-intro{background:var(--card);border-radius:14px;padding:18px 20px;margin-top:16px;box-shadow:0 1px 4px var(--shadow);font-size:14px;color:var(--ink-light);line-height:1.75}
 .brand-intro p{margin:0 0 8px}
 .brand-intro p:last-child{margin-bottom:0}
@@ -208,13 +218,25 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   </section>
 
   <div class="info-banner">
-    🏷️ 常規豆蝦皮 <strong>95 折</strong>・特選豆享<strong>專屬價</strong>｜運費 <strong>$38</strong><br>
-    🎉 滿 <strong>$1,000</strong> 免運費！｜🏪 7-ELEVEN 門市取貨<br>
-    📦 <strong>特選豆單＋精品常規豆</strong> 同時加購 → 免運費<br>
-    👑 近 3 個月採購<br>
-    <span style="display:inline-block;margin-left:1.7em"><strong>TOP 20%</strong> 享 <strong>92 折</strong></span><br>
-    <span style="display:inline-block;margin-left:1.7em"><strong>TOP 10%</strong> 享 <strong>9 折</strong></span><br>
-    <span style="display:inline-block;margin-left:1.7em;font-size:12px;color:var(--ink-light)">（由出貨 Email 通知實付金額）</span>
+    <div class="offer-grid">
+      <div class="offer-item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        <div><div class="offer-title">常規豆 95 折</div><div class="offer-sub">較蝦皮定價・特選豆享專屬價</div></div>
+      </div>
+      <div class="offer-item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <div><div class="offer-title">滿 $1,000 免運</div><div class="offer-sub">未滿運費 $38・<span style="white-space:nowrap">7-11 取貨</span></div></div>
+      </div>
+      <div class="offer-item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div><div class="offer-title">組合免運</div><div class="offer-sub">特選豆單＋常規豆同購即免運</div></div>
+      </div>
+      <div class="offer-item">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17H3z"/><line x1="5" y1="21" x2="19" y2="21"/></svg>
+        <div><div class="offer-title">VIP 老客回饋</div><div class="offer-sub">近 3 個月 <span style="white-space:nowrap">TOP10% 9折</span>・<span style="white-space:nowrap">TOP20% 92折</span></div></div>
+      </div>
+    </div>
+    <div class="offer-note">VIP 折扣自動套用，實付金額由出貨 Email 通知</div>
     <div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(196,133,60,.35);text-align:center">
       <button type="button" id="btn-overseas" onclick="openOverseasModal()" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;color:#0E7C66;border:1.5px solid #0E7C66;border-radius:999px;font-size:13px;font-weight:700;font-family:'Noto Sans TC',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -230,6 +252,17 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       <div style="font-size:14px;font-weight:700;line-height:1.3"><span style="color:#E8A84C">Coffee Review 88</span> 分又怎樣？</div>
       <div style="font-size:11px;color:rgba(245,240,235,.5);margin-top:2px">照樣賣得嚇嚇叫。反骨精神，用品質說話 →</div>
     </div>
+  </a>
+
+  <a href="https://line.me/ti/g2/s8am86BpCIocU3mFlozlejE8qoBCQfldWZfBMA" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','join_line_click',{location:'home_banner'})" style="display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid #06C755;border-radius:12px;padding:10px 16px;margin-top:8px;text-decoration:none;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .2s" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform=''">
+    <div style="width:38px;height:38px;border-radius:10px;background:#06C755;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.48 3 2 6.64 2 11.1c0 3.99 3.55 7.33 8.34 7.97.32.07.77.21.88.49.1.25.07.65.03.9l-.14.86c-.04.25-.2 1 .87.54 1.07-.45 5.77-3.4 7.87-5.82C21.4 14.4 22 12.83 22 11.1 22 6.64 17.52 3 12 3z"/></svg>
+    </div>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:14px;font-weight:700;color:#069E47">加入卡啡 LINE 社群</div>
+      <div style="font-size:11px;color:var(--ink-faint);margin-top:2px">新豆上架・限時特價 第一時間通知</div>
+    </div>
+    <div style="font-size:12px;color:#069E47;font-weight:700;white-space:nowrap">加入 →</div>
   </a>
 
   <a href="https://shopee.tw/zengkaochen" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:14px;background:var(--card);border:1.5px solid #EE4D2D;border-radius:12px;padding:10px 16px;margin-top:8px;text-decoration:none;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .2s" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform=''">
@@ -372,6 +405,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 
 <!-- Summary Bar -->
 <div class="summary-bar hidden" id="summary-bar">
+  <div class="ship-progress"><div class="ship-progress-fill" id="ship-progress-fill"></div></div>
   <div class="summary-inner">
     <div class="summary-text"><span id="sum-packs">0</span> 包｜<strong>$<span id="sum-total">0</span></strong><br><span id="sum-ship"></span></div>
     <button class="btn-checkout" onclick="handleCheckout()">確認訂單</button>
@@ -629,9 +663,10 @@ function updateBar(){
   document.getElementById('sum-packs').textContent=c.pk;
   document.getElementById('sum-total').textContent=c.total.toLocaleString();
   const s=document.getElementById('sum-ship');
-  if(!c.pk)s.innerHTML='';
-  else if(c.fr)s.innerHTML='<span class="free-ship">'+lbl+' $'+c.subtotal.toLocaleString()+(c.mixFree?' ✓ 免運 📦':' ✓ 免運')+'</span>';
-  else s.innerHTML=`<span class="ship-cost">${lbl} $${c.subtotal.toLocaleString()}＋運費 $${SHIP}｜再 $${FREE-c.effSum} 免運</span>`;
+  const fill=document.getElementById('ship-progress-fill');
+  if(!c.pk){s.innerHTML='';fill.style.width='0';fill.classList.remove('done');}
+  else if(c.fr){s.innerHTML='<span class="free-ship">'+lbl+' $'+c.subtotal.toLocaleString()+(c.mixFree?' ✓ 免運 📦':' ✓ 免運')+'</span>';fill.style.width='100%';fill.classList.add('done');}
+  else{s.innerHTML=`<span class="ship-cost">${lbl} $${c.subtotal.toLocaleString()}＋運費 $${SHIP}</span><span class="ship-need">再 $${(FREE-c.effSum).toLocaleString()} 免運</span>`;fill.style.width=Math.min(100,Math.round(c.effSum/FREE*100))+'%';fill.classList.remove('done');}
   document.getElementById('summary-bar').classList.toggle('hidden',!c.pk);
 }
 
