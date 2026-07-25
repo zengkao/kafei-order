@@ -85,6 +85,13 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .rb-clear{flex:none;background:transparent;border:none;color:var(--accent-dark);font-size:11.5px;font-family:'Noto Sans TC',sans-serif;text-decoration:underline;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
 .rb-store{margin-top:3px;font-size:11.5px;color:var(--ink-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .rb-privacy{display:flex;align-items:center;gap:4px;margin-top:6px;font-size:10.5px;color:var(--ink-faint)}
+/* 開頁時商品是 build 時的舊快照，GAS 要 1~2 秒才回來；用這條提示讓更新變成預期中的事 */
+.stock-updating{display:none;align-items:center;gap:8px;margin:0 0 8px}
+.stock-updating.show{display:flex}
+.stock-updating .su-bar{flex:1 1 auto;height:3px;border-radius:2px;background:rgba(196,133,60,.15);overflow:hidden}
+.stock-updating .su-bar i{display:block;height:100%;width:40%;border-radius:2px;background:linear-gradient(90deg,#C4853C,#E8A84C);animation:suSlide 1.1s ease-in-out infinite}
+@keyframes suSlide{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
+.stock-updating span{flex:none;font-size:11px;color:var(--ink-faint)}
 .store-stale{display:none;align-items:center;gap:7px;padding:9px 12px;background:var(--seven-bg);border:1.5px solid var(--seven-border);border-radius:10px;margin-bottom:12px;font-size:12.5px;color:#B04A00;line-height:1.5}
 .store-stale.show{display:flex}
 .form-section{background:var(--card);border-radius:14px;padding:20px 16px;margin-top:10px;box-shadow:0 1px 4px var(--shadow)}
@@ -314,6 +321,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     <button class="cat-tab" data-cat="special">特選豆單</button>
     <button class="cat-tab" data-cat="family">家庭號<small>1500g</small></button>
   </div>
+  <div class="stock-updating" id="stock-updating"><div class="su-bar"><i></i></div><span>正在更新庫存…</span></div>
   <div id="product-list"></div>
 
   <div class="section-label">🏪 取貨門市</div>
@@ -568,7 +576,7 @@ function loadStores(){
 }
 loadStores();
 
-const P=[{"id":"飛雀_72","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":200,"stock":198,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_72","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":225,"stock":197,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"},{"id":"LU_73","name":"[淺中焙] 豆超 露西藝伎 水洗","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":200,"stock":44,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"LP_90","name":"[淺中焙] 哥倫比亞 小珍珠 水洗 微批次","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":225,"stock":35,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥倫比亞 (Colombia)\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"FC_75","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":225,"stock":33,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"PA_90","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":250,"stock":20,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"EBS_71","name":"[淺中焙] 班莎 水洗 74110/74112","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":200,"stock":15,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"all_448","name":"[淺中焙] 全店 常規豆 套組 20260723","origin":"","flavors":["淺中焙"],"price":900,"stock":5,"roast":"","category":"beans","unit":"100g*5","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"莫札特 葡萄乾蜜處理\n蕭邦 圓舞曲 葡萄乾蜜處理\nAcacia Hills 帕卡馬拉 水洗\n豆超 飛雀藝伎 日曬\n露西藝伎 水洗\n共5支各100克"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":66,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"SW_187","name":"[淺中焙] 泰國 草莓奶昔 雙重厭氧蜜處理","origin":"","flavors":["草莓","玫瑰","柑橘","杏桃","蜂蜜"],"price":270,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家 / 泰國\n產區 / 清萊\n品種 / 卡杜拉\n海拔 / 1400M～1600M \n處理法 / 雙重厭氧蜜處理\n風味筆記 /草莓、玫瑰、柑橘、杏桃、蜂蜜"},{"id":"烏克莉莉_144","name":"[淺中] 烏克栗栗 AB TOP","origin":"","flavors":["仙楂餅","黑佳麗軟糖","雪松"],"price":260,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"肯亞 烏克栗栗/黑莓皇后 AB TOP (祈安布) 26/03 批次\r\nKenya Uklili AB TOP (Kiambu) Lot 26/03\r\n乾香為陳皮梅、烏梅、黑莓及小紅莓香氣。在口中展現煙燻烏梅、\r\n陳皮梅及黑嘉麗軟糖風味，夾帶著仙楂梅餅、手捲菸絲及悠長雪松\r\n餘韻，口感厚實，風味深邃強勁。"},{"id":"三隻猴子_246","name":"[淺中] 祕魯 小雛菊莊園  藝伎 慢乾水洗","origin":"","flavors":["檸檬皮","水蜜桃","佛手柑","茉莉","草莓(很淡)","經典藝伎風味"],"price":299,"stock":7,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n祕魯 庫斯科 三隻猴子 小雛菊莊園 瑰夏/藝伎 暗室慢速乾燥 水洗\nPeru Cusco Three Monkeys La Margarita Geisha DRD Washed Lot GW-2225\n乾香可感受到檸檬皮、水蜜桃、佛手柑與茉莉氣息。入口可感受到檸檬皮、蜂蜜柚子\n茶與水蜜桃風味，中後段浮現茉莉花及山竹甜甜香氣，香甜滑順。"},{"id":"曼巴茶包_450","name":"［茶包咖啡50入］配方 經典曼巴 中焙","origin":"","flavors":["黑糖","可可","奶油"],"price":600,"stock":1,"roast":"","category":"special","unit":"50包入","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"配方 經典曼巴 中焙\n風味 黑糖、可可、奶油\n產區 巴西、印尼\n處理法 日曬、濕剝法\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"LU_867","name":"[淺中焙] 豆超 露西藝伎 水洗[家庭號]","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":2400,"stock":99,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"PA_970","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗[家庭號]","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":3000,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"FC15_930","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"飛雀_867","name":"[淺中焙] 豆超 飛雀藝伎 日曬[家庭號]","origin":"","flavors":["芒果","百香果","水果糖"],"price":2400,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_930","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"}];
+const P=[{"id":"飛雀_72","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":200,"stock":198,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_72","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":225,"stock":197,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"},{"id":"LU_73","name":"[淺中焙] 豆超 露西藝伎 水洗","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":200,"stock":44,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"LP_90","name":"[淺中焙] 哥倫比亞 小珍珠 水洗 微批次","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":225,"stock":35,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥倫比亞 (Colombia)\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"FC_75","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":225,"stock":33,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"PA_90","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":250,"stock":20,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"EBS_71","name":"[淺中焙] 班莎 水洗 74110/74112","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":200,"stock":15,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"套組0723_448","name":"[淺中焙] 全店 常規豆 套組 20260723","origin":"","flavors":["淺中焙"],"price":900,"stock":5,"roast":"","category":"beans","unit":"100g*5","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"莫札特 葡萄乾蜜處理\n蕭邦 圓舞曲 葡萄乾蜜處理\nAcacia Hills 帕卡馬拉 水洗\n豆超 飛雀藝伎 日曬\n露西藝伎 水洗\n共5支各100克"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":66,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"SW_187","name":"[淺中焙] 泰國 草莓奶昔 雙重厭氧蜜處理","origin":"","flavors":["草莓","玫瑰","柑橘","杏桃","蜂蜜"],"price":270,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家 / 泰國\n產區 / 清萊\n品種 / 卡杜拉\n海拔 / 1400M～1600M \n處理法 / 雙重厭氧蜜處理\n風味筆記 /草莓、玫瑰、柑橘、杏桃、蜂蜜"},{"id":"烏克莉莉_144","name":"[淺中] 烏克栗栗 AB TOP","origin":"","flavors":["仙楂餅","黑佳麗軟糖","雪松"],"price":260,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"肯亞 烏克栗栗/黑莓皇后 AB TOP (祈安布) 26/03 批次\r\nKenya Uklili AB TOP (Kiambu) Lot 26/03\r\n乾香為陳皮梅、烏梅、黑莓及小紅莓香氣。在口中展現煙燻烏梅、\r\n陳皮梅及黑嘉麗軟糖風味，夾帶著仙楂梅餅、手捲菸絲及悠長雪松\r\n餘韻，口感厚實，風味深邃強勁。"},{"id":"三隻猴子_246","name":"[淺中] 祕魯 小雛菊莊園  藝伎 慢乾水洗","origin":"","flavors":["檸檬皮","水蜜桃","佛手柑","茉莉","草莓(很淡)","經典藝伎風味"],"price":299,"stock":7,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n祕魯 庫斯科 三隻猴子 小雛菊莊園 瑰夏/藝伎 暗室慢速乾燥 水洗\nPeru Cusco Three Monkeys La Margarita Geisha DRD Washed Lot GW-2225\n乾香可感受到檸檬皮、水蜜桃、佛手柑與茉莉氣息。入口可感受到檸檬皮、蜂蜜柚子\n茶與水蜜桃風味，中後段浮現茉莉花及山竹甜甜香氣，香甜滑順。"},{"id":"曼巴茶包_450","name":"［茶包咖啡50入］配方 經典曼巴 中焙","origin":"","flavors":["黑糖","可可","奶油"],"price":600,"stock":1,"roast":"","category":"special","unit":"50包入","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"配方 經典曼巴 中焙\n風味 黑糖、可可、奶油\n產區 巴西、印尼\n處理法 日曬、濕剝法\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"LU_867","name":"[淺中焙] 豆超 露西藝伎 水洗[家庭號]","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":2400,"stock":99,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"PA_970","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗[家庭號]","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":3000,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"FC15_930","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"飛雀_867","name":"[淺中焙] 豆超 飛雀藝伎 日曬[家庭號]","origin":"","flavors":["芒果","百香果","水果糖"],"price":2400,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_930","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"}];
 const SHIP=38,FREE=1000,DISC=0.95,Q={};
 const SOON=86400000;
 let curCat='beans',stockLoaded=false;
@@ -615,9 +623,9 @@ function calcTotals(t){
 
 // ── 從 Google Sheets 讀取完整商品資料（支援 Sheet 新增商品）──
 function mapCat(c){var m={'精品豆':'beans','精品常規豆':'beans','100g':'beans','特選豆單':'special','半磅':'special','家庭號':'family','1500g':'family'};return m[c]||c||'beans';}
-function loadStock(){
-  return fetch(GAS_URL+'?action=products',{cache:'no-store'}).then(r=>r.json()).then(sp=>{
-    if(!Array.isArray(sp)||!sp.length)return;
+// 把 API 回來的商品陣列併進 P，回傳有沒有變動（開頁用快取、輪詢用網路，兩邊共用這段）
+function mergeProducts(sp){
+    if(!Array.isArray(sp)||!sp.length)return false;
     var sheetIds={},changed=false;
     sp.forEach(s=>{
       sheetIds[s.id]=true;
@@ -643,9 +651,37 @@ function loadStock(){
       }
     });
     P.forEach(p=>{if(!sheetIds[p.id]&&p.stock!==0){p.stock=0;changed=true;}});
-    if(!stockLoaded||changed){stockLoaded=true;render();}
-  }).catch(()=>{/* 讀不到就用 HTML 內建的庫存 */});
+    return changed;
 }
+// 商品快取：GAS Web App 每次固定 1~2 秒（302 轉址+容器啟動，後端已有 CacheService 也省不掉），
+// 開頁只能先畫 build 時烘進 HTML 的舊快照 → 客人看到跳動。
+// 解法同門市清單：把上次成功抓到的商品存 localStorage，回訪開頁先用它畫，再背景更新。
+const PRODUCTS_CACHE_KEY='kafei_products_v1';
+function setUpdating(on){
+  const el=document.getElementById('stock-updating');
+  if(el)el.classList.toggle('show',!!on);
+}
+function loadProductsCache(){
+  try{
+    const c=JSON.parse(localStorage.getItem(PRODUCTS_CACHE_KEY)||'null');
+    if(c&&Array.isArray(c.data)&&c.data.length){
+      if(mergeProducts(c.data))render();
+      return true;
+    }
+  }catch(e){}
+  return false;
+}
+function loadStock(){
+  setUpdating(true);
+  return fetch(GAS_URL+'?action=products',{cache:'no-store'}).then(r=>r.json()).then(sp=>{
+    if(!Array.isArray(sp)||!sp.length)return;
+    const changed=mergeProducts(sp);
+    if(!stockLoaded||changed){stockLoaded=true;render();}
+    try{localStorage.setItem(PRODUCTS_CACHE_KEY,JSON.stringify({ts:Date.now(),data:sp}));}catch(e){}
+  }).catch(()=>{/* 讀不到就沿用快取或 HTML 內建的庫存 */})
+   .then(()=>{setUpdating(false);});
+}
+loadProductsCache();
 loadStock();
 // 即時推送：每 5 秒問一次伺服器版本號（很輕，只回一個數字），版本變了才重抓商品
 // 觸發版本變動的時機：店家在 Sheet 改商品/庫存、按「立即推送」、其他客人下單扣帳、未領退回
@@ -689,17 +725,18 @@ document.getElementById('cat-tabs').addEventListener('click',e=>{
 });
 
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function render(){
-  const fp=P.filter(p=>p.category===curCat&&(p.stock>0||Q[p.id]>0));
-  const now=Date.now();
-  document.getElementById('product-list').innerHTML=fp.map(p=>{
-    const has=Q[p.id]>0;
+// 卡片簽章：把所有會影響這張卡外觀的欄位串起來，變了才重畫這一張（不整塊重繪＝不閃）
+function cardSig(p,now){
+  return [p.name,p.price,p.unit,p.stock,Q[p.id],p.desc||'',(p.flavors||[]).join(''),
+          p.salePrice,p.saleStart,p.saleEnd,p.saleQty,saleState(p,now)||''].join('');
+}
+function cardClass(p){return 'product-card'+(Q[p.id]>0?' has-qty':'')+(p.desc?' has-desc':'');}
+function cardInner(p,now){
     const d=p.desc||'';
-    const hd=d?'has-desc':'';
     const st=saleState(p,now);
     const saleTag=st==='active'?`<span class="sale-tag"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>${p.saleEnd?'限時特價':'特價'}${p.saleQty!=null?'・剩 '+p.saleQty:''}</span>`
       :st==='upcoming'?`<span class="sale-soon-tag"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${fmtMD(p.saleStart)} 起特價 $${p.salePrice}</span>`:'';
-    return`<div class="product-card ${has?'has-qty':''} ${hd}">
+    return`
       <div class="desc-icon" onclick="toggleTip(event)"><svg viewBox="0 0 24 24" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
       ${d?`<div class="desc-tooltip"><div class="dt-title">▎商品規格 ▎</div>${esc(d)}</div>`:''}
       <div class="product-info">
@@ -714,8 +751,40 @@ function render(){
           <div class="qty-val ${Q[p.id]>0?'active':''}">${Q[p.id]}</div>
           <button class="qty-btn" onclick="chg('${p.id}',1)" ${Q[p.id]>=p.stock?'disabled':''}>+</button>
         </div>
-      </div></div>`;
-  }).join('')||'<div style="text-align:center;padding:20px;color:var(--ink-light)">此分類暫無商品</div>';
+      </div>`;
+}
+// 差異更新：只有簽章變了的卡片才重畫，位置不對才搬 DOM。
+// 這樣 45 秒輪詢／快取換成新資料時，畫面不會整片閃，開著的規格 tooltip 也不會被關掉。
+const _cardEls={},_cardSigs={};
+function render(){
+  const list=document.getElementById('product-list');
+  const fp=P.filter(p=>p.category===curCat&&(p.stock>0||Q[p.id]>0));
+  const now=Date.now();
+  if(!fp.length){
+    list.innerHTML='<div style="text-align:center;padding:20px;color:var(--ink-light)">此分類暫無商品</div>';
+  }else{
+    if(list.firstElementChild&&!list.firstElementChild.classList.contains('product-card'))list.innerHTML='';
+    const keep={};
+    fp.forEach((p,idx)=>{
+      keep[p.id]=1;
+      const sig=cardSig(p,now);
+      let el=_cardEls[p.id];
+      if(!el){
+        el=document.createElement('div');
+        el.dataset.pid=p.id;
+        el.className=cardClass(p);
+        el.innerHTML=cardInner(p,now);
+        _cardEls[p.id]=el;_cardSigs[p.id]=sig;
+      }else if(_cardSigs[p.id]!==sig){
+        const tipOpen=el.classList.contains('tooltip-active');
+        el.className=cardClass(p)+(tipOpen?' tooltip-active':'');
+        el.innerHTML=cardInner(p,now);
+        _cardSigs[p.id]=sig;
+      }
+      if(list.children[idx]!==el)list.insertBefore(el,list.children[idx]||null);
+    });
+    Array.from(list.children).forEach(el=>{if(!el.dataset||!keep[el.dataset.pid])el.remove();});
+  }
   // highlight tabs that have items in cart, hide empty categories
   document.querySelectorAll('.cat-tab').forEach(t=>{
     const cat=t.dataset.cat;
