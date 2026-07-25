@@ -66,6 +66,27 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .summary-text .free-ship{color:#7CBA7C;font-size:11px;font-weight:700}.summary-text .ship-cost{font-size:11px;color:rgba(245,240,235,.5)}
 .btn-checkout{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Noto Sans TC',sans-serif;-webkit-tap-highlight-color:transparent}
 .btn-checkout:active{background:var(--accent-dark)}
+/* 老客快速結帳（購物車列）：有記住資料且購物車非空才顯示，此時確認訂單降為外框鈕 */
+.summary-actions{display:flex;align-items:center;gap:8px;flex:none}
+.btn-quick{display:none;align-items:center;gap:5px;background:linear-gradient(135deg,#E8A84C,#C4853C);color:#2C2420;border:none;padding:11px 14px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;font-family:'Noto Sans TC',sans-serif;-webkit-tap-highlight-color:transparent;flex:none}
+.btn-quick.show{display:flex}
+.btn-quick:active{filter:brightness(.92)}
+.summary-inner.has-quick .summary-text{flex:1 1 auto;min-width:0;font-size:12.5px}
+.summary-inner.has-quick .summary-text strong{font-size:18px}
+.summary-inner.has-quick .btn-checkout{background:transparent;border:1.5px solid rgba(245,240,235,.45);color:#F5F0EB;padding:10px 14px;font-size:13.5px}
+.summary-inner.has-quick .btn-checkout:active{background:rgba(245,240,235,.12)}
+/* 老客回訪列（收件人資訊上方） */
+.returning-bar{background:linear-gradient(135deg,rgba(196,133,60,.10),rgba(196,133,60,.04));border:1.5px solid rgba(196,133,60,.35);border-radius:14px;padding:12px 14px;margin-top:10px}
+.rb-fill{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--accent);color:#fff;border:none;border-radius:11px;padding:11px 14px;font-size:14.5px;font-weight:700;font-family:'Noto Sans TC',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s}
+.rb-fill:active{background:var(--accent-dark)}
+.rb-fill.done{background:var(--green-light);color:var(--green);cursor:default}
+.rb-meta{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11.5px;color:var(--ink-light)}
+.rb-last{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rb-clear{flex:none;background:transparent;border:none;color:var(--accent-dark);font-size:11.5px;font-family:'Noto Sans TC',sans-serif;text-decoration:underline;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+.rb-store{margin-top:3px;font-size:11.5px;color:var(--ink-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rb-privacy{display:flex;align-items:center;gap:4px;margin-top:6px;font-size:10.5px;color:var(--ink-faint)}
+.store-stale{display:none;align-items:center;gap:7px;padding:9px 12px;background:var(--seven-bg);border:1.5px solid var(--seven-border);border-radius:10px;margin-bottom:12px;font-size:12.5px;color:#B04A00;line-height:1.5}
+.store-stale.show{display:flex}
 .form-section{background:var(--card);border-radius:14px;padding:20px 16px;margin-top:10px;box-shadow:0 1px 4px var(--shadow)}
 .form-group{margin-bottom:14px}.form-group:last-child{margin-bottom:0}
 .form-group label{display:block;font-size:12px;font-weight:500;color:var(--ink-light);margin-bottom:4px}.form-group label .req{color:var(--red)}
@@ -194,7 +215,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       "publisher": { "@id": "https://zengkao.github.io/kafei-order/#organization" },
       "inLanguage": "zh-Hant"
     },
-    {"@type": "ItemList", "@id": "https://zengkao.github.io/kafei-order/#products", "name": "KAFE' 卡啡 精品咖啡豆商品列表", "numberOfItems": 17, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "班莎 水洗 74110/74112", "description": "風味：柳橙、紅茶、雞蛋花｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "哥倫比亞 小珍珠 水洗 微批次", "description": "風味：青蘋果、白花、柑橘、黃金糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "250", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "全店 常規豆 套組", "description": "風味：淺中焙｜規格：100g*5", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "900", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "烏干達 希比瀑布 日曬", "description": "風味：百香果、黑醋栗、熱帶水果汁、尾韻綿長｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "210", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "日商 水蜜桃共同發酵 藝伎", "description": "風味：水蜜桃、荔枝、烏龍茶｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "泰國 草莓奶昔 雙重厭氧蜜處理", "description": "風味：草莓、玫瑰、柑橘、杏桃、蜂蜜｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "270", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "祕魯 小雛菊莊園  藝伎 慢乾水洗", "description": "風味：檸檬皮、水蜜桃、佛手柑、茉莉、草莓(很淡)、經典藝伎風味｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Product", "name": "班奇馬吉 1931藝伎 水洗", "description": "風味：佛手柑、甜柚、柳橙、金萱茶、芹菜香氣｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Product", "name": "［茶包咖啡50入］配方 經典曼巴 中焙", "description": "風味：黑糖、可可、奶油｜規格：50包入", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "600", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 13, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗[家庭號]", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 14, "item": {"@type": "Product", "name": "Las Perlitas 水洗處理法[家庭號]", "description": "風味：青蘋果、白花、柑橘、黃金糖｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 15, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗[家庭號]", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "3000", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 16, "item": {"@type": "Product", "name": "班莎 水洗 74110/74112[家庭號]", "description": "風味：柳橙、紅茶、雞蛋花｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 17, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}]}
+    {"@type": "ItemList", "@id": "https://zengkao.github.io/kafei-order/#products", "name": "KAFE' 卡啡 精品咖啡豆商品列表", "numberOfItems": 18, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬", "description": "風味：芒果、百香果、水果糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "哥斯大黎加 莫札特 葡萄乾蜜處理", "description": "風味：草莓、玫瑰、荔枝軟糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "哥倫比亞 小珍珠 水洗 微批次", "description": "風味：青蘋果、白花、柑橘、黃金糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "250", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "班莎 水洗 74110/74112", "description": "風味：柳橙、紅茶、雞蛋花｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "全店 常規豆 套組", "description": "風味：淺中焙｜規格：100g*5", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "900", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "日商 水蜜桃共同發酵 藝伎", "description": "風味：水蜜桃、荔枝、烏龍茶｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "泰國 草莓奶昔 雙重厭氧蜜處理", "description": "風味：草莓、玫瑰、柑橘、杏桃、蜂蜜｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "270", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Product", "name": "烏克栗栗 AB TOP", "description": "風味：仙楂餅、黑佳麗軟糖、雪松｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "260", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Product", "name": "祕魯 小雛菊莊園  藝伎 慢乾水洗", "description": "風味：檸檬皮、水蜜桃、佛手柑、茉莉、草莓(很淡)、經典藝伎風味｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 13, "item": {"@type": "Product", "name": "［茶包咖啡50入］配方 經典曼巴 中焙", "description": "風味：黑糖、可可、奶油｜規格：50包入", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "600", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 14, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗[家庭號]", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 15, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗[家庭號]", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "3000", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 16, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 17, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬[家庭號]", "description": "風味：芒果、百香果、水果糖｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 18, "item": {"@type": "Product", "name": "哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]", "description": "風味：草莓、玫瑰、荔枝軟糖｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}]}
   ]
 }
 </script>
@@ -308,6 +329,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       <span class="check">✓</span>
       <span id="store-display"></span>
     </div>
+    <div class="store-stale" id="store-stale">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span id="store-stale-text"></span>
+    </div>
     <div class="form-group">
       <label>搜尋門市 <span class="req">*</span></label>
       <div class="ac-wrap">
@@ -326,18 +351,33 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   </div>
 
   <div class="section-label">📬 收件人資訊</div>
+  <div class="returning-bar" id="returning-bar" style="display:none">
+    <button type="button" class="rb-fill" id="rb-fill" onclick="onFillProfile()">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span id="rb-fill-text">一鍵帶入上次訂購資料</span>
+    </button>
+    <div class="rb-meta">
+      <span class="rb-last" id="rb-last"></span>
+      <button type="button" class="rb-clear" onclick="onClearProfile()">不是我？清除</button>
+    </div>
+    <div class="rb-store" id="rb-store"></div>
+    <div class="rb-privacy">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>資料只存在你的手機，不會上傳</span>
+    </div>
+  </div>
   <div class="form-section">
     <div class="form-group">
       <label>收件者姓名 <span class="req">*</span></label>
-      <input class="form-input" type="text" id="inp-name" placeholder="王小明">
+      <input class="form-input" type="text" id="inp-name" placeholder="王小明" autocomplete="name">
     </div>
     <div class="form-group">
       <label>手機號碼 <span class="req">*</span></label>
-      <input class="form-input" type="tel" id="inp-phone" placeholder="0912345678" maxlength="10" inputmode="numeric">
+      <input class="form-input" type="tel" id="inp-phone" placeholder="0912345678" maxlength="10" inputmode="numeric" autocomplete="tel">
     </div>
     <div class="form-group">
       <label>Email <span class="req">*</span> <small style="color:var(--ink-faint)">(收出貨通知與電子發票)</small></label>
-      <input class="form-input" type="email" id="inp-email" placeholder="example@gmail.com" inputmode="email" required>
+      <input class="form-input" type="email" id="inp-email" placeholder="example@gmail.com" inputmode="email" autocomplete="email" required>
     </div>
     <div class="form-group">
       <label>備註</label>
@@ -415,7 +455,10 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
   <div class="ship-progress" id="ship-progress"><div class="ship-progress-fill" id="ship-progress-fill"></div></div>
   <div class="summary-inner" id="summary-inner">
     <div class="summary-text"><span id="sum-packs">0</span> 包｜<strong>$<span id="sum-total">0</span></strong><br><span id="sum-ship"></span></div>
-    <button class="btn-checkout" onclick="handleCheckout()">確認訂單</button>
+    <div class="summary-actions">
+      <button class="btn-quick" id="btn-quick" onclick="quickCheckout()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>快速結帳</button>
+      <button class="btn-checkout" onclick="handleCheckout()">確認訂單</button>
+    </div>
   </div>
 </div>
 
@@ -508,6 +551,7 @@ function fetchStores(attempt){
     if(data.length){
       setStores(data);
       try{localStorage.setItem(STORE_CACHE_KEY,JSON.stringify({ts:Date.now(),data:data}));}catch(e){}
+      try{checkStoreStale();}catch(e){}   // 老客帶入的門市若已停業，清單到齊後才驗得出來
     }else if(!STORES.length){
       document.getElementById('store-count-label').textContent='門市清單尚未建立，請至 Google Sheets 執行「更新門市清單」';
     }
@@ -524,7 +568,7 @@ function loadStores(){
 }
 loadStores();
 
-const P=[{"id":"EBS_71","name":"[淺中焙] 班莎 水洗 74110/74112","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":200,"stock":47,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"LU_73","name":"[淺中焙] 豆超 露西藝伎 水洗","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":200,"stock":45,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"LP_90","name":"[淺中焙] 哥倫比亞 小珍珠 水洗 微批次","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":225,"stock":36,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥倫比亞 (Colombia)\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"FC_75","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":225,"stock":33,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"PA_90","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":250,"stock":20,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"all_448","name":"[淺中焙] 全店 常規豆 套組 20260717","origin":"","flavors":["淺中焙"],"price":900,"stock":9,"roast":"","category":"beans","unit":"100g*5","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"日商 水蜜桃共同發酵藝伎\n蕭邦 圓舞曲 葡萄乾蜜處理\nAcacia Hills 帕卡馬拉 水洗\n班莎 水洗 74110/74112\n露西藝伎 水洗\n共5支各100克"},{"id":"SF_77.5","name":"[淺中焙] 烏干達 希比瀑布 日曬","origin":"","flavors":["百香果","黑醋栗","熱帶水果汁","尾韻綿長"],"price":210,"stock":1,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：烏干達 (Uganda)\n產區：Kapchorwa / 希比瀑布處理廠 (Sipi Falls)\n海拔：1800-1900公尺\n品種：SL14、SL28\n處理法：日曬 (Natural)\n風味主調：百香果、黑醋栗、熱帶水果汁、尾韻綿長"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":73,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"SW_187","name":"[淺中焙] 泰國 草莓奶昔 雙重厭氧蜜處理","origin":"","flavors":["草莓","玫瑰","柑橘","杏桃","蜂蜜"],"price":270,"stock":20,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家 / 泰國\n產區 / 清萊\n品種 / 卡杜拉\n海拔 / 1400M～1600M \n處理法 / 雙重厭氧蜜處理\n風味筆記 /草莓、玫瑰、柑橘、杏桃、蜂蜜"},{"id":"三隻猴子_246","name":"[淺中] 祕魯 小雛菊莊園  藝伎 慢乾水洗","origin":"","flavors":["檸檬皮","水蜜桃","佛手柑","茉莉","草莓(很淡)","經典藝伎風味"],"price":299,"stock":9,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n祕魯 庫斯科 三隻猴子 小雛菊莊園 瑰夏/藝伎 暗室慢速乾燥 水洗\nPeru Cusco Three Monkeys La Margarita Geisha DRD Washed Lot GW-2225\n乾香可感受到檸檬皮、水蜜桃、佛手柑與茉莉氣息。入口可感受到檸檬皮、蜂蜜柚子\n茶與水蜜桃風味，中後段浮現茉莉花及山竹甜甜香氣，香甜滑順。"},{"id":"1931_207","name":"[淺焙] 班奇馬吉 1931藝伎 水洗","origin":"","flavors":["佛手柑","甜柚","柳橙","金萱茶","芹菜香氣"],"price":299,"stock":9,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"【🌟衣索比亞 班奇馬吉/森林花后✨ 藝伎水洗咖啡】\r\n【基本資料】\r\n◼️國別：Ethiopia衣索比亞\r\n◼️產區：SNNPR / Bench-maji 班奇馬吉\r\n◼️農場：Forest coffee 原始森林採集\r\n◼️高度：1950-2100公尺\r\n◼️品種：Gesha 1931\r\n◼️處理法：Fully Washed全水洗\r\n✔含水量：11.1% 密度：862g/L\r\n✔生豆瑕疵率：約1.2% (碎豆&曬斑為主)\r\n★原始森林優秀藝伎樹種★\r\n★香氣獨特甜感立體豐富★\r\n\r\n▌班奇馬吉/森林花后✨ Gesha 1931水洗咖啡► 🍰森林系花果鮮香🍹 \r\n『入口帶有薄荷涼感與佛手柑、香水檸檬、香柚等柑橘香氣，明亮而乾淨。中段轉為柔和多汁的果香，有著荔枝、水蜜桃、綠葡萄、青蘋果、枇杷、柳橙；花香在後段浮現，細緻而立體：薰衣草的冷紫香、雞蛋花與梔子花的奶香白花調，再疊上白甘蔗與麥芽糖桂花釀的甜蜜芬芳，讓香氣更顯柔和飽滿。尾韻則以奶香金萱茶的滑順茶感收束，帶著蜂蜜般綿長甜韻，久久不散。』"},{"id":"曼巴茶包_450","name":"［茶包咖啡50入］配方 經典曼巴 中焙","origin":"","flavors":["黑糖","可可","奶油"],"price":600,"stock":1,"roast":"","category":"special","unit":"50包入","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"配方 經典曼巴 中焙\n風味 黑糖、可可、奶油\n產區 巴西、印尼\n處理法 日曬、濕剝法\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"LU_867","name":"[淺中焙] 豆超 露西藝伎 水洗[家庭號]","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":2400,"stock":99,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"LP15_1155","name":"[淺中焙]  Las Perlitas 水洗處理法[家庭號]","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":2700,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"品名：小珍珠 (Las Perlitas)\n國家：哥倫比亞 (Colombia)\n售價：NT$ 225 / 100g\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"PA_970","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗[家庭號]","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":3000,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"EBS_862","name":"[淺中焙] 班莎 水洗 74110/74112[家庭號]","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":2400,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"FC15_930","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"}];
+const P=[{"id":"飛雀_72","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":200,"stock":198,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_72","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":225,"stock":197,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"},{"id":"LU_73","name":"[淺中焙] 豆超 露西藝伎 水洗","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":200,"stock":44,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"LP_90","name":"[淺中焙] 哥倫比亞 小珍珠 水洗 微批次","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":225,"stock":35,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥倫比亞 (Colombia)\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"FC_75","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":225,"stock":33,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"PA_90","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":250,"stock":20,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"EBS_71","name":"[淺中焙] 班莎 水洗 74110/74112","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":200,"stock":15,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"all_448","name":"[淺中焙] 全店 常規豆 套組 20260723","origin":"","flavors":["淺中焙"],"price":900,"stock":5,"roast":"","category":"beans","unit":"100g*5","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"莫札特 葡萄乾蜜處理\n蕭邦 圓舞曲 葡萄乾蜜處理\nAcacia Hills 帕卡馬拉 水洗\n豆超 飛雀藝伎 日曬\n露西藝伎 水洗\n共5支各100克"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":66,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"SW_187","name":"[淺中焙] 泰國 草莓奶昔 雙重厭氧蜜處理","origin":"","flavors":["草莓","玫瑰","柑橘","杏桃","蜂蜜"],"price":270,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家 / 泰國\n產區 / 清萊\n品種 / 卡杜拉\n海拔 / 1400M～1600M \n處理法 / 雙重厭氧蜜處理\n風味筆記 /草莓、玫瑰、柑橘、杏桃、蜂蜜"},{"id":"烏克莉莉_144","name":"[淺中] 烏克栗栗 AB TOP","origin":"","flavors":["仙楂餅","黑佳麗軟糖","雪松"],"price":260,"stock":15,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"肯亞 烏克栗栗/黑莓皇后 AB TOP (祈安布) 26/03 批次\r\nKenya Uklili AB TOP (Kiambu) Lot 26/03\r\n乾香為陳皮梅、烏梅、黑莓及小紅莓香氣。在口中展現煙燻烏梅、\r\n陳皮梅及黑嘉麗軟糖風味，夾帶著仙楂梅餅、手捲菸絲及悠長雪松\r\n餘韻，口感厚實，風味深邃強勁。"},{"id":"三隻猴子_246","name":"[淺中] 祕魯 小雛菊莊園  藝伎 慢乾水洗","origin":"","flavors":["檸檬皮","水蜜桃","佛手柑","茉莉","草莓(很淡)","經典藝伎風味"],"price":299,"stock":7,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n祕魯 庫斯科 三隻猴子 小雛菊莊園 瑰夏/藝伎 暗室慢速乾燥 水洗\nPeru Cusco Three Monkeys La Margarita Geisha DRD Washed Lot GW-2225\n乾香可感受到檸檬皮、水蜜桃、佛手柑與茉莉氣息。入口可感受到檸檬皮、蜂蜜柚子\n茶與水蜜桃風味，中後段浮現茉莉花及山竹甜甜香氣，香甜滑順。"},{"id":"曼巴茶包_450","name":"［茶包咖啡50入］配方 經典曼巴 中焙","origin":"","flavors":["黑糖","可可","奶油"],"price":600,"stock":1,"roast":"","category":"special","unit":"50包入","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"配方 經典曼巴 中焙\n風味 黑糖、可可、奶油\n產區 巴西、印尼\n處理法 日曬、濕剝法\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"LU_867","name":"[淺中焙] 豆超 露西藝伎 水洗[家庭號]","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":2400,"stock":99,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"PA_970","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗[家庭號]","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":3000,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"FC15_930","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"飛雀_867","name":"[淺中焙] 豆超 飛雀藝伎 日曬[家庭號]","origin":"","flavors":["芒果","百香果","水果糖"],"price":2400,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_930","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"}];
 const SHIP=38,FREE=1000,DISC=0.95,Q={};
 const SOON=86400000;
 let curCat='beans',stockLoaded=false;
@@ -702,6 +746,10 @@ function updateBar(){
   document.getElementById('ship-progress').style.display=c.pk?'':'none';
   document.getElementById('summary-inner').style.display=c.pk?'':'none';
   document.getElementById('summary-bar').classList.toggle('hidden',!(c.pk||showF));
+  // 老客快速結帳鈕：記得住資料且購物車非空才出現（此時確認訂單降為外框鈕）
+  const showQ=!!(c.pk&&readProfile());
+  document.getElementById('btn-quick').classList.toggle('show',showQ);
+  document.getElementById('summary-inner').classList.toggle('has-quick',showQ);
 }
 // 一鍵加購主打商品（chg 內含上限保護 + GA add_to_cart 事件）
 function addFeatured(id){chg(id,1);}
@@ -729,15 +777,27 @@ function onSearch(){
   list.innerHTML=h;list.classList.add('open');acIdx=-1;
 }
 function hl(t,terms){let r=t;terms.forEach(w=>{if(!w)return;r=r.replace(new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),m=>`<mark>${m}</mark>`);});return r;}
+// 門市欄位統一由此寫入（pick 與老客資料帶入共用，避免兩份邏輯漂移）
+function setStoreFields(name,code,addr,area){
+  document.getElementById('inp-store').value=name;
+  document.getElementById('inp-store-code').value=code||'';
+  document.getElementById('inp-store-search').value=name;
+  document.getElementById('inp-store-addr').value=addr||'';
+  document.getElementById('store-addr-row').style.display=addr?'':'none';
+  document.getElementById('store-display').textContent='7-ELEVEN '+name+(area?'（'+area+'）':'');
+  document.getElementById('store-selected').classList.add('show');
+  document.getElementById('store-stale').classList.remove('show');
+  window._storeArea=area||'';   // 行政區沒有對應輸入欄，記在這裡供老客資料存檔用
+}
+function clearStoreFields(){
+  ['inp-store','inp-store-code','inp-store-search','inp-store-addr'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('store-addr-row').style.display='none';
+  document.getElementById('store-selected').classList.remove('show');
+  window._storeArea='';
+}
 function pick(i){
   const s=STORES[i];
-  document.getElementById('inp-store').value=s[0];
-  document.getElementById('inp-store-code').value=s[3]||'';
-  document.getElementById('inp-store-search').value=s[0];
-  document.getElementById('inp-store-addr').value=s[1];
-  document.getElementById('store-addr-row').style.display='';
-  document.getElementById('store-display').textContent='7-ELEVEN '+s[0]+'（'+s[2]+'）';
-  document.getElementById('store-selected').classList.add('show');
+  setStoreFields(s[0],s[3]||'',s[1],s[2]);
   document.getElementById('ac-list').classList.remove('open');
 }
 document.getElementById('inp-store-search').addEventListener('keydown',e=>{
@@ -760,6 +820,126 @@ document.getElementById('inv-tabs').addEventListener('click',e=>{
   document.querySelectorAll('.inv-panel').forEach(p=>p.style.display='none');
   document.getElementById('inv-panel-'+invType).style.display='block';
 });
+
+// ── 老客資料記憶（只存在客人自己的瀏覽器，不進後端）──
+// 存檔時機在 handleCheckout 通過所有驗證之後，故存下的一定是合法資料；
+// 也涵蓋「開了確認頁又放棄」的客人，下次回來不用重打。備註每單不同，不存。
+const PROFILE_KEY='kafei_profile_v1';
+let profileApplied=false;
+function readProfile(){
+  try{
+    const p=JSON.parse(localStorage.getItem(PROFILE_KEY)||'null');
+    if(!p||p.v!==1||!p.phone||!p.email)return null;
+    return p;
+  }catch(e){return null;}
+}
+function saveProfile(d,inv){
+  try{
+    localStorage.setItem(PROFILE_KEY,JSON.stringify({
+      v:1,ts:Date.now(),
+      name:d.name,phone:d.phone,email:d.email,
+      store:{name:d.store,code:d.storeCode,addr:d.storeAddr,area:window._storeArea||''},
+      inv:{type:inv.type,carrierNum:inv.carrierNum,certNum:inv.certNum,loveCode:inv.loveCode,companyId:inv.companyId,companyTitle:inv.companyTitle}
+    }));
+  }catch(e){}
+}
+function maskPhone(p){return p&&p.length===10?p.slice(0,4)+'***'+p.slice(7):(p||'');}
+function setInvType(t){
+  const tab=document.querySelector('.inv-tab[data-inv="'+t+'"]');
+  if(!tab)return;
+  invType=t;
+  document.querySelectorAll('.inv-tab').forEach(x=>x.classList.toggle('active',x===tab));
+  document.querySelectorAll('.inv-panel').forEach(p=>p.style.display='none');
+  document.getElementById('inv-panel-'+t).style.display='block';
+}
+// 帶入上次資料。門市用存下的快照還原，不等 330KB 門市清單載入完
+function applyProfile(){
+  const p=readProfile();
+  if(!p||profileApplied)return !!p;
+  document.getElementById('inp-name').value=p.name||'';
+  document.getElementById('inp-phone').value=p.phone||'';
+  document.getElementById('inp-email').value=p.email||'';
+  if(p.store&&p.store.name){
+    setStoreFields(p.store.name,p.store.code,p.store.addr,p.store.area);
+    checkStoreStale();   // 清單還沒載入完就先跳過，fetchStores 成功後會再驗一次
+  }
+  const iv=p.inv||{};
+  if(iv.type){
+    setInvType(iv.type);
+    if(iv.carrierNum)document.getElementById('inp-carrier-num').value=iv.carrierNum;
+    if(iv.certNum)document.getElementById('inp-cert-num').value=iv.certNum;
+    if(iv.loveCode)document.getElementById('inp-love-code').value=iv.loveCode;
+    if(iv.companyId)document.getElementById('inp-company-id').value=iv.companyId;
+    if(iv.companyTitle)document.getElementById('inp-company-title').value=iv.companyTitle;
+  }
+  profileApplied=true;
+  const btn=document.getElementById('rb-fill');
+  btn.classList.add('done');btn.disabled=true;
+  document.getElementById('rb-fill-text').textContent='已帶入上次資料';
+  return true;
+}
+// 門市可能已停業／改名：清單載入後比對店號，對不上就清掉請客人重選
+function checkStoreStale(){
+  if(!STORES.length)return;
+  const code=document.getElementById('inp-store-code').value.trim();
+  const name=document.getElementById('inp-store').value.trim();
+  if(!name)return;
+  const hit=STORES.some(s=>code?String(s[3])===code:s[0]===name);
+  if(hit)return;
+  clearStoreFields();
+  document.getElementById('store-stale-text').textContent='上次的門市（'+name+'）目前查不到，請重新搜尋選擇取貨門市';
+  document.getElementById('store-stale').classList.add('show');
+}
+function renderReturningBar(){
+  const p=readProfile();
+  const bar=document.getElementById('returning-bar');
+  if(!p){bar.style.display='none';return;}
+  bar.style.display='';
+  const parts=[];
+  if(p.name)parts.push(p.name);
+  if(p.phone)parts.push(maskPhone(p.phone));
+  document.getElementById('rb-last').textContent='上次：'+parts.join('・');
+  const st=p.store&&p.store.name?'取貨門市：7-ELEVEN '+p.store.name+(p.store.area?'（'+p.store.area+'）':''):'';
+  document.getElementById('rb-store').textContent=st;
+  document.getElementById('rb-store').style.display=st?'':'none';
+}
+function onFillProfile(){
+  if(!applyProfile())return;
+  if(typeof gtag==='function')gtag('event','profile_autofill_click',{location:'recipient_form'});
+}
+function onClearProfile(){
+  try{localStorage.removeItem(PROFILE_KEY);}catch(e){}
+  ['inp-name','inp-phone','inp-email','inp-carrier-num','inp-cert-num','inp-love-code','inp-company-id','inp-company-title'].forEach(id=>document.getElementById(id).value='');
+  clearStoreFields();
+  document.getElementById('store-stale').classList.remove('show');
+  setInvType('cloud');
+  profileApplied=false;
+  const btn=document.getElementById('rb-fill');
+  btn.classList.remove('done');btn.disabled=false;
+  document.getElementById('rb-fill-text').textContent='一鍵帶入上次訂購資料';
+  document.getElementById('returning-bar').style.display='none';
+  updateBar();
+}
+// 捲到第一個還沒填的必填欄（門市失效或資料不全時用，不要只丟 alert 讓客人在購物車列乾等）
+function scrollToMissing(){
+  const miss=['inp-store-search','inp-name','inp-phone','inp-email'].find(id=>{
+    const src=id==='inp-store-search'?'inp-store':id;
+    return !document.getElementById(src).value.trim();
+  });
+  if(!miss)return;
+  const el=document.getElementById(miss);
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  setTimeout(()=>{try{el.focus({preventScroll:true});}catch(e){el.focus();}},400);
+}
+// 購物車列的「快速結帳」：帶入資料後直接開確認視窗，客人送出前仍看得到完整明細
+function quickCheckout(){
+  applyProfile();
+  if(typeof gtag==='function')gtag('event','quick_checkout_click',{location:'summary_bar'});
+  const ready=document.getElementById('inp-store').value.trim()&&document.getElementById('inp-name').value.trim()
+    &&document.getElementById('inp-phone').value.trim()&&document.getElementById('inp-email').value.trim();
+  if(!ready){scrollToMissing();return;}
+  handleCheckout();
+}
 
 // ── Checkout ──
 let orderData=null;
@@ -814,6 +994,9 @@ function handleCheckout(){
     cartItems:P.filter(p=>Q[p.id]>0).map(p=>{const su=saleUnits(p,Q[p.id],ct);return{id:p.id,qty:Q[p.id],name:p.name,unit:p.unit,price:p.price,salePrice:su>0?p.salePrice:null,saleUnits:su};}),
     invoiceType:inv.type,carrierNum:inv.carrierNum,certNum:inv.certNum,loveCode:inv.loveCode,companyId:inv.companyId,companyTitle:inv.companyTitle};
 
+  // 記住這次填的收件/發票資料（資料已通過上面所有驗證），下次回訪可一鍵帶入
+  saveProfile(orderData,inv);
+
   // GA4 ecommerce: begin_checkout
   if(typeof gtag==='function'){
     gtag('event','begin_checkout',{currency:'TWD',value:total,items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.salePrice||i.price,quantity:i.qty}))});
@@ -828,7 +1011,8 @@ function handleCheckout(){
   h+=`<div class="order-total"><span>合計 ${packs} 包</span><span class="ot-val">$${total.toLocaleString()}</span></div>`;
   h+=`<div class="order-ship-info">${fr?(c.mixFree?'特選豆單＋精品常規豆組合 📦 免運':'已達免運門檻'):'差 $'+(FREE-c.effSum)+' 即享免運'}</div>`;
   const invLabel={cloud:'雲端發票（寄至 Email）',carrier:'手機條碼 '+inv.carrierNum,certificate:'自然人憑證 '+inv.certNum,donate:'捐贈 '+inv.loveCode,company:'統編 '+inv.companyId+'　'+inv.companyTitle}[invType];
-  h+=`<div class="order-recipient">🏪 7-ELEVEN ${store}${addr?'<br>📍 '+addr:''}<br>👤 ${name}<br>📱 ${phone}<br>✉️ ${email}<br>🧾 ${invLabel}${note?'<br>📝 '+note:''}</div>`;
+  // 收件資訊全部走 esc()：這些是客人自由輸入的字串，直接塞進 innerHTML 會被當 HTML 解析
+  h+=`<div class="order-recipient">🏪 7-ELEVEN ${esc(store)}${addr?'<br>📍 '+esc(addr):''}<br>👤 ${esc(name)}<br>📱 ${esc(phone)}<br>✉️ ${esc(email)}<br>🧾 ${esc(invLabel)}${note?'<br>📝 '+esc(note):''}</div>`;
 
   document.getElementById('modal-body').innerHTML=h;
   const btn=document.getElementById('btn-submit');btn.disabled=false;btn.className='btn-submit';btn.innerHTML='🛒 送出訂單';
@@ -974,6 +1158,7 @@ function toggleTip(e){
 }
 document.addEventListener('click',e=>{if(!e.target.closest('.desc-tooltip')&&!e.target.closest('.desc-icon'))document.querySelectorAll('.tooltip-active').forEach(c=>c.classList.remove('tooltip-active'));});
 
+renderReturningBar();
 render();
 
 /* Trust carousel dot indicator */
