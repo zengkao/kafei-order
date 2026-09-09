@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RFEJXE7CET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RFEJXE7CET');</script>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>關於特殊處理 ｜ KAFE' Coffee Roastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--green-light:#E8F5E8;--red:#C25040;--border:#DDD4CA;--shadow:rgba(44,36,32,.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* Hero */
+.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+.hero *{position:relative}
+.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
+.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
+.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
+.back-link:hover{background:rgba(196,133,60,.15)}
+
+/* Container */
+.container{max-width:600px;margin:0 auto;padding:0 16px 60px}
+
+/* Section Labels */
+.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+
+/* Quote Block */
+.quote-block{position:relative;background:var(--card);border-radius:14px;padding:28px 24px;margin-top:20px;box-shadow:0 1px 4px var(--shadow);text-align:center}
+.quote-block::before{content:'\201C';position:absolute;top:8px;left:16px;font-family:'Playfair Display',serif;font-size:60px;color:var(--accent);opacity:.2;line-height:1}
+.quote-text{font-size:18px;font-weight:700;line-height:1.8;color:var(--ink)}
+.quote-text em{font-style:normal;color:var(--accent-dark)}
+
+/* Content Cards */
+.content-card{background:var(--card);border-radius:14px;padding:20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both}
+.content-card:nth-child(2){animation-delay:.05s}
+.content-card:nth-child(3){animation-delay:.1s}
+.content-card:nth-child(4){animation-delay:.15s}
+.content-card h3{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.content-card h3 .icon{flex-shrink:0;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.content-card p{font-size:13px;color:var(--ink-light);line-height:1.75}
+
+/* Result Highlight */
+.result-banner{background:var(--green-light);border:1.5px solid #B5D8B5;border-radius:14px;padding:20px;margin-top:20px;text-align:center;animation:fadeUp .4s ease both}
+.result-badge{display:inline-block;background:var(--green);color:#fff;font-size:13px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:10px}
+.result-big{font-size:28px;font-weight:900;color:var(--green);margin-bottom:4px}
+.result-detail{font-size:13px;color:var(--ink-light)}
+
+/* Info Table */
+.info-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.info-table td{padding:6px 0;border-bottom:1px solid #F0EBE5}
+.info-table td:first-child{color:var(--ink-faint);width:90px;white-space:nowrap}
+.info-table td:last-child{font-weight:500}
+
+/* Report Gallery */
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+@media(max-width:400px){.report-grid{grid-template-columns:1fr}}
+.report-page{border-radius:10px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.1);cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative}
+.report-page:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.report-page img{width:100%;display:block}
+.report-page-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:11px;font-weight:500;padding:16px 10px 6px;text-align:center}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lightbox.show{opacity:1;pointer-events:all}
+.lightbox-inner{position:relative;max-width:90vw;max-height:90vh}
+.lightbox-img{max-width:90vw;max-height:85vh;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.4);transform:scale(.9);transition:transform .35s cubic-bezier(.32,.72,0,1)}
+.lightbox.show .lightbox-img{transform:scale(1)}
+.lightbox-caption{text-align:center;color:rgba(255,255,255,.8);font-size:14px;margin-top:12px;font-weight:500}
+.lightbox-close{position:absolute;top:-40px;right:0;width:36px;height:36px;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:20px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:22px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.25)}
+.lightbox-nav.prev{left:-56px}
+.lightbox-nav.next{right:-56px}
+@media(max-width:600px){
+  .lightbox-nav.prev{left:8px}
+  .lightbox-nav.next{right:8px}
+  .lightbox-nav{background:rgba(0,0,0,.5)}
+}
+
+/* Card lists & flavor table */
+.content-card ul.card-list{margin:8px 0;padding-left:20px;font-size:13px;color:var(--ink-light);line-height:1.85}
+.content-card ul.card-list li{margin-bottom:4px}
+.content-card .sub-label{font-weight:700;color:var(--ink);font-size:13px;margin:14px 0 6px}
+.content-card .sub-label:first-of-type{margin-top:6px}
+.flavor-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;border-radius:8px;overflow:hidden}
+.flavor-table thead{background:#2C2420;color:#F5F0EB}
+.flavor-table th{padding:8px 10px;font-weight:600;font-size:12px;letter-spacing:.5px;text-align:left}
+.flavor-table td{padding:8px 10px;border-bottom:1px solid #F0EBE5;color:var(--ink-light)}
+.flavor-table tr:last-child td{border-bottom:none}
+.flavor-table td:first-child{font-weight:700;color:var(--ink)}
+@media(max-width:480px){.flavor-table th,.flavor-table td{padding:6px 6px;font-size:11px}}
+.boundary-card{background:linear-gradient(135deg,#F8F5F0,#FDF9F4);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px;margin-top:12px;font-size:13px;color:var(--ink-light);line-height:1.8}
+.boundary-card strong{color:var(--accent-dark)}
+
+/* Disclaimer */
+.disclaimer{background:#F8F5F0;border-radius:10px;padding:14px 16px;margin-top:20px;font-size:12px;color:var(--ink-faint);line-height:1.7}
+
+/* Footer */
+.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KAFE' 卡啡">
+<meta property="og:title" content="關於特殊處理 — 厭氧處理咖啡完整指南｜KAFE' 卡啡">
+<meta property="og:description" content="精品咖啡特殊處理完整指南：常見類型、厭氧發酵原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。">
+<meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
+<meta property="og:url" content="https://zengkao.github.io/kafei-order/v2/special-process.html">
+<meta name="description" content="精品咖啡特殊處理完整指南：常見類型、厭氧發酵原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。">
+<link rel="canonical" href="https://zengkao.github.io/kafei-order/v2/special-process.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://zengkao.github.io/kafei-order/"},{"@type":"ListItem","position":2,"name":"關於特殊處理","item":"https://zengkao.github.io/kafei-order/special-process.html"}]}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "關於特殊處理 — 厭氧處理咖啡完整指南",
+  "description": "精品咖啡特殊處理完整指南：常見類型（厭氧、雙重厭氧、乳酸、酒桶、酵母）、厭氧發酵的科學原理、風味比較、為什麼選擇後段驗證。卡啡將井井咖啡的雙重厭氧生豆送 SGS 食品實驗室，1,2-丙二醇未檢出。",
+  "articleSection": [
+    "常見的特殊處理類型",
+    "厭氧發酵的科學原理",
+    "風味比較",
+    "為什麼送驗丙二醇",
+    "SGS 檢測結果",
+    "怎麼挑選與沖煮特殊處理咖啡"
+  ],
+  "image": [
+    "https://zengkao.github.io/kafei-order/sgs-report-p1.jpg",
+    "https://zengkao.github.io/kafei-order/sgs-report-p2.jpg",
+    "https://zengkao.github.io/kafei-order/sgs-report-p3.jpg",
+    "https://zengkao.github.io/kafei-order/sgs-report-p4.jpg"
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "KAFE' 卡啡",
+    "url": "https://zengkao.github.io/kafei-order/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KAFE' 卡啡",
+    "url": "https://zengkao.github.io/kafei-order/"
+  },
+  "about": [
+    {"@type": "Thing", "name": "厭氧發酵咖啡處理法"},
+    {"@type": "Thing", "name": "雙重厭氧"},
+    {"@type": "Thing", "name": "1,2-丙二醇檢測"},
+    {"@type": "Thing", "name": "精品咖啡後製"}
+  ],
+  "citation": {
+    "@type": "CreativeWork",
+    "name": "SGS 食品實驗室檢測報告 AVA25705260 — 1,2-丙二醇未檢出",
+    "publisher": {"@type": "Organization", "name": "SGS 台灣檢驗科技股份有限公司", "url": "https://www.sgs.com.tw"},
+    "identifier": "AVA25705260",
+    "datePublished": "2025-07-31"
+  },
+  "mainEntityOfPage": "https://zengkao.github.io/kafei-order/special-process.html",
+  "inLanguage": "zh-Hant"
+}
+</script>
+</head>
+<body>
+<div style="position:sticky;top:0;z-index:9999;background:#B3261E;color:#fff;padding:7px 12px;font-size:12.5px;font-weight:800;text-align:center;line-height:1.5;font-family:sans-serif;letter-spacing:.5px">⚠️ 測試站　這裡不會真的收單，送出訂單會被擋下</div>
+
+<div class="hero">
+  <div class="hero-badge">SPECIAL PROCESS</div>
+  <h1>KAFE' <span>卡啡</span></h1>
+  <div class="hero-sub">關於特殊處理 ・ 用科學說話</div>
+  <a href="index.html" class="back-link">← 前往訂購</a>
+</div>
+
+<div class="container">
+
+  <!-- 核心訊息 -->
+  <div class="quote-block">
+    <div class="quote-text">
+      你可以選擇不喝特殊處理，<br>
+      但請不要將它與<em>香精豆</em>畫上等號。
+    </div>
+  </div>
+
+  <!-- 什麼是特殊處理 -->
+  <div class="section-label">WHAT IS SPECIAL PROCESS</div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F5E6D0,#EDDCC4)">🧬</span> 特殊處理是什麼？</h3>
+    <p>特殊處理（Special Process）是精品咖啡產業中，透過控制發酵環境來引導風味發展的後製技術。目的是讓咖啡果實在特定的溫度、濕度與氧氣條件下，發展出獨特的風味層次。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F0E6F5,#E0D4EE)">📚</span> 常見的特殊處理類型</h3>
+    <p>除了傳統的水洗（Washed）與日曬（Natural）以外，業界常見的特殊處理包含：</p>
+    <ul class="card-list">
+      <li><strong>厭氧發酵</strong>（Anaerobic）：密封容器排除氧氣，由厭氧菌主導發酵</li>
+      <li><strong>雙重厭氧</strong>（Double Anaerobic）：先帶果厭氧、去果皮再二次厭氧，層次更複雜</li>
+      <li><strong>乳酸發酵</strong>（Lactic）：刻意培養乳酸菌，產生乳製品般甜潤口感</li>
+      <li><strong>酒桶／二氧化碳浸漬</strong>（Barrel-Aged / Carbonic Maceration）：借用葡萄酒、威士忌橡木桶的風土延伸</li>
+      <li><strong>酵母發酵</strong>（Yeast-Inoculated）：接種特定酵母菌株，讓風味結果更可預測</li>
+    </ul>
+    <p>這些技術的共通邏輯是<strong>「控制微生物與發酵環境」</strong>，引導咖啡果實在特定條件下發展風味——而不是事後添加任何香料。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#FCE4D2,#F5D2BE)">🧪</span> 厭氧發酵的科學原理</h3>
+    <p>當咖啡果實處在無氧環境，需氧菌活動受抑制，厭氧菌（如乳酸菌、酵母菌）反而成為主導者。這些微生物在分解果膠與糖分時，會產生大量代謝副產物：</p>
+    <ul class="card-list">
+      <li><strong>酯類（Esters）</strong>：水果香、花香的主要來源（草莓、莓果、熱帶水果）</li>
+      <li><strong>醇類（Alcohols）</strong>：增加酒感、層次與綿長尾韻</li>
+      <li><strong>有機酸（Organic Acids）</strong>：構成明亮酸質與立體甜感</li>
+    </ul>
+    <p>發酵時間越長、環境變因控制越精細，杯中風味就越複雜。<strong>雙重厭氧</strong>之所以受推崇，正因為它把這個發酵過程做了兩次，把風味層次推到極致。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E8DFE0,#D8CDD0)">📊</span> 風味比較</h3>
+    <table class="flavor-table">
+      <thead>
+        <tr><th>處理法</th><th>風味特徵</th><th>酸質</th><th>甜感</th><th>複雜度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>水洗</td><td>乾淨、明亮、焦點清晰</td><td>高</td><td>中</td><td>低</td></tr>
+        <tr><td>日曬</td><td>飽滿、莓果、酒感</td><td>中高</td><td>高</td><td>中</td></tr>
+        <tr><td>厭氧</td><td>發酵風、果汁感</td><td>中</td><td>高</td><td>高</td></tr>
+        <tr><td>雙重厭氧</td><td>強烈水果調、爆發力</td><td>中</td><td>極高</td><td>極高</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px">每位飲者對「層次」的偏好不同，沒有絕對好壞——但若把特殊處理直接等同於「添加香料」，那是對工藝本身的誤解。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E8F0E4,#D4E4CC)">🌿</span> 天然發酵，不是添加香料</h3>
+    <p>特殊處理的風味來自微生物在發酵過程中產生的天然代謝物——酯類、醇類與有機酸。這和人工添加香料的咖啡有本質上的差異：前者是發酵的化學產物，後者是事後外加的物質。</p>
+  </div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#E0E8F5,#D0DCEE)">🔬</span> 為什麼送驗丙二醇？</h3>
+    <p>先講清楚一個事實：<strong>「香精咖啡」在精品咖啡圈裡，目前仍是爭議很大的議題</strong>。咖啡產業並沒有官方統一的香精豆檢驗標準清單，正反兩方各有立場，業界共識還沒形成。</p>
+    <p>更現實的問題是——<strong>生豆的加工過程，供應商往往無法完全公開透明地展示</strong>。發酵的環境變因、菌種來源、是否使用人工添加物，外人很難全程目擊與監控。這是整個咖啡後製產業共同面對的限制，不是單一品牌的問題。</p>
+    <p>那卡啡能做什麼？我們的選擇是：<strong>在後段驗證</strong>。</p>
+    <p>合作之初，<strong>井井咖啡</strong>向卡啡明確敘述：「我們的雙重厭氧製程，沒有添加丙二醇這一類的香精溶劑」。這是井井方面的說法。我們無法回到產地全程監看，但我們可以把成品送到第三方公正單位驗給數據看。</p>
+    <p>於是卡啡將井井提供的雙重厭氧生豆，送至 <strong>SGS 食品實驗室</strong>，依照 <strong>GB 5009.251-2016</strong>（食品中乙二醇與丙二醇的測定方法）進行檢驗。</p>
+  </div>
+
+  <!-- 檢測結果 -->
+  <div class="section-label">SGS TEST RESULT</div>
+
+  <div class="result-banner">
+    <div class="result-badge">SGS 檢測結果</div>
+    <div class="result-big">1,2-丙二醇：未檢出</div>
+    <div class="result-detail">定量極限 75 mg/kg ・ 檢測方法 GB5009.251-2016</div>
+  </div>
+
+  <div class="content-card" style="margin-top:10px">
+    <table class="info-table">
+      <tr><td>報告編號</td><td>AVA25705260</td></tr>
+      <tr><td>送驗單位</td><td>卡啡商行</td></tr>
+      <tr><td>產品名稱</td><td>井井咖啡 雙重厭氧系列 咖啡生豆</td></tr>
+      <tr><td>生產廠商</td><td>井井咖啡</td></tr>
+      <tr><td>原產地</td><td>哥倫比亞</td></tr>
+      <tr><td>製造日期</td><td>2025/06/01</td></tr>
+      <tr><td>報告日期</td><td>2025/07/31</td></tr>
+      <tr><td>檢測機構</td><td>SGS 台灣 ・ 食品實驗室（高雄）</td></tr>
+    </table>
+  </div>
+
+  <div class="boundary-card">
+    這份報告的意義，<strong>不是</strong>「卡啡證明特殊處理絕對乾淨」，也不是「整個產業都該這樣驗」。它就是——<br><br>
+    <strong>井井所敘述的「沒添加丙二醇類香精」，在後段驗證中與檢驗結果相符、並無差異。</strong><br><br>
+    我們承認這個方法的侷限：它無法回溯產地過程，也無法窮盡所有可能的添加物。但在我們能做到的範圍內，這是最直接、最公正、最可被任何人查證的方式。爭議或許會繼續，但至少這份報告的數據——是公開的、可查證的、不靠話術的。
+  </div>
+
+  <!-- SGS 報告原文 -->
+  <div class="section-label">FULL REPORT</div>
+
+  <div class="report-grid">
+    <div class="report-page" onclick="openLB(0)">
+      <img src="../sgs-report-p1.jpg" alt="SGS 報告第 1 頁" loading="lazy">
+      <div class="report-page-label">第 1 頁 ・ 報告封面</div>
+    </div>
+    <div class="report-page" onclick="openLB(1)">
+      <img src="../sgs-report-p2.jpg" alt="SGS 報告第 2 頁" loading="lazy">
+      <div class="report-page-label">第 2 頁 ・ 檢測結果</div>
+    </div>
+    <div class="report-page" onclick="openLB(2)">
+      <img src="../sgs-report-p3.jpg" alt="SGS 報告第 3 頁" loading="lazy">
+      <div class="report-page-label">第 3 頁 ・ 樣品照片</div>
+    </div>
+    <div class="report-page" onclick="openLB(3)">
+      <img src="../sgs-report-p4.jpg" alt="SGS 報告第 4 頁" loading="lazy">
+      <div class="report-page-label">第 4 頁 ・ 檢測方法</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    本檢測報告由 SGS 台灣檢驗科技股份有限公司出具，報告編號 AVA25705260。檢測結果僅對送驗樣品負責，不對產品合法性做判斷。完整報告可至 <a href="https://www.sgs.com.tw" target="_blank" style="color:var(--accent)">SGS 官網</a> 查詢驗證。
+  </div>
+
+  <!-- 怎麼挑選與沖煮 -->
+  <div class="section-label">HOW TO ENJOY</div>
+
+  <div class="content-card">
+    <h3><span class="icon" style="background:linear-gradient(135deg,#F5E6D0,#EDDCC4)">☕</span> 怎麼挑選與沖煮特殊處理咖啡</h3>
+    <div class="sub-label">挑選建議</div>
+    <ul class="card-list">
+      <li><strong>入門飲者</strong>：建議從乳酸或酵母發酵的品項開始，風味較收斂</li>
+      <li><strong>想挑戰風味極限</strong>：選擇雙重厭氧或長時厭氧</li>
+      <li><strong>對發酵風味敏感</strong>：可從厭氧蜜處理（風味最溫和的厭氧分支）入門</li>
+    </ul>
+    <div class="sub-label">沖煮建議</div>
+    <ul class="card-list">
+      <li><strong>水溫</strong>：建議 90-92 度，避免發酵酸過於尖銳</li>
+      <li><strong>粉水比</strong>：1:15-1:16，保留風味厚度與層次</li>
+      <li><strong>手法</strong>：一刀流可維持風味純粹、不過度抽取</li>
+    </ul>
+    <p style="margin-top:14px;font-size:13px"><a href="index.html" style="color:var(--accent-dark);font-weight:600;text-decoration:none">→ 來看卡啡的特殊處理咖啡品項</a> ・ <a href="faq.html" style="color:var(--accent-dark);font-weight:600;text-decoration:none">更多常見問題</a></p>
+  </div>
+
+  <div class="footer">
+    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
+    <a href="index.html">← 回到訂購單</a>｜<a href="how-to-choose.html">選豆指南</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="faq.html">常見問題</a>｜<a href="reviews.html">顧客好評</a>｜<a href="gallery.html">相簿</a>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLB()">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLB()">&times;</button>
+    <button class="lightbox-nav prev" onclick="navLB(-1)">&#8249;</button>
+    <button class="lightbox-nav next" onclick="navLB(1)">&#8250;</button>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <div class="lightbox-caption" id="lb-cap"></div>
+  </div>
+</div>
+
+<script>
+const pages=[
+  {src:'sgs-report-p1.jpg',cap:'SGS 報告 第 1 頁 — 報告封面'},
+  {src:'sgs-report-p2.jpg',cap:'SGS 報告 第 2 頁 — 檢測結果：1,2-丙二醇 未檢出'},
+  {src:'sgs-report-p3.jpg',cap:'SGS 報告 第 3 頁 — 樣品照片'},
+  {src:'sgs-report-p4.jpg',cap:'SGS 報告 第 4 頁 — 檢測方法'}
+];
+let cur=0;
+function openLB(i){
+  cur=i;showLB();
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('show');
+  document.body.style.overflow='';
+}
+function navLB(d){cur=(cur+d+pages.length)%pages.length;showLB();}
+function showLB(){
+  document.getElementById('lb-img').src=pages[cur].src;
+  document.getElementById('lb-cap').textContent=pages[cur].cap;
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('show'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')navLB(-1);
+  if(e.key==='ArrowRight')navLB(1);
+});
+</script>
+</body>
+</html>

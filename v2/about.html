@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RFEJXE7CET"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RFEJXE7CET');</script>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>關於卡啡 ｜ 回歸本質，去蕪存菁</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0EB;
+  --card:#FFF;
+  --ink:#2C2420;
+  --ink-light:#6B5E54;
+  --ink-faint:#A89888;
+  --accent:#C4853C;
+  --accent-dark:#A06A28;
+  --accent-glow:#E8A84C;
+  --border:#DDD4CA;
+  --shadow:rgba(44,36,32,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Header */
+.hero{
+  background:linear-gradient(135deg,#2C2420,#3D2E22);
+  padding:48px 20px 40px;
+  text-align:center;
+  color:#F5F0EB;
+}
+.hero-badge{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--accent-glow);
+  border:1px solid rgba(196,133,60,.4);
+  padding:4px 16px;
+  border-radius:20px;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  font-weight:700;
+  color:#F5F0EB;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+.hero-sub{
+  font-size:14px;
+  color:rgba(245,240,235,.75);
+  font-weight:300;
+  letter-spacing:.5px;
+}
+.back-nav{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:20px;
+  font-size:13px;
+  color:var(--accent-glow);
+  text-decoration:none;
+  border:1px solid rgba(196,133,60,.4);
+  padding:6px 18px;
+  border-radius:20px;
+  transition:all .2s;
+}
+.back-nav:hover{
+  background:rgba(196,133,60,.15);
+}
+
+/* Main Container */
+.container{
+  max-width:580px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+
+/* Letter Card */
+.letter-card{
+  background:var(--card);
+  border-radius:18px;
+  padding:36px 28px;
+  box-shadow:0 2px 12px var(--shadow);
+  border:1px solid rgba(221,212,202,.6);
+  font-size:15px;
+  color:var(--ink);
+}
+
+.section-title{
+  font-size:18px;
+  font-weight:800;
+  color:#2C2420;
+  margin:28px 0 12px;
+  letter-spacing:.5px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.section-title::before{
+  content:'';
+  width:4px;
+  height:18px;
+  background:var(--accent);
+  border-radius:2px;
+  display:inline-block;
+}
+.letter-card p{
+  margin-bottom:18px;
+  color:#423630;
+  line-height:1.85;
+}
+.letter-card p:last-child{
+  margin-bottom:0;
+}
+
+.highlight-box{
+  background:linear-gradient(135deg,rgba(196,133,60,.08),rgba(196,133,60,.03));
+  border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0;
+  padding:16px 18px;
+  margin:22px 0;
+  font-size:15px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.75;
+}
+
+.comparison-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:22px 0;
+}
+.comp-card{
+  border-radius:12px;
+  padding:16px 14px;
+  font-size:13.5px;
+}
+.comp-card.sub{
+  background:#FAF4F2;
+  border:1px solid #EEDBD6;
+}
+.comp-card.keep{
+  background:#F2F7F2;
+  border:1px solid #D6E8D6;
+}
+.comp-title{
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.comp-card.sub .comp-title{color:#B84A39}
+.comp-card.keep .comp-title{color:#3E7B3E}
+
+.comp-list{
+  list-style:none;
+  line-height:1.7;
+}
+.comp-list li{
+  position:relative;
+  padding-left:14px;
+  margin-bottom:4px;
+  color:var(--ink-light);
+}
+.comp-card.sub .comp-list li::before{
+  content:'−';
+  position:absolute;
+  left:0;
+  color:#B84A39;
+  font-weight:bold;
+}
+.comp-card.keep .comp-list li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:#3E7B3E;
+  font-weight:bold;
+}
+
+.quote-block{
+  text-align:center;
+  padding:24px 16px;
+  margin:24px 0;
+  border-top:1px dashed var(--border);
+  border-bottom:1px dashed var(--border);
+}
+.quote-main{
+  font-size:20px;
+  font-weight:900;
+  color:var(--accent-dark);
+  letter-spacing:1px;
+}
+.quote-sub{
+  font-size:14px;
+  color:var(--ink-light);
+  margin-top:6px;
+}
+
+.signature{
+  margin-top:32px;
+  padding-top:20px;
+  border-top:1px solid #F0EBE5;
+  text-align:right;
+  color:var(--ink-light);
+  font-size:14px;
+}
+.signature strong{
+  color:var(--ink);
+  font-size:16px;
+}
+
+/* Footer CTA */
+.footer-cta{
+  text-align:center;
+  margin-top:30px;
+}
+.btn-primary{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  padding:12px 32px;
+  border-radius:24px;
+  box-shadow:0 3px 10px rgba(196,133,60,.25);
+  transition:all .2s;
+}
+.btn-primary:active{
+  background:var(--accent-dark);
+  transform:scale(.98);
+}
+.footer{
+  text-align:center;
+  padding:32px 16px 16px;
+  font-size:12px;
+  color:var(--ink-faint);
+}
+</style>
+</head>
+<body>
+<div style="position:sticky;top:0;z-index:9999;background:#B3261E;color:#fff;padding:7px 12px;font-size:12.5px;font-weight:800;text-align:center;line-height:1.5;font-family:sans-serif;letter-spacing:.5px">⚠️ 測試站　這裡不會真的收單，送出訂單會被擋下</div>
+
+<header class="hero">
+  <div class="hero-badge">KAFE' 2.0</div>
+  <h1>回歸本質，去蕪存菁</h1>
+  <div class="hero-sub">讓一包咖啡的價值，重新回到咖啡本身</div>
+  <a href="index.html" class="back-nav">← 回到商品訂購</a>
+</header>
+
+<main class="container">
+  <article class="letter-card">
+    <p>嗨，我是卡啡的勞闆。</p>
+    
+    <p>卡啡已經經營了大約五年。在邁向 2.0 的這個時刻，我想以勞闆的身分，對長期支持我們的好朋友與老客戶說一段心裡話。</p>
+
+    <h2 class="section-title">走過五年的「加法」</h2>
+    <p>過去前三年，我們花了很多心力與時間挑戰 Coffee Review 國際評鑑，陸續拿到 24 款最高 94 分的成績，也曾在電商平台累積了兩萬多則五星好評。那段時間，我們全力想把卡啡打造成更有知名度的精品咖啡品牌。</p>
+    
+    <p>我並不否定那段經歷。在品牌建立信任的最初階段，評分、平台與曝光，確實幫我們證明了烘焙實力，也讓第一批客人認識了卡啡。</p>
+
+    <div class="highlight-box">
+      但經營五年後，卡啡已經累積了一批長期回購、深深認同我們烘焙與選豆能力的老客戶，我們也已經建立了穩定的自有官網。<br><br>
+      因此下一個階段，我想重新思考：<br>
+      <strong>「已經認同卡啡的老客戶，是否還需要持續為平台抽成、廣告投手的獲客成本、以及品牌光環所堆疊的溢價買單？」</strong><br><br>
+      卡啡 2.0 的答案是：<strong>不需要。</strong>
+    </div>
+
+    <h2 class="section-title">卡啡 2.0：開始做「減法」</h2>
+    <p>前五年我們做了很多加法，接下來我們要專心做減法。</p>
+
+    <div class="comparison-grid">
+      <div class="comp-card sub">
+        <div class="comp-title">捨去不必要的成本</div>
+        <ul class="comp-list">
+          <li>平台抽成與手續費</li>
+          <li>廣告獲客預算</li>
+          <li>多餘的品牌溢價包裝</li>
+          <li>過多繁雜的商品規格與選項</li>
+          <li>過高的熟豆庫存風險</li>
+          <li>為了追求曝光的額外成本</li>
+        </ul>
+      </div>
+      <div class="comp-card keep">
+        <div class="comp-title">留下真正重要的價值</div>
+        <ul class="comp-list">
+          <li>高品質的生豆</li>
+          <li>嚴謹的選豆與烘焙工藝</li>
+          <li>五年累積的熟客信任</li>
+          <li>簡潔高效的自有官網</li>
+          <li>必要的營運成本</li>
+          <li>合理且永續的烘焙利潤</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-main">「回歸本質，去蕪存菁。」</div>
+      <div class="quote-sub">讓一包咖啡的價值，重新回到咖啡本身。</div>
+    </div>
+
+    <h2 class="section-title">自然留下來的真實價格</h2>
+    <p>當不必要的平台抽成、廣告費與商業包裝一層一層拿掉之後，節省下來的空間，我們直接反映在售價上。</p>
+    
+    <p>這不是廉價競爭，更不是短期的促銷倒數，而是商業結構改變後，自然留下來的合理價格。</p>
+    
+    <p>同時，我們也不再為了每週追求大量新品而強迫上架。同一時間，架上主要維持 <strong>4～5 款我們真心認可、值得推薦的咖啡豆</strong>（半磅日常飲用；珍稀高價生豆則以 100g 小包裝精準控制在約 300 元左右，輕鬆嚐鮮無負擔），以及日常最方便的<strong>茶包咖啡</strong>與<strong>新鮮手包耳掛</strong>。</p>
+    
+    <p>我們的原則很簡單：<strong>「有值得賣的豆子，才上架。」</strong></p>
+
+    <div class="signature">
+      謝謝你五年來的陪伴與信任。<br>
+      接下來，讓我們把一切交給杯中的咖啡。<br><br>
+      <strong>卡啡 KAFE' 勞闆 敬上</strong>
+    </div>
+  </article>
+
+  <div class="footer-cta">
+    <a href="index.html" class="btn-primary">前往挑選本期咖啡豆 →</a>
+  </div>
+</main>
+
+<footer class="footer">
+  &copy; KAFE' 卡啡 ｜ 自家烘焙工作室 ｜ 回歸本質，去蕪存菁
+</footer>
+
+</body>
+</html>
