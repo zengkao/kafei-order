@@ -860,7 +860,7 @@ body{
 </script>
 </head>
 <body>
-<div style="position:sticky;top:0;z-index:9999;background:#B3261E;color:#fff;padding:7px 12px;font-size:12.5px;font-weight:800;text-align:center;line-height:1.5;font-family:sans-serif;letter-spacing:.5px">⚠️ 測試站　這裡不會真的收單，送出訂單會被擋下</div>
+<div style="position:sticky;top:0;z-index:9999;background:#B3261E;color:#fff;padding:7px 12px;font-size:12.5px;font-weight:800;text-align:center;line-height:1.5;font-family:sans-serif;letter-spacing:.5px">🧪 測試站　訂單會寫進「訂單_測試」分頁，不寄信、不開發票</div>
 
 <header class="hero">
   <div class="hero-badge">KAFE' 2.0 ｜ 自家烘焙工作室</div>
@@ -1147,7 +1147,7 @@ body{
 </div>
 
 <script>
-const GAS_URL = "https://script.google.com/macros/s/AKfycbyWcAS56c83kq76RqX1llRjnqNyAhZeNqDpwUhVt4sC1LrVcUlJWKhYTDAxBoqHpHXi/exec";
+const GAS_URL = "https://script.google.com/macros/s/AKfycbzxwmneNhw5nhAJmnbVcpiE_JXITTIYEBEhcpOFifttej2OI3H_c8AzsECVI08VAv0S/exec";
 let STORES = [];
 const STORE_CACHE_KEY='kafei_stores_v1';
 
@@ -1824,27 +1824,9 @@ document.addEventListener('visibilitychange',function(){
 </script>
 
 <script>
-/* ── 測試站限定：不抓線上商品、不送單 ────────────────────────────
-   商品/庫存：正式後端目前仍是 1.0，回來的是舊商品表，抓了會把 2.0 豆單蓋掉，
-              所以直接停用，畫面用頁面內嵌的 2.0 資料。
-   送出訂單：完全擋在前端，不發任何請求。
-   門市清單：維持原樣照抓（唯讀 GET，對正式資料沒有影響）。            */
-(function(){
-  window.__KAFE_TEST_SITE__ = true;
-
-  function noop(){ return Promise.resolve(); }
-  try { window.loadStock        = noop; } catch(e){}
-  try { window.pollStockVersion = noop; } catch(e){}
-  try { window.loadProductsCache= noop; } catch(e){}
-
-  try {
-    window.submitOrder = function(){
-      alert('這裡是卡啡 2.0 測試站，不會真的成立訂單。\n\n' +
-            '本頁用來確認畫面、文案與優惠金額計算是否正確。\n' +
-            '要實際下單請回正式網站。');
-    };
-  } catch(e){}
-})();
+/* 測試站標記。商品、庫存、下單全部走 2.0 專用部署，
+   後端的 TEST_MODE 會把訂單寫進「訂單_測試」分頁、不寄信、不開發票。 */
+window.__KAFE_TEST_SITE__ = true;
 </script>
 </body>
 </html>
