@@ -906,8 +906,9 @@ body{
   <div class="filter-bar">
     <button class="filter-pill active" onclick="setFilter('all', this)">全部品項</button>
     <button class="filter-pill" onclick="setFilter('in_stock', this)">🔥 當期現貨</button>
-    <button class="filter-pill" onclick="setFilter('special', this)">💎 特選豆單</button>
-    <button class="filter-pill" onclick="setFilter('convenient', this)">🍵 便利沖泡</button>
+    <button class="filter-pill" onclick="setFilter('onetime', this)">💎 1期豆單</button>
+    <button class="filter-pill" onclick="setFilter('longterm', this)">☕ 長期豆款</button>
+    <button class="filter-pill" onclick="setFilter('tea', this)">🍵 茶包咖啡</button>
   </div>
 
   <div id="stock-updating"><span>正在更新庫存…</span></div>
@@ -1179,7 +1180,7 @@ loadStores();
 // build 時烘進 HTML 的商品快照。這是「第一畫」用的，不是真實來源——
 // 真實來源是 Google Sheets「商品庫存2.0」，開頁後由 loadStock() 覆蓋。
 // 每週末換豆單只要改 Sheet，不需要重新 build／push。
-let P = [{"id":"飛雀_160","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":300,"stock":20,"roast":"","category":"長期豆款","unit":"227g","noDiscount":false,"desc":"芒果、百香果、水果糖"},{"id":"莫札特_160","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":330,"stock":20,"roast":"","category":"長期豆款","unit":"227g","noDiscount":false,"desc":"草莓、玫瑰、荔枝軟糖"},{"id":"花雀_160","name":"[增味配方] 花雀｜Floral Sparrow Blend","origin":"","flavors":["橙花","玫瑰","熱帶水果","蜂蜜"],"price":300,"stock":20,"roast":"","category":"長期豆款","unit":"227g","noDiscount":false,"desc":"橙花、玫瑰、熱帶水果、蜂蜜"},{"id":"Ayla_160","name":"[淺中焙] Ayla 74112水洗","origin":"","flavors":["甜桃","檸檬糖","烏龍茶"],"price":300,"stock":20,"roast":"","category":"長期豆款","unit":"227g","noDiscount":false,"desc":"甜桃、檸檬糖、烏龍茶"},{"id":"一期20260909_230.625","name":"巧貝沙 28天日曬","origin":"","flavors":["草莓果醬","藍莓","紫羅蘭","糖漬鳳梨"],"price":350,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"草莓果醬、藍莓、紫羅蘭、糖漬鳳梨"},{"id":"一期20260909_201.875","name":"抹茶山 小圓山","origin":"","flavors":["洛神","紅醋栗","葡萄柚","高山茶"],"price":350,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"洛神、紅醋栗、葡萄柚、高山茶"},{"id":"一期20260909_158.75","name":"SL34 96H肯亞式水洗","origin":"","flavors":["黑莓","黑糖","核桃","抹茶"],"price":300,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"黑莓、黑糖、核桃、抹茶"},{"id":"一期20260909_193.25","name":"JACKY 特選 日曬","origin":"","flavors":["藍莓果醬","巨峰葡萄","水蜜桃"],"price":350,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"藍莓果醬、巨峰葡萄、水蜜桃"},{"id":"一期20260909_268","name":"極光莊園 帕卡瑪拉 日曬","origin":"","flavors":["黑莓","黑醋栗","柑橘","可可"],"price":400,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"黑莓、黑醋栗、柑橘、可可"},{"id":"一期20260909_158.75","name":"黑金新團隊 浮光夜色 日曬","origin":"","flavors":["橙花","黑醋栗","藍莓","草莓","葡萄"],"price":300,"stock":17,"roast":"","category":"1期豆款","unit":"227g","noDiscount":false,"desc":"橙花、黑醋栗、藍莓、草莓、葡萄"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":31,"roast":"","category":"常鮮豆單","unit":"100克","noDiscount":false,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"葉門巴西_490","name":"［茶包咖啡50入］配方 大人的味道 中深","origin":"","flavors":["雪茄","可可","堅果","焦糖"],"price":600,"stock":10,"roast":"","category":"茶包咖啡","unit":"50包入","noDiscount":true,"desc":"配方 大人的味道 中深\n風味 雪茄、可可、堅果、焦糖\n產區 巴西、葉門\n處理法 日曬\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"}];
+let P = [{"id":"飛雀_160","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"芒果、百香果、水果糖"},{"id":"莫札特_160","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":330,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"草莓、玫瑰、荔枝軟糖"},{"id":"花雀_160","name":"[增味配方] 花雀｜Floral Sparrow Blend","origin":"","flavors":["橙花","玫瑰","熱帶水果","蜂蜜"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"橙花、玫瑰、熱帶水果、蜂蜜"},{"id":"Ayla_160","name":"[淺中焙] Ayla 74112水洗","origin":"","flavors":["甜桃","檸檬糖","烏龍茶"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"甜桃、檸檬糖、烏龍茶"},{"id":"一期20260909_230.625","name":"巧貝沙 28天日曬","origin":"","flavors":["草莓果醬","藍莓","紫羅蘭","糖漬鳳梨"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"草莓果醬、藍莓、紫羅蘭、糖漬鳳梨"},{"id":"一期20260909_201.875","name":"抹茶山 小圓山","origin":"","flavors":["洛神","紅醋栗","葡萄柚","高山茶"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"洛神、紅醋栗、葡萄柚、高山茶"},{"id":"一期20260909_158.75","name":"SL34 96H肯亞式水洗","origin":"","flavors":["黑莓","黑糖","核桃","抹茶"],"price":300,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑糖、核桃、抹茶"},{"id":"一期20260909_193.25","name":"JACKY 特選 日曬","origin":"","flavors":["藍莓果醬","巨峰葡萄","水蜜桃"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"藍莓果醬、巨峰葡萄、水蜜桃"},{"id":"一期20260909_268","name":"極光莊園 帕卡瑪拉 日曬","origin":"","flavors":["黑莓","黑醋栗","柑橘","可可"],"price":400,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑醋栗、柑橘、可可"},{"id":"一期20260909_158.75","name":"黑金新團隊 浮光夜色 日曬","origin":"","flavors":["橙花","黑醋栗","藍莓","草莓","葡萄"],"price":300,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"橙花、黑醋栗、藍莓、草莓、葡萄"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":31,"roast":"","category":"longterm","unit":"100克","noDiscount":false,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"葉門巴西_490","name":"［茶包咖啡50入］配方 大人的味道 中深","origin":"","flavors":["雪茄","可可","堅果","焦糖"],"price":600,"stock":10,"roast":"","category":"tea","unit":"50包入","noDiscount":true,"desc":"配方 大人的味道 中深\n風味 雪茄、可可、堅果、焦糖\n產區 巴西、葉門\n處理法 日曬\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"}];
 const SHIP = 38, Q = {};
 let curFilter = 'all';
 let stockLoaded = false;
@@ -1191,12 +1192,15 @@ function isExcluded(p){
   return p.noDiscount === true;
 }
 
+// ⚠ 這張表必須跟 google_apps_script.js 的 normalizeCategory_() 一模一樣，
+//   不一致會讓同一款豆在前後端被分到不同頁籤。
 function mapCat(c){
-  const m={'精品常規豆':'beans','精品豆':'beans','常規豆':'beans','100g':'beans',
-           '特選豆單':'special','特選':'special','半磅':'special',
-           '便利沖泡':'convenient','耳掛':'convenient','茶包':'convenient',
+  const m={'1期豆款':'onetime','1期豆單':'onetime','一期豆款':'onetime','特選豆單':'onetime',
+           '長期豆款':'longterm','長期豆單':'longterm','常鮮豆單':'longterm',
+           '精品常規豆':'longterm','精品豆':'longterm','常規豆':'longterm',
+           '茶包咖啡':'tea','茶包':'tea','耳掛':'tea','便利沖泡':'tea',
            '家庭號':'family','1500g':'family'};
-  return m[c]||c||'beans';
+  return m[c]||c||'longterm';
 }
 
 // 把 Sheet 回來的資料併進 P，回傳「有沒有真的變動」（沒變就不重繪，避免卡片閃動）
@@ -1354,7 +1358,7 @@ function esc(s){return s?s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 
 function getUnitBadge(p){
   const u=p.unit||'';
-  if(u==='半磅'||u.indexOf('半磅')>=0)return '<span class="unit-badge half">半磅 227g</span>';
+  if(u==='半磅'||u.indexOf('半磅')>=0||u.indexOf('227')>=0)return '<span class="unit-badge half">半磅 227g</span>';
   if(u==='100g'||u.indexOf('100')>=0)return '<span class="unit-badge hundred">100g 嚐鮮</span>';
   if(u.indexOf('50包')>=0||u.indexOf('50入')>=0)return '<span class="unit-badge tea">50包家庭袋</span>';
   if(u.indexOf('5包')>=0||u.indexOf('5入')>=0)return '<span class="unit-badge drip">5包隨行組</span>';
@@ -1402,10 +1406,12 @@ function render(){
 
   if(curFilter==='in_stock'){
     items=items.filter(p=>p.stock>0||Q[p.id]>0);
-  }else if(curFilter==='special'){
-    items=items.filter(p=>p.category==='special');
-  }else if(curFilter==='convenient'){
-    items=items.filter(p=>p.category==='convenient'||p.unit.indexOf('包')>=0);
+  }else if(curFilter==='onetime'){
+    items=items.filter(p=>p.category==='onetime');
+  }else if(curFilter==='longterm'){
+    items=items.filter(p=>p.category==='longterm');
+  }else if(curFilter==='tea'){
+    items=items.filter(p=>p.category==='tea'||p.category==='convenient');
   }
 
   // 現貨排前面，庫存 0 排後面
