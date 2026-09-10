@@ -1250,6 +1250,14 @@ function mergeProducts(sp){
   if(!Array.isArray(sp)||!sp.length)return false;
   const sheetIds={};let changed=false;
   sp.forEach(s=>{
+    // Sheet J 欄設成不顯示：從畫面上移除。
+    // 不能只靠「後端不回這筆」，因為對 Sheet 上沒有的品項這裡是留著顯示售罄，
+    // 那樣下架的豆子會一直掛在頁面快照裡。
+    if(s.hidden){
+      const i=P.findIndex(p=>p.id===s.id);
+      if(i>=0){P.splice(i,1);delete Q[s.id];changed=true;}
+      return;
+    }
     sheetIds[s.id]=true;
     const nf=s.flavors?String(s.flavors).split(/[、,，]+/).map(f=>f.trim()).filter(Boolean):[];
     const nd=s.description||'';
