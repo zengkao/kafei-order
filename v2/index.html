@@ -1179,9 +1179,9 @@ body{
 <!-- ── 送單成功彈窗 ── -->
 <div class="modal-overlay" id="modal-success">
   <div class="modal-sheet" style="text-align:center;padding-top:44px">
-    <div style="font-size:64px;margin-bottom:16px">🎉</div>
-    <div style="font-size:22px;font-weight:900;margin-bottom:8px">訂單已成功送出！</div>
-    <div style="font-size:14px;color:var(--ink-light);margin-bottom:24px;line-height:1.7">
+    <div style="font-size:64px;margin-bottom:16px" id="succ-icon">🎉</div>
+    <div style="font-size:22px;font-weight:900;margin-bottom:8px" id="succ-title">訂單已成功送出！</div>
+    <div style="font-size:14px;color:var(--ink-light);margin-bottom:24px;line-height:1.7" id="succ-body">
       我們已收到您的訂單<br>勞闆會盡快為您現烘並至 7-11 寄出<br>感謝您對 KAFE' 卡啡的支持 ☕
     </div>
     <button class="btn-submit" style="background:var(--green)" onclick="location.reload()">✓ 完成</button>
@@ -1221,7 +1221,7 @@ loadStores();
 // build 時烘進 HTML 的商品快照。這是「第一畫」用的，不是真實來源——
 // 真實來源是 Google Sheets「商品庫存2.0」，開頁後由 loadStock() 覆蓋。
 // 每週末換豆單只要改 Sheet，不需要重新 build／push。
-let P = [{"id":"飛雀_160","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"芒果、百香果、水果糖"},{"id":"莫札特_160","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":330,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"草莓、玫瑰、荔枝軟糖"},{"id":"花雀_160","name":"[增味配方] 花雀｜Floral Sparrow Blend","origin":"","flavors":["橙花","玫瑰","熱帶水果","蜂蜜"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"橙花、玫瑰、熱帶水果、蜂蜜"},{"id":"Ayla_160","name":"[淺中焙] Ayla 74112水洗","origin":"","flavors":["甜桃","檸檬糖","烏龍茶"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"甜桃、檸檬糖、烏龍茶"},{"id":"一期20260909_230.625","name":"衣索比亞 巧貝沙 28天日曬","origin":"","flavors":["草莓果醬","藍莓","紫羅蘭","糖漬鳳梨"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"草莓果醬、藍莓、紫羅蘭、糖漬鳳梨"},{"id":"一期20260909_201.875","name":"肯亞 抹茶山 小圓山","origin":"","flavors":["洛神","紅醋栗","葡萄柚","高山茶"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"洛神、紅醋栗、葡萄柚、高山茶"},{"id":"一期20260909_158.75","name":"緬甸 SL34 96H肯亞式水洗","origin":"","flavors":["黑莓","黑糖","核桃","抹茶"],"price":300,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑糖、核桃、抹茶"},{"id":"一期20260909_193.25","name":"衣索比亞 JACKY 特選 日曬","origin":"","flavors":["藍莓果醬","巨峰葡萄","水蜜桃"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"藍莓果醬、巨峰葡萄、水蜜桃"},{"id":"一期20260909_268","name":"巴拿馬 極光莊園 帕卡瑪拉 日曬","origin":"","flavors":["黑莓","黑醋栗","柑橘","可可"],"price":400,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑醋栗、柑橘、可可"},{"id":"一期20260910_158.75","name":"黑金新團隊 浮光夜色 日曬","origin":"","flavors":["橙花","黑醋栗","藍莓","草莓","葡萄"],"price":300,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"橙花、黑醋栗、藍莓、草莓、葡萄"},{"id":"水蜜桃_150","name":"日商 哥倫比亞 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":300,"stock":31,"roast":"","category":"longterm","unit":"100克","noDiscount":false,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"葉門巴西_490","name":"［茶包咖啡50入］配方 大人的味道 中深","origin":"","flavors":["雪茄","可可","堅果","焦糖"],"price":600,"stock":10,"roast":"","category":"tea","unit":"50包入","noDiscount":true,"desc":"配方 大人的味道 中深\n風味 雪茄、可可、堅果、焦糖\n產區 巴西、葉門\n處理法 日曬\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"飛雀_163","name":"[中深焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["水梨","熱帶水果","焦糖","可可"],"price":299,"stock":2,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"}];
+let P = [{"id":"飛雀_160","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":300,"stock":18,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"芒果、百香果、水果糖"},{"id":"莫札特_160","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":330,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"草莓、玫瑰、荔枝軟糖"},{"id":"花雀_160","name":"[增味配方] 花雀｜Floral Sparrow Blend","origin":"","flavors":["橙花","玫瑰","熱帶水果","蜂蜜"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"橙花、玫瑰、熱帶水果、蜂蜜"},{"id":"Ayla_160","name":"[淺中焙] Ayla 74112水洗","origin":"","flavors":["甜桃","檸檬糖","烏龍茶"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"甜桃、檸檬糖、烏龍茶"},{"id":"一期20260909_230.625","name":"衣索比亞 巧貝沙 28天日曬","origin":"","flavors":["草莓果醬","藍莓","紫羅蘭","糖漬鳳梨"],"price":350,"stock":13,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"草莓果醬、藍莓、紫羅蘭、糖漬鳳梨"},{"id":"一期20260909_201.875","name":"肯亞 抹茶山 小圓山","origin":"","flavors":["洛神","紅醋栗","葡萄柚","高山茶"],"price":350,"stock":14,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"洛神、紅醋栗、葡萄柚、高山茶"},{"id":"一期20260909_158.75","name":"緬甸 SL34 96H肯亞式水洗","origin":"","flavors":["黑莓","黑糖","核桃","抹茶"],"price":300,"stock":14,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑糖、核桃、抹茶"},{"id":"一期20260909_193.25","name":"衣索比亞 JACKY 特選 日曬","origin":"","flavors":["藍莓果醬","巨峰葡萄","水蜜桃"],"price":350,"stock":12,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"藍莓果醬、巨峰葡萄、水蜜桃"},{"id":"一期20260909_268","name":"巴拿馬 極光莊園 帕卡瑪拉 日曬","origin":"","flavors":["黑莓","黑醋栗","柑橘","可可"],"price":400,"stock":13,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑醋栗、柑橘、可可"},{"id":"一期20260910_158.75","name":"黑金新團隊 浮光夜色 日曬","origin":"","flavors":["橙花","黑醋栗","藍莓","草莓","葡萄"],"price":300,"stock":13,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"橙花、黑醋栗、藍莓、草莓、葡萄"},{"id":"水蜜桃_150","name":"日商 哥倫比亞 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":300,"stock":29,"roast":"","category":"longterm","unit":"100克","noDiscount":false,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"葉門巴西_490","name":"［茶包咖啡50入］配方 大人的味道 中深","origin":"","flavors":["雪茄","可可","堅果","焦糖"],"price":600,"stock":10,"roast":"","category":"tea","unit":"50包入","noDiscount":true,"desc":"配方 大人的味道 中深\n風味 雪茄、可可、堅果、焦糖\n產區 巴西、葉門\n處理法 日曬\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"飛雀_163","name":"[中深焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["水梨","熱帶水果","焦糖","可可"],"price":299,"stock":2,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"}];
 const SHIP = 38, Q = {};
 let curFilter = 'all';
 let curSort = 'default';
@@ -1838,7 +1838,26 @@ async function submitOrder(){
       throw new Error(result.message||'送單失敗');
     }
 
-    if(typeof gtag==='function'){
+    // 後端判定是重送（10 分鐘內同內容）時走另一套文案：
+    // 講清楚「已經收到、沒有重複建立」，客人才不會再送第三次，也不會誤以為被打槍。
+    const dupId=result.duplicate?(result.orderId||orderData.orderId||''):'';
+    const succIcon=document.getElementById('succ-icon');
+    const succTitle=document.getElementById('succ-title');
+    const succBody=document.getElementById('succ-body');
+    if(result.duplicate){
+      succIcon.textContent='📬';
+      succTitle.textContent='這筆訂單我們已經收到了';
+      succBody.innerHTML='系統偵測到相同內容的訂單，<b>沒有重複建立</b>，也不會重複出貨或重複扣款。'+
+        (dupId?'<br>訂單編號 '+esc(dupId):'')+
+        '<br>如果您是真的想再訂一份，請於 10 分鐘後再送出，或改一下備註再送。';
+    }else{
+      succIcon.textContent='🎉';
+      succTitle.textContent='訂單已成功送出！';
+      succBody.innerHTML="我們已收到您的訂單<br>勞闆會盡快為您現烘並至 7-11 寄出<br>感謝您對 KAFE' 卡啡的支持 ☕";
+    }
+
+    // 重送不算一筆新營收，duplicate 時不能再打一次 purchase 事件
+    if(!result.duplicate&&typeof gtag==='function'){
       gtag('event','purchase',{transaction_id:orderData.orderId,currency:'TWD',
         value:orderData.total,shipping:orderData.shipping||0,
         items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.price,quantity:i.qty}))});
