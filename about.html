@@ -6,299 +6,337 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RFEJXE7CET');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>關於卡啡 ｜ KAFE' Coffee Roastery</title>
+<title>關於卡啡 ｜ 回歸本質，去蕪存菁</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--border:#DDD4CA;--shadow:rgba(44,36,32,.08)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+:root{
+  --bg:#F5F0EB;
+  --card:#FFF;
+  --ink:#2C2420;
+  --ink-light:#6B5E54;
+  --ink-faint:#A89888;
+  --accent:#C4853C;
+  --accent-dark:#A06A28;
+  --accent-glow:#E8A84C;
+  --border:#DDD4CA;
+  --shadow:rgba(44,36,32,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
 
-/* Hero */
-.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
-.hero *{position:relative}
-.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
-.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
-.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
-.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
-.back-link:hover{background:rgba(196,133,60,.15)}
+/* Header */
+.hero{
+  background:linear-gradient(135deg,#2C2420,#3D2E22);
+  padding:48px 20px 40px;
+  text-align:center;
+  color:#F5F0EB;
+}
+.hero-badge{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--accent-glow);
+  border:1px solid rgba(196,133,60,.4);
+  padding:4px 16px;
+  border-radius:20px;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  font-weight:700;
+  color:#F5F0EB;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+.hero-sub{
+  font-size:14px;
+  color:rgba(245,240,235,.75);
+  font-weight:300;
+  letter-spacing:.5px;
+}
+.back-nav{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:20px;
+  font-size:13px;
+  color:var(--accent-glow);
+  text-decoration:none;
+  border:1px solid rgba(196,133,60,.4);
+  padding:6px 18px;
+  border-radius:20px;
+  transition:all .2s;
+}
+.back-nav:hover{
+  background:rgba(196,133,60,.15);
+}
 
-/* Container */
-.container{max-width:600px;margin:0 auto;padding:0 16px 60px}
+/* Main Container */
+.container{
+  max-width:580px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
 
-/* Avatar Section */
-.avatar-section{text-align:center;margin-top:-40px;position:relative;z-index:10}
-.avatar-img{width:120px;height:120px;border-radius:50%;border:4px solid var(--card);box-shadow:0 4px 20px rgba(0,0,0,.15);object-fit:cover}
-.avatar-name{font-size:22px;font-weight:900;margin-top:12px}
-.avatar-title{font-size:14px;color:var(--accent-dark);font-weight:500;margin-top:2px}
+/* Letter Card */
+.letter-card{
+  background:var(--card);
+  border-radius:18px;
+  padding:36px 28px;
+  box-shadow:0 2px 12px var(--shadow);
+  border:1px solid rgba(221,212,202,.6);
+  font-size:15px;
+  color:var(--ink);
+}
 
-/* Section Labels */
-.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
+.section-title{
+  font-size:18px;
+  font-weight:800;
+  color:#2C2420;
+  margin:28px 0 12px;
+  letter-spacing:.5px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.section-title::before{
+  content:'';
+  width:4px;
+  height:18px;
+  background:var(--accent);
+  border-radius:2px;
+  display:inline-block;
+}
+.letter-card p{
+  margin-bottom:18px;
+  color:#423630;
+  line-height:1.85;
+}
+.letter-card p:last-child{
+  margin-bottom:0;
+}
 
-/* Philosophy Cards */
-.philosophy-card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);display:flex;gap:14px;align-items:flex-start;animation:fadeUp .4s ease both}
-.philosophy-card:nth-child(2){animation-delay:.05s}
-.philosophy-card:nth-child(3){animation-delay:.1s}
-.philosophy-card:nth-child(4){animation-delay:.15s}
-.philosophy-card:nth-child(5){animation-delay:.2s}
-.phi-icon{flex-shrink:0;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
-.phi-icon.src{background:linear-gradient(135deg,#E8F0E4,#D4E4CC)}
-.phi-icon.roast{background:linear-gradient(135deg,#F5E6D0,#EDDCC4)}
-.phi-icon.qc{background:linear-gradient(135deg,#E0E8F5,#D0DCEE)}
-.phi-icon.ship{background:linear-gradient(135deg,#F5E0E8,#EED0DC)}
-.phi-icon.cert{background:linear-gradient(135deg,#FFF3D6,#F5E6B8)}
-.phi-content{flex:1;min-width:0}
-.phi-title{font-size:15px;font-weight:700;margin-bottom:2px}
-.phi-desc{font-size:13px;color:var(--ink-light);line-height:1.65}
+.highlight-box{
+  background:linear-gradient(135deg,rgba(196,133,60,.08),rgba(196,133,60,.03));
+  border-left:3px solid var(--accent);
+  border-radius:0 12px 12px 0;
+  padding:16px 18px;
+  margin:22px 0;
+  font-size:15px;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.75;
+}
 
-/* CR Table */
-.cr-summary{background:var(--card);border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 1px 4px var(--shadow);text-align:center}
-.cr-big-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:var(--accent-dark)}
-.cr-big-label{font-size:13px;color:var(--ink-faint);margin-top:-4px}
-.cr-stats{display:flex;justify-content:center;gap:24px;margin-top:14px}
-.cr-stat-val{font-size:22px;font-weight:900;color:var(--ink)}
-.cr-stat-label{font-size:11px;color:var(--ink-faint)}
+.comparison-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:22px 0;
+}
+.comp-card{
+  border-radius:12px;
+  padding:16px 14px;
+  font-size:13.5px;
+}
+.comp-card.sub{
+  background:#FAF4F2;
+  border:1px solid #EEDBD6;
+}
+.comp-card.keep{
+  background:#F2F7F2;
+  border:1px solid #D6E8D6;
+}
+.comp-title{
+  font-weight:800;
+  font-size:14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.comp-card.sub .comp-title{color:#B84A39}
+.comp-card.keep .comp-title{color:#3E7B3E}
 
-.cr-table-wrap{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 1px 4px var(--shadow)}
-.cr-table{width:100%;border-collapse:collapse;font-size:13px}
-.cr-table thead{background:#2C2420;color:#F5F0EB}
-.cr-table th{padding:10px 12px;font-weight:600;font-size:12px;letter-spacing:.5px;text-align:left}
-.cr-table th:first-child{text-align:center;width:50px}
-.cr-table td{padding:10px 12px;border-bottom:1px solid #F0EBE5}
-.cr-table tr:last-child td{border-bottom:none}
-.cr-table tr:hover{background:#FAF7F3}
-.cr-table td:first-child{text-align:center;font-weight:900}
-.score-badge{display:inline-block;min-width:32px;padding:2px 8px;border-radius:8px;font-size:14px;font-weight:900;text-align:center}
-.score-94{background:linear-gradient(135deg,#C4853C,#A06A28);color:#fff}
-.score-93{background:linear-gradient(135deg,#D4A05C,#B8884A);color:#fff}
-.score-92{background:linear-gradient(135deg,#8B9E6B,#6E8450);color:#fff}
-.score-91{background:linear-gradient(135deg,#7B94A8,#5E7A90);color:#fff}
-.score-90{background:linear-gradient(135deg,#9E8B6B,#847252);color:#fff}
-.score-88{background:linear-gradient(135deg,#A0906B,#887852);color:#fff}
-.cr-name{font-weight:600;line-height:1.4}
-.cr-origin{font-size:11px;color:var(--ink-faint);margin-top:1px}
-.cr-date{font-size:12px;color:var(--ink-faint);white-space:nowrap}
-.cr-link{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--accent-dark);text-decoration:none;font-weight:600}
-.cr-link:hover{text-decoration:underline}
+.comp-list{
+  list-style:none;
+  line-height:1.7;
+}
+.comp-list li{
+  position:relative;
+  padding-left:14px;
+  margin-bottom:4px;
+  color:var(--ink-light);
+}
+.comp-card.sub .comp-list li::before{
+  content:'−';
+  position:absolute;
+  left:0;
+  color:#B84A39;
+  font-weight:bold;
+}
+.comp-card.keep .comp-list li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:#3E7B3E;
+  font-weight:bold;
+}
 
-/* Footer */
-.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
-.footer a{color:var(--accent);text-decoration:none}
-.footer a:hover{text-decoration:underline}
+.quote-block{
+  text-align:center;
+  padding:24px 16px;
+  margin:24px 0;
+  border-top:1px dashed var(--border);
+  border-bottom:1px dashed var(--border);
+}
+.quote-main{
+  font-size:20px;
+  font-weight:900;
+  color:var(--accent-dark);
+  letter-spacing:1px;
+}
+.quote-sub{
+  font-size:14px;
+  color:var(--ink-light);
+  margin-top:6px;
+}
 
-/* Honor Card */
-.honor-card{position:relative;background:linear-gradient(135deg,#2C2420 0%,#3D2E22 50%,#2C2420 100%);border-radius:16px;padding:22px 20px 20px;margin-bottom:10px;box-shadow:0 4px 16px rgba(44,36,32,.18);overflow:hidden;animation:fadeUp .4s ease both}
-.honor-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(232,168,76,.22),transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(196,133,60,.18),transparent 50%);pointer-events:none}
-.honor-card *{position:relative}
-.honor-ribbon{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:2px;color:#E8A84C;border:1px solid rgba(232,168,76,.4);padding:3px 12px;border-radius:14px;margin-bottom:14px;font-weight:700}
-.honor-ribbon svg{width:12px;height:12px;fill:#E8A84C}
-.honor-title{font-size:20px;font-weight:900;color:#F5F0EB;letter-spacing:.5px;margin-bottom:6px}
-.honor-stars{display:flex;gap:3px;margin:8px 0 12px}
-.honor-stars svg{width:18px;height:18px;fill:#E8A84C;filter:drop-shadow(0 1px 2px rgba(232,168,76,.5))}
-.honor-highlight{display:flex;align-items:baseline;gap:8px;background:linear-gradient(135deg,rgba(232,168,76,.12),rgba(196,133,60,.06));border:1px solid rgba(232,168,76,.25);border-radius:12px;padding:14px 16px;margin:10px 0 14px;flex-wrap:wrap}
-.honor-highlight-label{font-size:13px;color:rgba(245,240,235,.85);font-weight:500}
-.honor-highlight-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#E8A84C;line-height:1;text-shadow:0 0 20px rgba(232,168,76,.4)}
-.honor-highlight-unit{font-size:14px;color:#E8A84C;font-weight:700;margin-left:-2px}
-.honor-highlight-emph{font-size:13px;color:#F5F0EB;font-weight:700;letter-spacing:.5px}
-.honor-desc{font-size:13px;color:rgba(245,240,235,.65);line-height:1.65;margin-bottom:14px}
-.honor-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#E8A84C,#C4853C);color:#2C2420;text-decoration:none;font-size:13px;font-weight:700;padding:9px 18px;border-radius:22px;box-shadow:0 2px 10px rgba(232,168,76,.3);transition:all .2s}
-.honor-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(232,168,76,.5)}
-.honor-btn svg{width:14px;height:14px;fill:#2C2420}
+.signature{
+  margin-top:32px;
+  padding-top:20px;
+  border-top:1px solid #F0EBE5;
+  text-align:right;
+  color:var(--ink-light);
+  font-size:14px;
+}
+.signature strong{
+  color:var(--ink);
+  font-size:16px;
+}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* Responsive */
-@media(max-width:400px){
-  .cr-table th,.cr-table td{padding:8px 8px;font-size:12px}
-  .score-badge{font-size:12px;padding:2px 6px}
+/* Footer CTA */
+.footer-cta{
+  text-align:center;
+  margin-top:30px;
+}
+.btn-primary{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  padding:12px 32px;
+  border-radius:24px;
+  box-shadow:0 3px 10px rgba(196,133,60,.25);
+  transition:all .2s;
+}
+.btn-primary:active{
+  background:var(--accent-dark);
+  transform:scale(.98);
+}
+.footer{
+  text-align:center;
+  padding:32px 16px 16px;
+  font-size:12px;
+  color:var(--ink-faint);
 }
 </style>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="KAFE' 卡啡">
-<meta property="og:title" content="關於卡啡 — KAFE' Coffee Roastery">
-<meta property="og:description" content="自家烘焙精品咖啡，Coffee Review 88 分國際認證。從選豆、烘焙到品管，堅持每一杯的品質。">
-<meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
-<meta property="og:url" content="https://zengkao.github.io/kafei-order/about.html">
-<meta name="description" content="自家烘焙精品咖啡，Coffee Review 88 分國際認證。從選豆、烘焙到品管，堅持每一杯的品質。">
-<link rel="canonical" href="https://zengkao.github.io/kafei-order/about.html">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://zengkao.github.io/kafei-order/"},{"@type":"ListItem","position":2,"name":"關於卡啡","item":"https://zengkao.github.io/kafei-order/about.html"}]}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "url": "https://zengkao.github.io/kafei-order/about.html",
-  "inLanguage": "zh-Hant",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "KAFE' 卡啡",
-    "alternateName": "卡啡 Coffee Roastery",
-    "legalName": "卡啡商行",
-    "taxID": "91133731",
-    "url": "https://zengkao.github.io/kafei-order/",
-    "logo": "https://zengkao.github.io/kafei-order/kafe-avatar.jpg",
-    "image": "https://zengkao.github.io/kafei-order/kafe-avatar.jpg",
-    "description": "自家烘焙精品咖啡，咖啡烘烘烘星級評鑑全台第一高分連續六屆；24 款咖啡獲 Coffee Review 國際認證，最高 94 分。",
-    "slogan": "咖啡豆的品管工程師",
-    "award": [
-      "咖啡烘烘烘 星級評鑑 全台第一高分（連續 6 屆）",
-      "Coffee Review 國際評鑑 最高 94 分（24 款獲評鑑）"
-    ],
-    "sameAs": [
-      "https://www.facebook.com/kafe0422",
-      "https://www.instagram.com/kafe_cb_ry/",
-      "https://shopee.tw/zengkaochen",
-      "https://www.coffeereview.com/?post_type=review&s=zengkaochen&locations=all"
-    ]
-  }
-}
-</script>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">ABOUT US</div>
-  <h1>KAFE' <span>卡啡</span></h1>
-  <div class="hero-sub">咖啡豆的品管工程師</div>
-  <a href="index.html" class="back-link">← 前往訂購</a>
-</div>
+<header class="hero">
+  <div class="hero-badge">KAFE' 2.0</div>
+  <h1>回歸本質，去蕪存菁</h1>
+  <div class="hero-sub">讓一包咖啡的價值，重新回到咖啡本身</div>
+  <a href="index.html" class="back-nav">← 回到商品訂購</a>
+</header>
 
-<div class="container">
+<main class="container">
+  <article class="letter-card">
+    <p>嗨，我是卡啡的勞闆。</p>
+    
+    <p>卡啡已經經營了大約五年。在邁向 2.0 的這個時刻，我想以勞闆的身分，對長期支持我們的好朋友與老客戶說一段心裡話。</p>
 
-  <!-- Avatar -->
-  <div class="avatar-section">
-    <img src="kafe-avatar.jpg" alt="卡啡 Kafe" class="avatar-img" decoding="async" fetchpriority="high">
-    <div class="avatar-name">卡啡 Kafe'</div>
-    <div class="avatar-title">咖啡豆的品管工程師</div>
-  </div>
+    <h2 class="section-title">走過五年的「加法」</h2>
+    <p>過去前三年，我們花了很多心力與時間挑戰 Coffee Review 國際評鑑，陸續拿到 24 款最高 94 分的成績，也曾在電商平台累積了兩萬多則五星好評。那段時間，我們全力想把卡啡打造成更有知名度的精品咖啡品牌。</p>
+    
+    <p>我並不否定那段經歷。在品牌建立信任的最初階段，評分、平台與曝光，確實幫我們證明了烘焙實力，也讓第一批客人認識了卡啡。</p>
 
-  <!-- Special Honor -->
-  <div class="section-label">🏆 特殊殊榮</div>
-
-  <div class="honor-card">
-    <div class="honor-ribbon">
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      TAIWAN NO.1
+    <div class="highlight-box">
+      但經營五年後，卡啡已經累積了一批長期回購、深深認同我們烘焙與選豆能力的老客戶，我們也已經建立了穩定的自有官網。<br><br>
+      因此下一個階段，我想重新思考：<br>
+      <strong>「已經認同卡啡的老客戶，是否還需要持續為平台抽成、廣告投手的獲客成本、以及品牌光環所堆疊的溢價買單？」</strong><br><br>
+      卡啡 2.0 的答案是：<strong>不需要。</strong>
     </div>
-    <div class="honor-title">咖啡烘烘烘 星級評鑑</div>
-    <div class="honor-stars">
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+
+    <h2 class="section-title">卡啡 2.0：開始做「減法」</h2>
+    <p>前五年我們做了很多加法，接下來我們要專心做減法。</p>
+
+    <div class="comparison-grid">
+      <div class="comp-card sub">
+        <div class="comp-title">捨去不必要的成本</div>
+        <ul class="comp-list">
+          <li>平台抽成與手續費</li>
+          <li>廣告獲客預算</li>
+          <li>多餘的品牌溢價包裝</li>
+          <li>過多繁雜的商品規格與選項</li>
+          <li>過高的熟豆庫存風險</li>
+          <li>為了追求曝光的額外成本</li>
+        </ul>
+      </div>
+      <div class="comp-card keep">
+        <div class="comp-title">留下真正重要的價值</div>
+        <ul class="comp-list">
+          <li>高品質的生豆</li>
+          <li>嚴謹的選豆與烘焙工藝</li>
+          <li>五年累積的熟客信任</li>
+          <li>簡潔高效的自有官網</li>
+          <li>必要的營運成本</li>
+          <li>合理且永續的烘焙利潤</li>
+        </ul>
+      </div>
     </div>
-    <div class="honor-highlight">
-      <span class="honor-highlight-label">全台第一高分</span>
-      <span class="honor-highlight-emph">連續維持</span>
-      <span class="honor-highlight-num">6</span><span class="honor-highlight-unit">屆</span>
+
+    <div class="quote-block">
+      <div class="quote-main">「回歸本質，去蕪存菁。」</div>
+      <div class="quote-sub">讓一包咖啡的價值，重新回到咖啡本身。</div>
     </div>
-    <div class="honor-desc">由國內權威「咖啡烘烘烘」星級評鑑連續六屆給予全台第一高分，實力獲業界與評審團一致肯定。</div>
-    <a href="kafei-roastery-202502.pdf" target="_blank" rel="noopener" class="honor-btn">
-      <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-      查看 2025.02 評鑑報告
-    </a>
-  </div>
 
-  <!-- Philosophy -->
-  <div class="section-label">☕ 我們的堅持</div>
+    <h2 class="section-title">自然留下來的真實價格</h2>
+    <p>當不必要的平台抽成、廣告費與商業包裝一層一層拿掉之後，節省下來的空間，我們直接反映在售價上。</p>
+    
+    <p>這不是廉價競爭，更不是短期的促銷倒數，而是商業結構改變後，自然留下來的合理價格。</p>
+    
+    <p>同時，我們也不再為了每週追求大量新品而強迫上架。同一時間，架上主要維持 <strong>4～5 款我們真心認可、值得推薦的咖啡豆</strong>（半磅日常飲用；珍稀高價生豆則以 100g 小包裝精準控制在約 300 元左右，輕鬆嚐鮮無負擔），以及日常最方便的<strong>茶包咖啡</strong>與<strong>新鮮手包耳掛</strong>。</p>
+    
+    <p>我們的原則很簡單：<strong>「有值得賣的豆子，才上架。」</strong></p>
 
-  <div class="philosophy-card">
-    <div class="phi-icon src">🌱</div>
-    <div class="phi-content">
-      <div class="phi-title">源頭</div>
-      <div class="phi-desc">在您品嚐之前，我們已透過精準的物理參數，反覆檢視生豆的純粹本質。</div>
+    <div class="signature">
+      謝謝你五年來的陪伴與信任。<br>
+      接下來，讓我們把一切交給杯中的咖啡。<br><br>
+      <strong>卡啡 KAFE' 勞闆 敬上</strong>
     </div>
-  </div>
+  </article>
 
-  <div class="philosophy-card">
-    <div class="phi-icon roast">🔥</div>
-    <div class="phi-content">
-      <div class="phi-title">烘焙</div>
-      <div class="phi-desc">屏棄憑感覺的火力，我們只相信經無數次數據驗證的入豆量與時間曲線。</div>
-    </div>
+  <div class="footer-cta">
+    <a href="index.html" class="btn-primary">前往挑選本期咖啡豆 →</a>
   </div>
+</main>
 
-  <div class="philosophy-card">
-    <div class="phi-icon qc">🔬</div>
-    <div class="phi-content">
-      <div class="phi-title">品管</div>
-      <div class="phi-desc">以科技色選機取代肉眼，堅決剔除破壞風味的奎克豆與碳化豆。</div>
-    </div>
-  </div>
-
-  <div class="philosophy-card">
-    <div class="phi-icon ship">📦</div>
-    <div class="phi-content">
-      <div class="phi-title">交付</div>
-      <div class="phi-desc">透過嚴謹的 SOP 流程，讓高品質的咖啡，快速且穩定地抵達您手中。</div>
-    </div>
-  </div>
-
-  <div class="philosophy-card">
-    <div class="phi-icon cert">🏆</div>
-    <div class="phi-content">
-      <div class="phi-title">認證</div>
-      <div class="phi-desc">榮獲權威 Coffee Review 評鑑肯定，以國際級的客觀分數，印證我們的烘焙實力。</div>
-    </div>
-  </div>
-
-  <!-- Coffee Review -->
-  <div class="section-label">🏅 Coffee Review 評鑑紀錄</div>
-
-  <div class="cr-summary">
-    <div class="cr-big-num">24</div>
-    <div class="cr-big-label">款咖啡獲國際評鑑</div>
-    <div class="cr-stats">
-      <div><div class="cr-stat-val">94</div><div class="cr-stat-label">最高分</div></div>
-      <div><div class="cr-stat-val">92.5</div><div class="cr-stat-label">平均分</div></div>
-      <div><div class="cr-stat-val">88–94</div><div class="cr-stat-label">分數區間</div></div>
-    </div>
-  </div>
-
-  <div class="cr-table-wrap">
-    <table class="cr-table">
-      <thead>
-        <tr><th>分數</th><th>咖啡名稱</th><th>日期</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Kenya Kiairia Gititu</div><div class="cr-origin">Kenya</div></td><td class="cr-date">2025.07</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Colombia Las Perlitas</div><div class="cr-origin">Colombia</div></td><td class="cr-date">2025.09</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Ethiopia More Floral White Honey</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2025.01</td></tr>
-        <tr><td><span class="score-badge score-92">92</span></td><td><div class="cr-name">Honduras Comsa Station Natural SHG EP</div><div class="cr-origin">Honduras</div></td><td class="cr-date">2025.01</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Tanzania Karatu Acacia Hills Geisha Washed AB Espresso</div><div class="cr-origin">Tanzania</div></td><td class="cr-date">2024.07</td></tr>
-        <tr><td><span class="score-badge score-92">92</span></td><td><div class="cr-name">Guatemala Antigua Bella Carmona Geisha</div><div class="cr-origin">Guatemala</div></td><td class="cr-date">2024.10</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Ethiopia Sidamo Heidenröslein Anaerobic Washed G1</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2024.03</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Peach-C Blend</div><div class="cr-origin">Blend</div></td><td class="cr-date">2024.01</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Ethiopia Banko Gotiti</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2024.07</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Kenya Nyeri Kiawamururu AA</div><div class="cr-origin">Kenya</div></td><td class="cr-date">2024.04</td></tr>
-        <tr><td><span class="score-badge score-91">91</span></td><td><div class="cr-name">Ethiopia Guji Kercha Sakicha Red Honey</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2024.05</td></tr>
-        <tr><td><span class="score-badge score-90">90</span></td><td><div class="cr-name">Kenya Estate 28-Day Natural Microlot</div><div class="cr-origin">Kenya</div></td><td class="cr-date">2024.02</td></tr>
-        <tr><td><span class="score-badge score-88">88</span></td><td><div class="cr-name">Osmanthus Oolong Blend</div><div class="cr-origin">Blend</div></td><td class="cr-date">2024.10</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Costa Rica San Ramon Yeast Washed</div><div class="cr-origin">Costa Rica</div></td><td class="cr-date">2023.09</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Colombia Huila La Esperanza Pink Bourbon Honey</div><div class="cr-origin">Colombia</div></td><td class="cr-date">2023.04</td></tr>
-        <tr><td><span class="score-badge score-94">94</span></td><td><div class="cr-name">Costa Rica Volcán Azul Geisha Yeast-Washed</div><div class="cr-origin">Costa Rica</div></td><td class="cr-date">2023.03</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Ethiopia Guji Benti Nenka Natural</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2023.11</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Ethiopia Bench-Maji Lucy Station Washed Geisha</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2023.05</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Colombia Antioquia El Roble Long Fermentation Washed Chiroso</div><div class="cr-origin">Colombia</div></td><td class="cr-date">2023.04</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Costa Rica Tarrazu Caturra Anaerobic Natural Espresso</div><div class="cr-origin">Costa Rica</div></td><td class="cr-date">2023.03</td></tr>
-        <tr><td><span class="score-badge score-93">93</span></td><td><div class="cr-name">Ethiopia Gedeb Chelchele Slow Dry Washed</div><div class="cr-origin">Ethiopia</div></td><td class="cr-date">2022.12</td></tr>
-        <tr><td><span class="score-badge score-92">92</span></td><td><div class="cr-name">Vanilla Cocoa 2.0 Espresso</div><div class="cr-origin">Blend</div></td><td class="cr-date">2023.09</td></tr>
-        <tr><td><span class="score-badge score-92">92</span></td><td><div class="cr-name">Wild Strawberry Blend</div><div class="cr-origin">Blend</div></td><td class="cr-date">2022.12</td></tr>
-        <tr><td><span class="score-badge score-91">91</span></td><td><div class="cr-name">Colombia Huila El Vergel Yellow Fruit Anaerobic</div><div class="cr-origin">Colombia</div></td><td class="cr-date">2023.07</td></tr>
-      </tbody>
-    </table>
-    <a href="https://www.coffeereview.com/?post_type=review&s=zengkaochen&locations=all" target="_blank" class="cr-link">在 Coffee Review 查看完整評鑑 →</a>
-  </div>
-
-  <div class="footer">
-    <a href="index.html">KAFE' 卡啡</a> — 自家烘焙精品咖啡<br>
-    <a href="index.html">← 回到訂購單</a>｜<a href="contact.html">聯絡我們</a>｜<a href="suppliers.html">供應商夥伴</a>｜<a href="special-process.html">關於特殊處理</a>｜<a href="faq.html">常見問題</a>｜<a href="reviews.html">顧客好評</a>｜<a href="gallery.html">相簿</a>
-  </div>
-</div>
+<footer class="footer">
+  &copy; KAFE' 卡啡 ｜ 自家烘焙工作室 ｜ 回歸本質，去蕪存菁
+</footer>
 
 </body>
 </html>

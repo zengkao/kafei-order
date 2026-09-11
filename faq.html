@@ -6,269 +6,457 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RFEJXE7CET');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>常見問題 ｜ KAFE' Coffee Roastery</title>
+<title>常見問題 ｜ KAFE' 卡啡 2.0 勞闆老實說</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--green-light:#E8F5E8;--red:#C25040;--border:#DDD4CA;--shadow:rgba(44,36,32,.08);--seven:#E95504}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-
-.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
+:root{
+  --bg:#F9F6F1;
+  --card:#FFFFFF;
+  --ink:#221A15;
+  --ink-light:#5E5248;
+  --ink-faint:#9C8E82;
+  --accent:#C4823F;
+  --accent-dark:#9E5F26;
+  --accent-glow:#E29B4A;
+  --green:#2E7D32;
+  --green-light:#E8F5E9;
+  --border:#E8DFD5;
+  --border-light:#F2ECE4;
+  --shadow:rgba(34,26,21,.06);
+  --seven:#E95504;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.hero{
+  position:relative;
+  background:linear-gradient(135deg,#1E1612,#2E221B 50%,#3D2E24);
+  padding:52px 20px 42px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 20%,rgba(196,130,63,.18),transparent 70%);
+}
 .hero *{position:relative}
-.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
-.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
-.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
-.back-link{display:inline-block;margin-top:16px;font-size:13px;color:var(--accent-glow);text-decoration:none;border:1px solid rgba(196,133,60,.4);padding:6px 18px;border-radius:20px;transition:all .2s}
-.back-link:hover{background:rgba(196,133,60,.15)}
-
-.container{max-width:600px;margin:0 auto;padding:0 16px 60px}
-.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:32px 0 14px;text-transform:uppercase}
-
-/* Order Lookup */
-.lookup-section{background:var(--card);border-radius:14px;padding:20px;margin-top:20px;box-shadow:0 1px 4px var(--shadow)}
-.lookup-title{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.lookup-row{display:flex;gap:8px}
-.lookup-input{flex:1;min-width:0;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:'Noto Sans TC',sans-serif;color:var(--ink);background:#FAFAF8;-webkit-appearance:none}
-.lookup-input:focus{outline:none;border-color:var(--accent)}
-.lookup-btn{padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans TC',sans-serif;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-.lookup-btn:active{opacity:.85}
-.lookup-btn:disabled{background:var(--ink-faint);cursor:wait}
-.lookup-result{margin-top:14px;display:none}
+.hero-badge{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--accent-glow);
+  border:1px solid rgba(196,130,63,.45);
+  background:rgba(196,130,63,.08);
+  padding:4px 16px;
+  border-radius:20px;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  font-weight:700;
+  color:#F9F6F1;
+  margin-bottom:6px;
+  letter-spacing:1px;
+}
+.hero h1 span{color:var(--accent-glow)}
+.hero-sub{
+  font-size:14px;
+  color:rgba(249,246,241,.75);
+  font-weight:300;
+}
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:18px;
+  font-size:13px;
+  font-weight:500;
+  color:var(--accent-glow);
+  text-decoration:none;
+  border:1px solid rgba(196,130,63,.45);
+  padding:6px 20px;
+  border-radius:24px;
+  transition:all .2s;
+  background:rgba(196,130,63,.06);
+}
+.back-link:hover{
+  background:rgba(196,130,63,.18);
+  transform:translateY(-1px);
+}
+.container{
+  max-width:620px;
+  margin:0 auto;
+  padding:16px 16px 60px;
+}
+.lookup-section{
+  background:var(--card);
+  border-radius:16px;
+  padding:22px 20px;
+  margin:20px 0 28px;
+  box-shadow:0 2px 10px var(--shadow);
+  border:1px solid var(--border);
+}
+.lookup-title{
+  font-size:16px;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.lookup-row{
+  display:flex;
+  gap:8px;
+}
+.lookup-input{
+  flex:1;
+  min-width:0;
+  padding:11px 14px;
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  font-size:15px;
+  font-family:'Noto Sans TC',sans-serif;
+  color:var(--ink);
+  background:#FAF9F6;
+  -webkit-appearance:none;
+  transition:border-color .2s;
+}
+.lookup-input:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:#fff;
+}
+.lookup-btn{
+  padding:11px 22px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:'Noto Sans TC',sans-serif;
+  white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .2s;
+}
+.lookup-btn:active{
+  background:var(--accent-dark);
+}
+.lookup-btn:disabled{
+  background:var(--ink-faint);
+  cursor:wait;
+}
+.lookup-result{
+  margin-top:14px;
+  display:none;
+}
 .lookup-result.show{display:block}
-.order-item{background:#F8F5F0;border-radius:10px;padding:12px 14px;margin-bottom:8px;font-size:13px;line-height:1.7}
+.order-item{
+  background:#FAF7F2;
+  border:1px solid var(--border-light);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:8px;
+  font-size:13px;
+  line-height:1.7;
+}
 .order-item:last-child{margin-bottom:0}
-.order-status{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:700}
-.order-status.s-pending{background:rgba(196,133,60,.12);color:var(--accent-dark)}
-.order-status.s-exported{background:rgba(90,140,90,.12);color:var(--green)}
-.order-status.s-notified{background:rgba(90,140,90,.2);color:var(--green)}
-.order-empty{text-align:center;padding:16px;color:var(--ink-faint);font-size:13px}
-
-/* FAQ Cards */
-.faq-card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);animation:fadeUp .4s ease both}
-.faq-card:nth-child(2){animation-delay:.05s}
-.faq-card:nth-child(3){animation-delay:.1s}
-.faq-card:nth-child(4){animation-delay:.15s}
-.faq-card:nth-child(5){animation-delay:.2s}
-.faq-q{font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:flex-start;gap:8px}
-.faq-q::before{content:'Q';flex-shrink:0;display:inline-flex;width:24px;height:24px;border-radius:6px;background:var(--accent);color:#fff;font-size:13px;font-weight:900;align-items:center;justify-content:center}
-.faq-a{font-size:13px;color:var(--ink-light);line-height:1.75;padding-left:32px}
-.faq-a strong{color:var(--ink);font-weight:700}
-
-.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
-.footer a{color:var(--accent);text-decoration:none}
-.footer a:hover{text-decoration:underline}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.order-status{
+  display:inline-block;
+  padding:2px 10px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:700;
+}
+.order-status.s-pending{background:rgba(196,130,63,.14);color:var(--accent-dark)}
+.order-status.s-exported{background:rgba(46,125,50,.14);color:var(--green)}
+.order-status.s-notified{background:rgba(46,125,50,.22);color:var(--green)}
+.order-empty{
+  text-align:center;
+  padding:18px;
+  color:var(--ink-faint);
+  font-size:13px;
+}
+.cat-heading{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:var(--accent-dark);
+  margin:32px 0 14px;
+  text-transform:uppercase;
+}
+.cat-heading::after{
+  content:'';
+  flex:1;
+  height:1px;
+  background:var(--border);
+}
+.faq-card{
+  background:var(--card);
+  border-radius:16px;
+  padding:20px 22px;
+  margin-bottom:12px;
+  box-shadow:0 2px 8px var(--shadow);
+  border:1px solid var(--border);
+  transition:all .2s;
+}
+.faq-card:hover{
+  box-shadow:0 4px 16px rgba(34,26,21,.08);
+  border-color:rgba(196,130,63,.4);
+}
+.faq-q{
+  font-size:15.5px;
+  font-weight:800;
+  color:var(--ink);
+  margin-bottom:10px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  line-height:1.45;
+}
+.faq-q::before{
+  content:'Q';
+  flex-shrink:0;
+  display:inline-flex;
+  width:24px;
+  height:24px;
+  border-radius:8px;
+  background:var(--accent);
+  color:#fff;
+  font-size:13px;
+  font-weight:900;
+  align-items:center;
+  justify-content:center;
+  margin-top:1px;
+}
+.faq-a{
+  font-size:14px;
+  color:var(--ink-light);
+  line-height:1.8;
+  padding-left:34px;
+}
+.faq-a p{
+  margin-bottom:8px;
+}
+.faq-a p:last-child{
+  margin-bottom:0;
+}
+.faq-a strong{
+  color:var(--ink);
+  font-weight:700;
+}
+.faq-quote{
+  background:#FAF7F2;
+  border-left:3px solid var(--accent);
+  padding:10px 14px;
+  margin:10px 0;
+  border-radius:0 8px 8px 0;
+  font-size:13.5px;
+  color:var(--ink);
+}
+.footer{
+  text-align:center;
+  padding:36px 16px 16px;
+  font-size:12px;
+  color:var(--ink-faint);
+  line-height:1.8;
+}
+.footer a{
+  color:var(--accent);
+  text-decoration:none;
+}
+.footer a:hover{
+  text-decoration:underline;
+}
 @keyframes spin{to{transform:rotate(360deg)}}
-.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:4px}
+.spinner{
+  display:inline-block;
+  width:14px;
+  height:14px;
+  border:2px solid rgba(255,255,255,.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .6s linear infinite;
+  vertical-align:middle;
+  margin-right:4px;
+}
 </style>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KAFE' 卡啡">
-<meta property="og:title" content="常見問題 + 訂單查詢 — KAFE' 卡啡">
-<meta property="og:description" content="出貨時間、取貨方式、訂單查詢，所有問題一次解答。">
+<meta property="og:title" content="常見問題 ｜ KAFE' 卡啡 2.0 勞闆老實說">
+<meta property="og:description" content="卡啡 2.0 為什麼降價？滿件折扣怎麼算？浸泡茶包與手包耳掛沖泡法，勞闆一次說清楚。">
 <meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
 <meta property="og:url" content="https://zengkao.github.io/kafei-order/faq.html">
-<meta name="description" content="出貨時間、取貨方式、訂單查詢，所有問題一次解答。">
 <link rel="canonical" href="https://zengkao.github.io/kafei-order/faq.html">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首頁","item":"https://zengkao.github.io/kafei-order/"},{"@type":"ListItem","position":2,"name":"常見問題","item":"https://zengkao.github.io/kafei-order/faq.html"}]}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "出貨時間？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "每天晚上 10 點統一出貨。當日 22:00 前的訂單會在當天寄出，之後的訂單隔天處理。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "怎麼取貨？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "商品寄達 7-ELEVEN 後，您會收到簡訊通知。到門市報手機號碼後 3 碼，付費取貨即可。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "可以磨粉嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不提供磨粉服務。我們只販售原豆，建議您自行使用磨豆機現磨，風味最佳。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "退換貨怎麼處理？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "收到商品如有任何問題，請透過任何聯絡管道與我們反映。確認後直接退款，不需退回貨物。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "運費怎麼算？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "7-ELEVEN 超商取貨運費 $38。官網訂購享 95 折，滿 $1,000 免運費。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "我是咖啡新手，不知道該怎麼選豆？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "本店販售的品項，只要是淺中焙都會酸，可以接受的程度看個人。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "咖啡豆買回來要怎麼保存？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "不開封下 3 個月，放置陰涼處即可。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "有建議的沖煮方式嗎？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "依照自己的習慣沖煮即可。若不行，建議使用 1:15、92 度、一刀流。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "卡啡適合什麼樣的客人？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "卡啡比較像「日常會回購的精品咖啡」，不是節慶才開的競標稀有豆。適合：每天都要喝咖啡、想喝得安心又不想每包都花 500-800 元的人；喝過商業豆覺得不夠香、想試精品又怕踩雷的人；喜歡換口味嘗鮮、希望有個穩定的小店可以一直回購的人；在意基本食品安全（會想看 SGS 檢驗報告那種）的人；想喝特殊處理咖啡、但希望有合理入門價的人。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "卡啡跟其他烘焙商有什麼不同？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "卡啡不是冠軍烘豆師開的店，是一個在地方民間評鑑連續 5-6 屆都有不錯成績的小烘豆店。我們不主打稀有競標豆——因為那種豆子很少人會回購；主打的是日常會喝、價格不會太誇張的精品咖啡。跟主流烘焙商比，有幾個地方比較不同：（1）定價：半磅 300 元起、100g 包裝 225 元，是日常會回購的價位。（2）檢驗：合作的井井咖啡特殊處理生豆，有送第三方 SGS 檢驗（丙二醇未檢出）。（3）採購：不單押 1-2 家供應商，均衡向多家生豆商採購、輪換上架。（4）品項：從商業豆、精品豆到特殊處理都有；精品豆也做 SOE，特殊處理也做濃縮配方。（5）套組：還有全店套組可以一次帶走多支，嘗鮮或送禮都方便。我們不是業界頂尖，就是一間願意被檢驗、定價合理的小烘豆店。"
-      }
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">FAQ &amp; ORDER STATUS</div>
-  <h1>KAFE' <span>卡啡</span></h1>
-  <div class="hero-sub">常見問題 ・ 訂單查詢</div>
-  <a href="index.html" class="back-link">← 前往訂購</a>
-</div>
+<header class="hero">
+  <div class="hero-badge">KAFE' 2.0 ｜ FAQ &amp; STATUS</div>
+  <h1>常見問題 <span>勞闆老實說</span></h1>
+  <div class="hero-sub">回歸本質，去蕪存菁 ☕ 讓每一分錢都花在好咖啡上</div>
+  <a href="index.html" class="back-link">← 回到官網訂購單</a>
+</header>
 
-<div class="container">
+<main class="container">
 
   <!-- 訂單查詢 -->
-  <div class="section-label">ORDER STATUS</div>
+  <div class="cat-heading">📦 訂單狀態即時查詢</div>
 
   <div class="lookup-section">
-    <div class="lookup-title">📦 查詢訂單狀態</div>
+    <div class="lookup-title">🔍 查單（輸入訂單時填的手機）</div>
     <div class="lookup-row">
-      <input class="lookup-input" type="tel" id="inp-phone" placeholder="輸入手機號碼（09 開頭）" maxlength="10" inputmode="numeric">
+      <input class="lookup-input" type="tel" id="inp-phone" placeholder="輸入手機號碼（例：0912345678）" maxlength="10" inputmode="numeric">
       <button class="lookup-btn" id="btn-lookup" onclick="lookupOrder()">查詢</button>
     </div>
     <div class="lookup-result" id="lookup-result"></div>
   </div>
 
-  <!-- About KAFE -->
-  <div class="section-label">ABOUT KAFE'</div>
+  <!-- 品牌 2.0 與定價 -->
+  <div class="cat-heading">💡 關於卡啡 2.0 與定價</div>
 
   <div class="faq-card">
-    <div class="faq-q">卡啡適合什麼樣的客人？</div>
+    <div class="faq-q">為什麼要做「卡啡 2.0」？不在蝦皮賣了嗎？</div>
     <div class="faq-a">
-      <ul style="margin:0 0 10px 0;padding-left:18px;line-height:1.85">
-        <li>每天都要喝咖啡，想喝得安心、但不想每包都花 500-800 元</li>
-        <li>喝過商業豆覺得不夠香，想試精品又怕踩雷</li>
-        <li>喜歡換口味嘗鮮，希望有個穩定的小店可以一直回購</li>
-        <li>在意基本食品安全（會想看 SGS 檢驗報告那種）</li>
-        <li>想喝特殊處理咖啡，但希望有合理的入門價</li>
+      <p><strong>勞闆真心話：</strong>以前在蝦皮平台被抽 12%~15% 手續費，每個月還要砸廣告費買關鍵字、買曝光去撈新客人。這些成本算到最後是誰在付？依然是買咖啡的老朋友買單。</p>
+      <div class="faq-quote">「認同卡啡的老朋友，真的不需要再為平台抽成、廣告投手與品牌溢價買單。」</div>
+      <p>經營五年了，我們累積了一批長期回購、深深懂我們烘焙與生豆品質的熟客。既然有了自己的官網，我們決定大膽做減法：<strong>砍掉所有平台抽成與廣告費，直接把節省下來的空間反映在定價上</strong>。這就是卡啡 2.0。</p>
+    </div>
+  </div>
+
+  <div class="faq-card">
+    <div class="faq-q">價格變便宜了，豆子品質或烘焙有縮水嗎？</div>
+    <div class="faq-a">
+      <p><strong>絕對沒有！一分錢一分貨，烘焙工藝只會越磨越精。</strong></p>
+      <p>我們的生豆採購標準完全跟過去挑戰 Coffee Review 評鑑 94 分時一模一樣，合作的生豆商（如井井、圓石、豆超、黑金新團隊等）依舊嚴格篩選。少掉的是平台抽成與行銷預算，每一包送到你手上的咖啡豆，內容物只會更真材實料。</p>
+    </div>
+  </div>
+
+  <!-- 滿件折扣與自由混搭 -->
+  <div class="cat-heading">🎁 優惠規則與全館混搭</div>
+
+  <div class="faq-card">
+    <div class="faq-q">優惠怎麼算？耳掛跟茶包有算嗎？</div>
+    <div class="faq-a">
+      <p><strong>卡啡 2.0 有兩套優惠，系統自動幫你挑比較便宜的那一套，不用輸入折扣碼。</strong></p>
+      <p style="margin-top:10px"><strong>① 滿額優惠（人人都有）</strong>，門檻只看<strong>咖啡豆打折前的原價小計</strong>：</p>
+      <ul style="padding-left:18px;margin:8px 0">
+        <li>咖啡豆小計滿 <strong>$800</strong> → 自動<strong>免運費</strong>（現省 $38 超商運費），咖啡豆不打折。</li>
+        <li>咖啡豆小計滿 <strong>$1,400</strong> → <strong>免運費 ＋ 咖啡豆 9 折</strong>。</li>
       </ul>
-      簡單講，卡啡比較像「<strong>日常會回購的精品咖啡</strong>」，不是節慶才開的競標稀有豆。
+      <p style="margin-top:10px"><strong>② VIP 老客回饋（自動認列，不需申請）</strong>：</p>
+      <ul style="padding-left:18px;margin:8px 0">
+        <li>近 3 個月消費 <strong>TOP 10%</strong> → 全單 <strong>9 折</strong>。</li>
+        <li>近 3 個月消費 <strong>TOP 11~20%</strong> → 全單 <strong>92 折</strong>。</li>
+        <li>VIP 折扣打的是<strong>全單原價（含耳掛與茶包）</strong>，但<strong>不自帶免運</strong>——運費一樣看咖啡豆有沒有滿 $800。名單每天凌晨自動更新。</li>
+      </ul>
+      <p style="margin-top:12px;padding:12px 14px;background:#FFF6F0;border-radius:10px;border-left:3px solid var(--accent);font-size:13px;line-height:1.75">
+        <strong>兩套不疊加、取最優惠：</strong>收到訂單時系統會把「滿額優惠」與「VIP 折扣」各算一次含運費的應付金額，<strong>自動採用比較便宜的那一種</strong>，結果會寫在訂單確認信裡。訂購頁上顯示的是滿額優惠的價格，若 VIP 比較划算，實際收款金額會更低。
+      </p>
+      <p style="margin-top:12px;padding:12px 14px;background:#FAF7F2;border-radius:10px;border-left:3px solid var(--accent);font-size:13px;line-height:1.75">
+        <strong>⚠️ 勞闆老實說（耳掛與茶包不參與滿額優惠）：</strong><br>
+        浸泡式茶包咖啡（50包家庭袋 $600，平均一包才 $12）與新鮮手包耳掛（5入 $100，平均一包 $20）都是勞闆手工現磨現封、純粹交朋友回饋的<strong>極致微利推廣品</strong>。因為價格已經壓到見骨，<strong>耳掛與茶包不計入 $800／$1,400 門檻、不吃滿額 9 折，也不會單獨湊到免運</strong>（咖啡豆未滿 $800 時，超商運費為 $38）。不過 VIP 折扣有涵蓋它們。請老朋友們多多體諒手下留情！
+      </p>
     </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">卡啡跟其他烘焙商有什麼不同？</div>
+    <div class="faq-q">為什麼有些豆子是半磅（227g），有些只有 100g？</div>
     <div class="faq-a">
-      卡啡<strong>不是冠軍烘豆師開的店</strong>，是一個在地方民間評鑑連續 5-6 屆都有不錯成績的小烘豆店。我們不主打稀有競標豆——因為那種豆子很少人會回購；主打的是日常會喝、價格不會太誇張的精品咖啡。<br><br>
-      跟主流烘焙商比，有幾個地方比較不同：
-      <ol style="margin:8px 0 10px 0;padding-left:20px;line-height:1.85">
-        <li><strong>定價</strong> — 半磅 300 元起、100g 包裝 225 元，是日常會回購的價位</li>
-        <li><strong>檢驗</strong> — 合作的井井咖啡特殊處理生豆，有送第三方 SGS 檢驗（丙二醇未檢出）</li>
-        <li><strong>採購</strong> — 不單押 1-2 家供應商，均衡向多家生豆商採購、輪換上架</li>
-        <li><strong>品項</strong> — 從商業豆、精品豆到特殊處理都有；精品豆也做 SOE，特殊處理也做濃縮配方</li>
-        <li><strong>套組</strong> — 還有「全店套組」可以一次帶走多支，嘗鮮或送禮都方便</li>
-      </ol>
-      我們不是業界頂尖，就是一間<strong>願意被檢驗、定價合理的小烘豆店</strong>。適合想天天喝、但又不想隨便喝的客人。
+      <p><strong>這是勞闆幫大家荷包著想的設計：</strong></p>
+      <ul style="padding-left:18px;margin:8px 0">
+        <li><strong>半磅裝（227g）</strong>：適合日常高頻飲用的口糧好豆，大包裝喝得過癮、平均每杯成本最低。</li>
+        <li><strong>100g 嚐鮮裝</strong>：有些世界頂尖莊園、微批次藝伎（Geisha）生豆成本貴得驚人，如果做半磅一包要賣 $500~$800，很多人想喝但下不了手。勞闆特製 100g 包裝，精準把單價壓在 <strong>約 $300 左右</strong>，讓大家無負擔嚐鮮頂級風味！</li>
+      </ul>
     </div>
   </div>
 
-  <!-- FAQ -->
-  <div class="section-label">FREQUENTLY ASKED</div>
+  <!-- 沖泡與品飲 -->
+  <div class="cat-heading">☕ 沖泡指南（茶包咖啡 / 耳掛 / 原豆）</div>
 
   <div class="faq-card">
-    <div class="faq-q">出貨時間？</div>
-    <div class="faq-a"><strong>每天晚上 10 點統一出貨。</strong><br>當日 22:00 前的訂單會在當天寄出，之後的訂單隔天處理。</div>
+    <div class="faq-q">浸泡式茶包咖啡（50包家庭袋）要怎麼泡最好喝？</div>
+    <div class="faq-a">
+      <p><strong>像泡茶一樣無腦簡單，熱泡冷萃都超讚！</strong></p>
+      <ul style="padding-left:18px;margin:8px 0">
+        <li>🔥 <strong>熱水沖泡</strong>：丟 1 包入馬克杯，注入 180~200ml 熱水，浸泡 5~8 分鐘，輕輕上下晃動茶包後取出，就是一杯醇厚濃郁的精品黑咖啡。</li>
+        <li>🧊 <strong>冷萃咖啡（勞闆大推！）</strong>：睡前將 1~2 包丟進水壺，加入常溫或冰水（每包配 180~200ml），放入冰箱冷藏 12~24 小時。隔天拿出來甘甜多汁、完全不苦澀，比超商冰美式好喝十倍！</li>
+      </ul>
+    </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">怎麼取貨？</div>
-    <div class="faq-a">商品寄達 7-ELEVEN 後，您會收到簡訊通知。<br><strong>到門市報手機號碼後 3 碼，付費取貨</strong>即可。</div>
+    <div class="faq-q">新鮮手包耳掛（5包組）跟市售量產耳掛有何差別？</div>
+    <div class="faq-a">
+      <p>市售大工廠耳掛大多是幾個月前大批磨好填裝的，開袋早已香氣散盡。卡啡的手包耳掛是<strong>勞闆用當期現烘莊園原豆新鮮研磨、手工充氮密封包裝</strong>，一撕開就能聞到豐富花果乾香。建議水溫 90~92℃，分段注水 150~180ml，外出差旅、露營隨手一沖就是手沖咖啡館等級。</p>
+    </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">可以磨粉嗎？</div>
-    <div class="faq-a"><strong>不提供磨粉服務。</strong><br>我們只販售原豆，建議您自行使用磨豆機現磨，風味最佳。</div>
+    <div class="faq-q">可以幫忙代磨成咖啡粉嗎？</div>
+    <div class="faq-a">
+      <p><strong>本店咖啡豆一律「只販售完整原豆」，不提供代磨粉服務。</strong></p>
+      <p>精品咖啡一旦研磨成粉，表面積大增，精華香氣在幾小時內就會快速氧化流失。為了對杯中風味負責，勞闆強烈建議自備磨豆機現磨現沖。如果出門不便磨豆，請直接選購我們的「手包耳掛」或「浸泡式茶包」！</p>
+    </div>
+  </div>
+
+  <!-- 出貨、保存與售後 -->
+  <div class="cat-heading">🚚 烘焙出貨、保存與售後</div>
+
+  <div class="faq-card">
+    <div class="faq-q">下單後什麼時候寄出？多久到店？</div>
+    <div class="faq-a">
+      <p>勞闆每週固定烘焙出爐，<strong>每日晚上 10 點統一至 7-ELEVEN 寄件出貨</strong>。超商物流一般寄出後 2～3 天送達指定門市，抵達門市時 7-11 會發送取貨簡訊，憑手機末三碼付款取貨。</p>
+    </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">退換貨怎麼處理？</div>
-    <div class="faq-a">收到商品如有任何問題，請透過 <a href="contact.html" style="color:var(--accent);font-weight:700">任何聯絡管道</a> 與我們反映。<br><strong>確認後直接退款，不需退回貨物。</strong></div>
+    <div class="faq-q">咖啡豆買回家如何保存？需要冰冰箱嗎？</div>
+    <div class="faq-a">
+      <p>未開封放置於室內陰涼乾燥處即可，約可保存 <strong>3 個月</strong>（烘焙後 7~21 天風味最巔峰）。</p>
+      <p>⚠️ <strong>切勿放入冷藏室</strong>（容易吸附冰箱異味與凝結水氣受潮）。若購買多包預計 1 個月以上喝不完，可將整包密封袋完整放入「冷凍庫」，要喝時不需退冰，直接取出倒出所需豆量研磨即可。</p>
+    </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">運費怎麼算？</div>
-    <div class="faq-a">7-ELEVEN 超商取貨運費 <strong>$38</strong>。<br>官網訂購享 <strong>95 折</strong>，滿 <strong>$1,000 免運費</strong>。</div>
+    <div class="faq-q">有開立電子發票嗎？可以打統一編號嗎？</div>
+    <div class="faq-a">
+      <p><strong>有！卡啡為依法登記商家（卡啡商行 統一編號 91133731）。</strong></p>
+      <p>結帳時可自由選擇<strong>雲端發票（Email寄送）</strong>、<strong>手機條碼載具</strong>、<strong>自然人憑證</strong>、<strong>公司統編抬頭</strong>或<strong>愛心捐贈碼</strong>。出貨時系統會自動開立並寄送通知。</p>
+    </div>
   </div>
 
   <div class="faq-card">
-    <div class="faq-q">我是咖啡新手，不知道該怎麼選豆？</div>
-    <div class="faq-a"><strong>本店販售的品項，只要是淺中焙都會酸，</strong>可以接受的程度看個人。</div>
-  </div>
-
-  <div class="faq-card">
-    <div class="faq-q">咖啡豆買回來要怎麼保存？</div>
-    <div class="faq-a"><strong>不開封下 3 個月，</strong>放置陰涼處即可。</div>
-  </div>
-
-  <div class="faq-card">
-    <div class="faq-q">有建議的沖煮方式嗎？</div>
-    <div class="faq-a"><strong>依照自己的習慣沖煮即可。</strong><br>若不行，建議使用 1:15、92 度、一刀流。</div>
+    <div class="faq-q">收到包裹發現品項不對或瑕疵，怎麼處理？</div>
+    <div class="faq-a">
+      <p>收到貨品如有任何問題，請直接透過 LINE、Email 聯絡勞闆反映。</p>
+      <p><strong>老朋友的信任第一，我們確認後會立刻為您補寄或全額退款，您不需大費周章退回包裹。</strong></p>
+    </div>
   </div>
 
   <div class="footer">
-    KAFE' 卡啡 — 自家烘焙精品咖啡<br>
-    <a href="index.html">← 回到訂購單</a>｜<a href="about.html">關於卡啡</a>｜<a href="contact.html">聯絡我們</a>｜<a href="special-process.html">關於特殊處理</a>｜<a href="reviews.html">顧客好評</a>｜<a href="gallery.html">相簿</a>
+    KAFE' 卡啡 — 自家烘焙工作室 ｜ 回歸本質，去蕪存菁<br>
+    <a href="index.html">← 回到官網訂購單</a> ｜ <a href="about.html">關於卡啡 2.0（給老客戶的一封信）</a> ｜ <a href="contact.html">聯絡勞闆</a><br>
+    <span style="color:var(--ink-faint)">卡啡商行 ｜ 統一編號 91133731</span>
   </div>
-</div>
+
+</main>
 
 <script>
 const GAS_URL="https://script.google.com/macros/s/AKfycbyWcAS56c83kq76RqX1llRjnqNyAhZeNqDpwUhVt4sC1LrVcUlJWKhYTDAxBoqHpHXi/exec";
@@ -284,7 +472,7 @@ function lookupOrder(){
     .then(data=>{
       btn.disabled=false;btn.textContent='查詢';
       if(!data.orders||!data.orders.length){
-        box.innerHTML='<div class="order-empty">查無訂單紀錄<br><span style="font-size:11px">請確認手機號碼是否正確</span></div>';
+        box.innerHTML='<div class="order-empty">查無此手機訂單紀錄<br><span style="font-size:11px">請確認下單時填寫的手機號碼是否正確</span></div>';
       }else{
         var h='';
         data.orders.forEach(o=>{
@@ -305,7 +493,7 @@ function lookupOrder(){
     })
     .catch(()=>{
       btn.disabled=false;btn.textContent='查詢';
-      box.innerHTML='<div class="order-empty">查詢失敗，請稍後再試</div>';
+      box.innerHTML='<div class="order-empty">查詢伺服器連線中，請稍後再試</div>';
       box.classList.add('show');
     });
 }

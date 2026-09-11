@@ -6,194 +6,858 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RFEJXE7CET');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>KAFE' 卡啡｜精品咖啡豆訂購．自家烘焙．厭氧處理．7-11取貨</title>
+<title>KAFE' 卡啡 2.0 ｜ 自家烘焙精品咖啡．回歸本質．7-11取貨</title>
+<meta name="description" content="KAFE' 卡啡自家烘焙精品咖啡豆。每週末現烘現包，半磅與 100g 皆可混搭；咖啡豆滿 $800 免運、滿 $1,400 免運再享 9 折，老客 VIP 另有 9 折／92 折擇優。7-ELEVEN 取貨付款。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F0EB;--card:#FFF;--ink:#2C2420;--ink-light:#6B5E54;--ink-faint:#A89888;--accent:#C4853C;--accent-dark:#A06A28;--accent-glow:#E8A84C;--green:#5A8C5A;--green-light:#E8F5E8;--red:#C25040;--border:#DDD4CA;--shadow:rgba(44,36,32,.08);--seven:#E95504;--seven-bg:#FFF6F0;--seven-border:#FDDCC8}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
-.hero{position:relative;background:linear-gradient(135deg,#2C2420,#4A3728 50%,#3D2E22);padding:48px 24px 40px;text-align:center;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(196,133,60,.15),transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(196,133,60,.1),transparent 50%)}
-.hero *{position:relative}.hero-badge{display:inline-block;font-size:11px;letter-spacing:3px;color:var(--accent-glow);border:1px solid rgba(196,133,60,.4);padding:4px 16px;border-radius:20px;margin-bottom:16px}
-.hero h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#F5F0EB;margin-bottom:6px}.hero h1 span{color:var(--accent-glow)}
-.hero-sub{font-size:14px;color:rgba(245,240,235,.6);font-weight:300;letter-spacing:1px}
-.container{max-width:520px;margin:0 auto;padding:0 16px 120px}
-.section-label{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);margin:28px 0 12px}
-.cat-tabs{display:flex;gap:6px;margin-bottom:14px;justify-content:center;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.cat-tabs::-webkit-scrollbar{display:none}
-.cat-tab{flex:1 1 0;min-width:0;white-space:nowrap;padding:8px 8px;border:1.5px solid var(--border);border-radius:20px;background:var(--card);font-size:13px;font-weight:600;color:var(--ink-light);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:4px}
-.cat-tab small{font-size:11px;font-weight:400;opacity:.7}
-.cat-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.cat-tab.active small{opacity:.9}
-.cat-tab.has-qty{border-color:var(--accent);color:var(--accent)}
-.cat-tab.has-qty.active{color:#fff}
-.product-card{background:var(--card);border-radius:14px;padding:16px;margin-bottom:10px;box-shadow:0 1px 4px var(--shadow);display:flex;align-items:center;gap:14px;animation:fadeUp .4s ease both}
-.product-card.has-qty{box-shadow:0 0 0 2px var(--accent),0 2px 12px rgba(196,133,60,.15)}
-.product-card:nth-child(2){animation-delay:.05s}.product-card:nth-child(3){animation-delay:.1s}.product-card:nth-child(4){animation-delay:.15s}
-.product-card:nth-child(5){animation-delay:.2s}.product-card:nth-child(6){animation-delay:.25s}.product-card:nth-child(7){animation-delay:.3s}
-.product-info{flex:1;min-width:0}.product-name{font-size:15px;font-weight:700;line-height:1.4;margin-bottom:2px}
-.product-origin{font-size:12px;color:var(--ink-light);margin-bottom:2px}.product-flavor{display:flex;flex-wrap:wrap;gap:4px}
-.flavor-tag{background:linear-gradient(135deg,#FFF3E0,#FDE8D0);border:1px solid #E8C9A0;border-radius:4px;padding:1px 6px;font-size:11px;white-space:nowrap;color:#8B5E34;font-weight:500}
-.low-stock-tag{background:rgba(194,80,64,.1);color:var(--red);border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap}
-.sale-tag{display:inline-flex;align-items:center;gap:3px;background:#D32F2F;color:#fff;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap}
-.sale-soon-tag{display:inline-flex;align-items:center;gap:3px;background:#1565C0;color:#fff;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;white-space:nowrap}
-.sale-tag svg,.sale-soon-tag svg{flex:none}
-.orig-price{text-decoration:line-through;color:var(--ink-light);font-size:13px;font-weight:400;margin-right:4px}
-.product-price.sale{color:#D32F2F}
-.sale-note{font-size:10.5px;color:#B71C1C;opacity:.85;margin-top:2px;line-height:1.3}
-.product-price{font-size:18px;font-weight:900;color:var(--accent-dark);white-space:nowrap}.product-price small{font-size:11px;font-weight:400;color:var(--ink-faint)}
-.product-right{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}
-.qty-stepper{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:10px;overflow:hidden}
-.qty-btn{width:36px;height:36px;border:none;background:transparent;font-size:20px;font-weight:500;color:var(--ink-light);cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent}
-.qty-btn:active{background:var(--bg)}.qty-btn:disabled{opacity:.25;cursor:default}
-.qty-val{width:36px;text-align:center;font-size:16px;font-weight:700;border-left:1.5px solid var(--border);border-right:1.5px solid var(--border);line-height:36px}
-.qty-val.active{color:var(--accent-dark)}.product-card.oos{opacity:.45;pointer-events:none}
-.oos-badge{font-size:10px;font-weight:700;color:var(--red);background:rgba(194,80,64,.08);padding:2px 8px;border-radius:6px}
-.summary-bar{position:fixed;bottom:0;left:0;right:0;background:#2C2420;color:#F5F0EB;z-index:100;box-shadow:0 -4px 20px rgba(0,0,0,.2);transition:transform .3s}
-.featured-strip{display:flex;align-items:center;gap:8px;padding:9px 16px;border-bottom:1px solid rgba(245,240,235,.12)}
-.featured-strip .fs-label{display:flex;align-items:center;gap:4px;color:#E8B873;font-weight:700;font-size:12.5px;white-space:nowrap}
-.featured-strip .fs-name{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#F5F0EB;font-size:13px}
-.featured-strip .fs-price{color:#F5F0EB;font-weight:700;font-size:13px;white-space:nowrap}
-.featured-strip .fs-add{flex:none;background:#C4853C;color:#fff;border:none;border-radius:14px;padding:5px 13px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;transition:transform .1s}
-.featured-strip .fs-add:active{transform:scale(.95)}
-.summary-bar.hidden{transform:translateY(100%)}
-.ship-progress{height:3px;background:rgba(245,240,235,.12)}
-.ship-progress-fill{height:100%;width:0;background:linear-gradient(90deg,#C4853C,#E8A84C);transition:width .35s ease}
-.ship-progress-fill.done{background:#7CBA7C}
-.summary-text .ship-need{display:inline-block;margin-left:8px;color:#E8A84C;font-size:12px;font-weight:700}
-.summary-inner{max-width:520px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.summary-text{font-size:13px;line-height:1.5}.summary-text strong{font-size:20px;color:var(--accent-glow)}
-.summary-text .free-ship{color:#7CBA7C;font-size:11px;font-weight:700}.summary-text .ship-cost{font-size:11px;color:rgba(245,240,235,.5)}
-.btn-checkout{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'Noto Sans TC',sans-serif;-webkit-tap-highlight-color:transparent}
-.btn-checkout:active{background:var(--accent-dark)}
-/* 老客快速結帳（購物車列）：有記住資料且購物車非空才顯示，此時確認訂單降為外框鈕 */
-.summary-actions{display:flex;align-items:center;gap:8px;flex:none}
-.btn-quick{display:none;align-items:center;gap:5px;background:linear-gradient(135deg,#E8A84C,#C4853C);color:#2C2420;border:none;padding:11px 14px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;font-family:'Noto Sans TC',sans-serif;-webkit-tap-highlight-color:transparent;flex:none}
-.btn-quick.show{display:flex}
-.btn-quick:active{filter:brightness(.92)}
-.summary-inner.has-quick .summary-text{flex:1 1 auto;min-width:0;font-size:12.5px}
-.summary-inner.has-quick .summary-text strong{font-size:18px}
-.summary-inner.has-quick .btn-checkout{background:transparent;border:1.5px solid rgba(245,240,235,.45);color:#F5F0EB;padding:10px 14px;font-size:13.5px}
-.summary-inner.has-quick .btn-checkout:active{background:rgba(245,240,235,.12)}
-/* 老客回訪列（收件人資訊上方） */
-.returning-bar{background:linear-gradient(135deg,rgba(196,133,60,.10),rgba(196,133,60,.04));border:1.5px solid rgba(196,133,60,.35);border-radius:14px;padding:12px 14px;margin-top:10px}
-.rb-fill{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;background:var(--accent);color:#fff;border:none;border-radius:11px;padding:11px 14px;font-size:14.5px;font-weight:700;font-family:'Noto Sans TC',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s}
+:root{
+  --bg:#F8F5F0;
+  --card:#FFFFFF;
+  --card-subtle:#FAF8F5;
+  --ink:#1F1713;
+  --ink-light:#5C4F46;
+  --ink-faint:#98897E;
+  --accent:#B87333;
+  --accent-dark:#9E5F26;
+  --accent-glow:#E29B4A;
+  --accent-soft:rgba(184,115,51,.08);
+  --green:#2E7D32;
+  --green-light:#E8F5E9;
+  --red:#C25040;
+  --border:#E8DFD5;
+  --border-light:#F2EBE4;
+  --shadow-xs:0 1px 3px rgba(31,23,19,.04);
+  --shadow-sm:0 3px 12px rgba(31,23,19,.06);
+  --shadow-md:0 8px 24px rgba(31,23,19,.09);
+  --seven:#E95504;
+  --seven-bg:#FFF7F2;
+  --seven-border:#FCD8C5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── Hero Section ── */
+.hero{
+  position:relative;
+  background:radial-gradient(circle at 50% -20%,#3A2A20,#1A130E 85%);
+  padding:54px 20px 44px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 25%,rgba(226,155,74,.18),transparent 75%);
+}
+.hero *{position:relative}
+.hero-badge{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:3px;
+  color:var(--accent-glow);
+  border:1px solid rgba(226,155,74,.4);
+  background:rgba(226,155,74,.08);
+  padding:4px 18px;
+  border-radius:24px;
+  margin-bottom:14px;
+  font-weight:600;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  font-weight:700;
+  color:#F8F5F0;
+  margin-bottom:6px;
+  letter-spacing:1.5px;
+}
+.hero h1 span{color:var(--accent-glow)}
+.hero-sub{
+  font-size:14.5px;
+  color:rgba(248,245,240,.78);
+  font-weight:300;
+  letter-spacing:.5px;
+}
+.hero-links{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.hero-link{
+  font-size:13px;
+  font-weight:500;
+  color:var(--accent-glow);
+  text-decoration:none;
+  border:1px solid rgba(226,155,74,.4);
+  background:rgba(226,155,74,.06);
+  padding:6px 18px;
+  border-radius:20px;
+  transition:all .2s;
+}
+.hero-link:hover{
+  background:rgba(226,155,74,.18);
+  transform:translateY(-1px);
+}
+.hero-link.secondary{
+  color:rgba(248,245,240,.75);
+  border-color:rgba(248,245,240,.25);
+  background:transparent;
+}
+.hero-link.secondary:hover{
+  background:rgba(248,245,240,.1);
+  color:#fff;
+}
+
+/* ── Container ── */
+.container{
+  max-width:540px;
+  margin:0 auto;
+  padding:0 16px 140px;
+}
+
+/* ── 2.0 宣言卡片 ── */
+.notice-20{
+  background:var(--card);
+  border:1.5px solid var(--border);
+  border-radius:18px;
+  padding:20px 22px;
+  margin-top:18px;
+  box-shadow:0 4px 16px var(--shadow-sm);
+  position:relative;
+  overflow:hidden;
+}
+.notice-20::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#B87333,#E29B4A);
+}
+.n20-header{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+.n20-badge{
+  background:var(--accent);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  padding:2px 10px;
+  border-radius:10px;
+  letter-spacing:1px;
+}
+.n20-title{
+  font-size:16px;
+  font-weight:900;
+  color:var(--ink);
+}
+.n20-desc{
+  font-size:13.5px;
+  color:var(--ink-light);
+  line-height:1.65;
+  margin-bottom:12px;
+}
+.n20-perks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.n20-perk{
+  background:#FAF7F2;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 12px;
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.n20-perk span{font-size:18px}
+.n20-perk strong{color:var(--accent-dark)}
+.n20-footnote{
+  margin-top:10px;
+  font-size:11.5px;
+  color:var(--ink-faint);
+  text-align:center;
+}
+
+/* ── Section Header & Filter Pills ── */
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:28px 0 12px;
+}
+.section-title{
+  font-size:15px;
+  font-weight:800;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.filter-bar{
+  display:flex;
+  gap:4px;
+  overflow-x:auto;
+  padding-bottom:4px;
+  margin-bottom:12px;
+  -webkit-overflow-scrolling:touch;
+}
+.filter-pill{
+  /* 四顆等分塞進 375px：原本 flex:none 會讓「便利沖泡」被推出畫面要橫滑，
+     而耳掛/茶包正好都在那一頁。處理方式同分類頁籤（commit 8135523）。 */
+  flex:1 1 0;
+  min-width:0;
+  white-space:nowrap;
+  text-align:center;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:5px 4px;
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--ink-light);
+  cursor:pointer;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.filter-pill.active{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+.sort-bar{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  margin:-6px 0 12px;
+}
+.sort-label{
+  font-size:11px;
+  color:var(--ink-faint);
+  font-weight:700;
+  flex:none;
+  margin-right:2px;
+}
+.sort-pill{
+  flex:none;
+  white-space:nowrap;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:4px 10px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--ink-light);
+  cursor:pointer;
+  transition:all .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.sort-pill.active{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+
+#stock-updating{
+  display:none;
+  font-size:11px;
+  color:var(--ink-faint);
+  padding:4px 2px 8px;
+  letter-spacing:.5px;
+}
+#stock-updating.show{display:block}
+#stock-updating span{position:relative;padding-left:14px}
+#stock-updating span::before{
+  content:'';position:absolute;left:0;top:50%;margin-top:-4px;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent);opacity:.35;
+  animation:stockPulse 1.1s ease-in-out infinite;
+}
+@keyframes stockPulse{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:.9;transform:scale(1.15)}}
+
+/* ── Unit Badges ── */
+.unit-badge{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+.unit-badge.half{background:#EFE6DD;color:#5A3E2B;border:1px solid #DFCEBE}
+.unit-badge.hundred{background:#FCEEE9;color:#9E3E26;border:1px solid #F3CEC3}
+.unit-badge.tea{background:#E8F3EB;color:#246435;border:1px solid #C4DFC8}
+.unit-badge.drip{background:#E6EEF5;color:#20527A;border:1px solid #C2D6E7}
+
+/* ── Product Card ── */
+.product-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px 18px;
+  margin-bottom:12px;
+  box-shadow:0 2px 8px var(--shadow-xs);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  position:relative;
+  transition:all .2s;
+  animation:fadeUp .35s ease both;
+}
+.product-card:hover{
+  border-color:rgba(184,115,51,.35);
+  box-shadow:0 4px 14px var(--shadow-sm);
+}
+.product-card.has-qty{
+  border-color:var(--accent);
+  box-shadow:0 0 0 2px var(--accent),0 4px 16px rgba(184,115,51,.18);
+  background:#FFFCF9;
+}
+.product-info{
+  flex:1 1 auto;
+  min-width:0;
+}
+.product-meta-row{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:5px;
+  flex-wrap:wrap;
+}
+.product-name{
+  font-size:15.5px;
+  font-weight:800;
+  color:var(--ink);
+  line-height:1.45;
+  margin-bottom:6px;
+}
+.product-flavor{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+.flavor-tag{
+  background:#FAF7F2;
+  border:1px solid #E8DFD5;
+  border-radius:4px;
+  padding:1px 7px;
+  font-size:11.5px;
+  color:#7A5532;
+  font-weight:500;
+  white-space:nowrap;
+}
+.low-stock-tag{
+  background:rgba(194,80,64,.1);
+  color:var(--red);
+  border-radius:4px;
+  padding:1px 6px;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.oos-badge{
+  font-size:11px;
+  font-weight:700;
+  color:#8C7E75;
+  background:#ECE7E1;
+  padding:2px 8px;
+  border-radius:6px;
+}
+
+/* Tooltip */
+.desc-icon{
+  width:20px;
+  height:20px;
+  flex-shrink:0;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.75;
+}
+.desc-icon:hover{opacity:1}
+.product-card.tooltip-active{
+  z-index:80;
+}
+.desc-tooltip{
+  display:none;
+  position:absolute;
+  left:14px;
+  right:14px;
+  bottom:calc(100% + 10px);
+  background:#261E1A;
+  color:#F8F5F0;
+  padding:14px 16px;
+  border-radius:14px;
+  font-size:12.5px;
+  line-height:1.75;
+  z-index:90;
+  box-shadow:0 12px 32px rgba(0,0,0,.35);
+  white-space:pre-line;
+  animation:tipFadeUp .2s cubic-bezier(.16,1,.3,1);
+}
+.desc-tooltip::after{
+  content:'';
+  position:absolute;
+  bottom:-6px;
+  left:22px;
+  width:12px;
+  height:12px;
+  background:#261E1A;
+  transform:rotate(45deg);
+}
+.dt-title{font-weight:800;color:var(--accent-glow);margin-bottom:6px}
+.product-card.tooltip-active .desc-tooltip{display:block}
+@media(hover:hover){
+  .desc-icon:hover + .desc-tooltip,
+  .desc-tooltip:hover{display:block}
+}
+@keyframes tipFadeUp{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.no-discount-tag{
+  background:#F2EFEB;
+  color:#8C7E75;
+  border-radius:4px;
+  padding:1px 6px;
+  font-size:11px;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+/* Price & Stepper */
+.product-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+  flex-shrink:0;
+}
+.product-price{
+  font-size:19px;
+  font-weight:900;
+  color:var(--accent-dark);
+  white-space:nowrap;
+}
+.product-price small{
+  font-size:12px;
+  font-weight:500;
+  color:var(--ink-faint);
+  margin-left:2px;
+}
+.qty-stepper{
+  display:flex;
+  align-items:center;
+  background:#FAF8F5;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.qty-btn{
+  width:36px;
+  height:36px;
+  border:none;
+  background:transparent;
+  font-size:18px;
+  font-weight:700;
+  color:var(--ink);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .15s;
+}
+.qty-btn:active{background:#EFEAE2}
+.qty-btn:disabled{opacity:.25;cursor:default}
+.qty-val{
+  width:36px;
+  text-align:center;
+  font-size:15.5px;
+  font-weight:800;
+  color:var(--ink-light);
+  line-height:36px;
+}
+.qty-val.active{color:var(--accent-dark)}
+
+/* Out of stock card */
+.product-card.oos{
+  background:#FAF8F5;
+  border-color:#ECE6DE;
+  opacity:.72;
+}
+.product-card.oos .product-name{color:var(--ink-faint)}
+.product-card.oos .qty-stepper{opacity:.4;pointer-events:none}
+
+/* ── 7-11 門市區塊 ── */
+.seven-section{
+  background:var(--seven-bg);
+  border:1.5px solid var(--seven-border);
+  border-radius:18px;
+  padding:20px 18px;
+  margin-top:14px;
+  box-shadow:0 2px 10px var(--shadow-xs);
+}
+.seven-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+.seven-logo{
+  width:42px;
+  height:42px;
+  background:var(--seven);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:900;
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  flex-shrink:0;
+  box-shadow:0 3px 8px rgba(233,85,4,.25);
+}
+.seven-title{font-size:16.5px;font-weight:800;color:var(--ink)}
+.seven-subtitle{font-size:12px;color:var(--ink-faint);margin-top:2px}
+.store-selected{
+  display:none;
+  align-items:center;
+  gap:10px;
+  padding:12px 14px;
+  background:var(--green-light);
+  border:1.5px solid #B5D8B5;
+  border-radius:12px;
+  margin-bottom:14px;
+  font-size:14px;
+  font-weight:700;
+  color:var(--green);
+}
+.store-selected.show{display:flex}
+.store-selected .check{
+  width:22px;height:22px;
+  border-radius:50%;
+  background:var(--green);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;flex-shrink:0;
+}
+.ac-wrap{position:relative}
+.ac-list{
+  position:absolute;
+  top:100%;left:0;right:0;
+  background:#fff;
+  border:1.5px solid var(--seven-border);
+  border-top:none;
+  border-radius:0 0 12px 12px;
+  max-height:240px;
+  overflow-y:auto;
+  z-index:50;
+  display:none;
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+}
+.ac-list.open{display:block}
+.ac-item{
+  padding:11px 14px;
+  cursor:pointer;
+  border-bottom:1px solid #FAF7F2;
+}
+.ac-item:last-child{border-bottom:none}
+.ac-item:hover,.ac-item.active{background:#FFF6F0}
+.ac-item-name{font-size:14px;font-weight:700;color:var(--ink)}
+.ac-item-name mark{background:rgba(233,85,4,.15);color:var(--seven);font-weight:900;border-radius:2px;padding:0 2px}
+.ac-item-addr{font-size:12px;color:var(--ink-faint);margin-top:2px}
+.ac-item-area{font-size:11px;color:var(--seven);font-weight:700}
+.ac-count{padding:8px 14px;font-size:11px;color:var(--ink-faint);text-align:center;border-bottom:1px solid #FAF7F2}
+
+/* ── 表單區塊 ── */
+.form-section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px 18px;
+  margin-top:14px;
+  box-shadow:0 2px 10px var(--shadow-xs);
+}
+.form-group{margin-bottom:14px}
+.form-group:last-child{margin-bottom:0}
+.form-group label{
+  display:block;
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--ink-light);
+  margin-bottom:5px;
+}
+.form-group label .req{color:var(--red)}
+.form-input{
+  width:100%;
+  padding:11px 14px;
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  font-size:15px;
+  font-family:'Noto Sans TC',sans-serif;
+  color:var(--ink);
+  background:#FAF9F6;
+  -webkit-appearance:none;
+  transition:border-color .2s,background .2s;
+}
+.form-input:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:#fff;
+}
+.form-input::placeholder{color:var(--ink-faint)}
+
+/* 老客一鍵帶入 */
+.returning-bar{
+  background:linear-gradient(135deg,rgba(184,115,51,.12),rgba(184,115,51,.04));
+  border:1.5px solid rgba(184,115,51,.35);
+  border-radius:14px;
+  padding:12px 14px;
+  margin-top:12px;
+}
+.rb-fill{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  padding:11px 16px;
+  font-size:14.5px;
+  font-weight:800;
+  font-family:'Noto Sans TC',sans-serif;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .2s;
+}
 .rb-fill:active{background:var(--accent-dark)}
 .rb-fill.done{background:var(--green-light);color:var(--green);cursor:default}
 .rb-meta{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:11.5px;color:var(--ink-light)}
 .rb-last{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rb-clear{flex:none;background:transparent;border:none;color:var(--accent-dark);font-size:11.5px;font-family:'Noto Sans TC',sans-serif;text-decoration:underline;cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+.rb-clear{flex:none;background:transparent;border:none;color:var(--accent-dark);font-size:11.5px;font-family:'Noto Sans TC',sans-serif;text-decoration:underline;cursor:pointer;padding:0}
 .rb-store{margin-top:3px;font-size:11.5px;color:var(--ink-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rb-privacy{display:flex;align-items:center;gap:4px;margin-top:6px;font-size:10.5px;color:var(--ink-faint)}
-/* 開頁時商品是 build 時的舊快照，GAS 要 1~2 秒才回來；用這條提示讓更新變成預期中的事 */
-.stock-updating{display:none;align-items:center;gap:8px;margin:0 0 8px}
-.stock-updating.show{display:flex}
-.stock-updating .su-bar{flex:1 1 auto;height:3px;border-radius:2px;background:rgba(196,133,60,.15);overflow:hidden}
-.stock-updating .su-bar i{display:block;height:100%;width:40%;border-radius:2px;background:linear-gradient(90deg,#C4853C,#E8A84C);animation:suSlide 1.1s ease-in-out infinite}
-@keyframes suSlide{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
-.stock-updating span{flex:none;font-size:11px;color:var(--ink-faint)}
-.store-stale{display:none;align-items:center;gap:7px;padding:9px 12px;background:var(--seven-bg);border:1.5px solid var(--seven-border);border-radius:10px;margin-bottom:12px;font-size:12.5px;color:#B04A00;line-height:1.5}
-.store-stale.show{display:flex}
-.form-section{background:var(--card);border-radius:14px;padding:20px 16px;margin-top:10px;box-shadow:0 1px 4px var(--shadow)}
-.form-group{margin-bottom:14px}.form-group:last-child{margin-bottom:0}
-.form-group label{display:block;font-size:12px;font-weight:500;color:var(--ink-light);margin-bottom:4px}.form-group label .req{color:var(--red)}
-.form-input{width:100%;padding:10px 14px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;font-family:'Noto Sans TC',sans-serif;color:var(--ink);background:#FAFAF8;-webkit-appearance:none}
-.form-input:focus{outline:none;border-color:var(--accent)}.form-input::placeholder{color:var(--ink-faint)}
-.seven-section{background:var(--seven-bg);border:1.5px solid var(--seven-border);border-radius:14px;padding:20px 16px;margin-top:10px;box-shadow:0 1px 4px var(--shadow)}
-.seven-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.seven-logo{width:42px;height:42px;background:var(--seven);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;font-family:'Playfair Display',serif;flex-shrink:0}
-.seven-title{font-size:16px;font-weight:700}.seven-subtitle{font-size:12px;color:var(--ink-faint)}
-.seven-section .form-input{background:#fff}.seven-section .form-input:focus{border-color:var(--seven)}
-.store-selected{display:none;align-items:center;gap:8px;padding:10px 14px;background:var(--green-light);border:1.5px solid #B5D8B5;border-radius:10px;margin-bottom:14px;font-size:14px;font-weight:500;color:var(--green)}
-.store-selected.show{display:flex}
-.store-selected .check{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-.ac-wrap{position:relative}
-.ac-list{position:absolute;top:100%;left:0;right:0;background:#fff;border:1.5px solid var(--seven-border);border-top:none;border-radius:0 0 10px 10px;max-height:240px;overflow-y:auto;z-index:50;display:none;box-shadow:0 8px 24px rgba(0,0,0,.12)}
-.ac-list.open{display:block}
-.ac-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid #F5F0EB}
-.ac-item:last-child{border-bottom:none}
-.ac-item:hover,.ac-item.active{background:#FFF6F0}
-.ac-item-name{font-size:14px;font-weight:700;color:var(--ink)}
-.ac-item-name mark{background:rgba(233,85,4,.15);color:var(--seven);font-weight:900;border-radius:2px;padding:0 1px}
-.ac-item-addr{font-size:12px;color:var(--ink-faint);margin-top:1px}
-.ac-item-area{font-size:11px;color:var(--seven);font-weight:500}
-.ac-count{padding:8px 14px;font-size:11px;color:var(--ink-faint);text-align:center;border-bottom:1px solid #F5F0EB}
-.info-banner{background:linear-gradient(135deg,rgba(196,133,60,.08),rgba(196,133,60,.04));border:1px solid rgba(196,133,60,.2);border-radius:12px;padding:14px 16px;margin-top:20px;font-size:13px;color:var(--ink-light);line-height:1.7}
-.info-banner strong{color:var(--accent-dark)}
-.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.offer-item{display:flex;align-items:flex-start;gap:8px;background:var(--card);border:1px solid rgba(196,133,60,.18);border-radius:10px;padding:10px 11px}
-.offer-item svg{flex-shrink:0;margin-top:2px}
-.offer-title{font-size:13px;font-weight:700;color:var(--accent-dark);line-height:1.35}
-.offer-sub{font-size:11px;color:var(--ink-light);margin-top:2px;line-height:1.45}
-.offer-note{font-size:11px;color:var(--ink-faint);text-align:center;margin-top:10px}
-.brand-intro{background:var(--card);border-radius:14px;padding:18px 20px;margin-top:16px;box-shadow:0 1px 4px var(--shadow);font-size:14px;color:var(--ink-light);line-height:1.75}
-.brand-intro p{margin:0 0 8px}
-.brand-intro p:last-child{margin-bottom:0}
-.brand-intro strong{color:var(--accent-dark);font-weight:700}
-.brand-intro .intro-cta{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(196,133,60,.2);color:var(--ink);font-weight:500;text-align:center}
-/* Modal */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
-.modal-overlay.show{opacity:1;pointer-events:all}
-.modal-sheet{background:var(--card);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;padding:24px 20px 36px;transform:translateY(100%);transition:transform .3s cubic-bezier(.32,.72,0,1)}
-.modal-overlay.show .modal-sheet{transform:translateY(0)}
-.modal-handle{width:40px;height:4px;border-radius:2px;background:var(--border);margin:0 auto 20px}
-.modal-title{font-size:20px;font-weight:900;margin-bottom:16px;text-align:center}
-.order-line{display:flex;justify-content:space-between;padding:8px 0;font-size:14px;border-bottom:1px solid #F0EBE5}
-.order-line:last-of-type{border-bottom:none}.order-line .ol-name{flex:1}.order-line .ol-detail{color:var(--ink-light);white-space:nowrap;margin-left:12px}
-.order-total{display:flex;justify-content:space-between;padding:14px 0 0;margin-top:8px;border-top:2px solid var(--ink);font-size:18px;font-weight:900}
-.order-total .ot-val{color:var(--accent-dark)}
-.order-ship-info{text-align:center;font-size:12px;color:var(--ink-faint);margin:6px 0 16px}
-.order-recipient{background:#F8F5F0;border-radius:10px;padding:12px 14px;margin-bottom:16px;font-size:13px;color:var(--ink-light);line-height:1.8}
-.btn-submit{width:100%;padding:14px;background:var(--seven);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Noto Sans TC',sans-serif;margin-bottom:8px;-webkit-tap-highlight-color:transparent;transition:all .2s}
-.btn-submit:active{opacity:.85}
-.btn-submit:disabled{background:var(--ink-faint);cursor:wait}
-.btn-submit.success{background:var(--green)}
-.btn-submit.error{background:var(--red)}
-.btn-copy-sm{width:100%;padding:10px;background:transparent;color:var(--ink-faint);border:1.5px solid var(--border);border-radius:12px;font-size:13px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;-webkit-tap-highlight-color:transparent;margin-bottom:8px}
-.btn-copy-sm.copied{border-color:var(--green);color:var(--green)}
-.btn-close-modal{width:100%;padding:10px;background:transparent;color:var(--ink-faint);border:none;font-size:13px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;text-decoration:underline}
-.footer{text-align:center;padding:24px 16px 8px;font-size:11px;color:var(--ink-faint)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes spin{to{transform:rotate(360deg)}}
-.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
-/* Tooltip 商品敘述 */
-.product-card{position:relative}
-.desc-icon{display:none;position:absolute;top:8px;right:8px;width:22px;height:22px;cursor:pointer;z-index:10;-webkit-tap-highlight-color:transparent;opacity:.55;transition:opacity .2s}
-.desc-icon:hover{opacity:1}
-.desc-icon svg{width:100%;height:100%}
-.product-card.has-desc .desc-icon{display:block}
-.desc-tooltip{display:none;position:absolute;left:12px;right:12px;bottom:calc(100% + 8px);background:#2C2420;color:#F5F0EB;border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.8;z-index:60;box-shadow:0 4px 20px rgba(0,0,0,.25);white-space:pre-line}
-.desc-tooltip::after{content:'';position:absolute;bottom:-6px;right:20px;width:12px;height:12px;background:#2C2420;transform:rotate(45deg)}
-.desc-tooltip .dt-title{font-size:11px;font-weight:700;color:var(--accent-glow);letter-spacing:1px;margin-bottom:6px}
-@media(hover:hover){.desc-icon:hover+.desc-tooltip,.desc-tooltip:hover{display:block}}
-.product-card.has-desc.tooltip-active .desc-tooltip{display:block}
-/* Invoice selector */
-.inv-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.inv-tab{flex:1;min-width:calc(50% - 3px);padding:8px 10px;border:1.5px solid var(--border);border-radius:10px;background:var(--card);font-size:13px;font-weight:600;color:var(--ink-light);cursor:pointer;font-family:'Noto Sans TC',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent;transition:all .2s}
+.rb-privacy{display:flex;align-items:center;gap:4px;margin-top:6px;font-size:11px;color:var(--ink-faint)}
+
+/* 電子發票分頁 */
+.inv-tabs{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:4px;
+  margin-bottom:14px;
+}
+.inv-tab{
+  padding:8px 4px;
+  background:#FAF8F5;
+  border:1px solid var(--border);
+  border-radius:8px;
+  font-size:11px;
+  font-weight:700;
+  color:var(--ink-light);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  transition:all .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.inv-tab.active{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
 .inv-tab svg{flex-shrink:0}
-.inv-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.inv-tab:active{transform:scale(.97)}
-.inv-panel{display:none;padding-top:4px;animation:fadeUp .25s ease both}
-.inv-hint{font-size:13px;color:var(--ink-light);background:#F8F5F0;border-radius:10px;padding:10px 14px;line-height:1.7}
-/* Shopee Trust Carousel */
-.trust-carousel{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin-top:16px;padding-bottom:4px}
-.trust-carousel::-webkit-scrollbar{display:none}
-.trust-carousel .trust-slide{flex:0 0 78%;scroll-snap-align:center;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px var(--shadow)}
-.trust-carousel .trust-slide img{width:100%;display:block}
-.trust-dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
-.trust-dots .dot{width:7px;height:7px;border-radius:50%;background:var(--border);transition:all .2s}
-.trust-dots .dot.active{background:var(--accent);width:18px;border-radius:4px}
-@media(min-width:520px){.trust-carousel .trust-slide{flex:0 0 calc(33.33% - 7px)}.trust-dots{display:none}}
+.inv-panel{display:none}
+.inv-hint{font-size:12.5px;color:var(--ink-light);padding:6px 2px}
+
+/* ── 底部懸浮購物車列 (Dock) ── */
+.summary-bar{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:rgba(26,19,14,.95);
+  backdrop-filter:blur(16px);
+  color:#F8F5F0;
+  z-index:100;
+  box-shadow:0 -6px 28px rgba(0,0,0,.28);
+  transition:transform .3s cubic-bezier(.16,1,.3,1);
+}
+.summary-bar.hidden{transform:translateY(100%)}
+.ship-progress{
+  height:4px;
+  background:rgba(248,245,240,.15);
+}
+.ship-progress-fill{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#B87333,#E29B4A);
+  transition:width .35s ease;
+}
+.ship-progress-fill.done{background:#4CAF50}
+.summary-inner{
+  max-width:540px;
+  margin:0 auto;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.summary-text{font-size:13px;line-height:1.45}
+.summary-text strong{font-size:21px;color:var(--accent-glow);margin-left:4px}
+.summary-text .free-ship{color:#81C784;font-size:11.5px;font-weight:700}
+.summary-text .ship-cost{font-size:11px;color:rgba(248,245,240,.6)}
+.summary-text .ship-need{display:inline-block;margin-left:6px;color:var(--accent-glow);font-size:11.5px;font-weight:700}
+.summary-actions{display:flex;align-items:center;gap:8px;flex:none}
+.btn-quick{
+  display:none;
+  align-items:center;
+  gap:5px;
+  background:linear-gradient(135deg,#E29B4A,#B87333);
+  color:#1A130E;
+  border:none;
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+  font-family:'Noto Sans TC',sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn-quick.show{display:flex}
+.btn-checkout{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  font-size:15px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+  font-family:'Noto Sans TC',sans-serif;
+  -webkit-tap-highlight-color:transparent;
+  transition:background .2s;
+}
+.btn-checkout:active{background:var(--accent-dark)}
+
+/* ── Modals ── */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(4px);
+  z-index:200;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+}
+.modal-overlay.show{display:flex}
+.modal-sheet{
+  background:#fff;
+  border-radius:24px 24px 0 0;
+  padding:24px 20px 36px;
+  max-width:540px;
+  width:100%;
+  max-height:88vh;
+  overflow-y:auto;
+  box-shadow:0 -8px 32px rgba(0,0,0,.25);
+  animation:slideUp .3s cubic-bezier(.16,1,.3,1);
+}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{width:40px;height:4px;background:#DDD;border-radius:2px;margin:0 auto 16px}
+.modal-title{font-size:18px;font-weight:900;text-align:center;margin-bottom:16px;color:var(--ink)}
+.order-line{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #FAF7F2;font-size:13.5px}
+.ol-name{color:var(--ink);font-weight:500}
+.ol-detail{color:var(--ink-light);font-weight:700}
+.order-total{display:flex;justify-content:space-between;padding:14px 0;font-size:18px;font-weight:900;color:var(--ink);border-top:1.5px solid var(--border);margin-top:8px}
+.order-total .ot-val{color:var(--accent-dark)}
+.order-ship-info{text-align:center;font-size:12.5px;color:var(--accent-dark);font-weight:700;margin-bottom:14px;background:#FAF7F2;padding:8px 12px;border-radius:8px}
+.order-recipient{background:#FAF7F2;border-radius:12px;padding:12px 14px;font-size:12.5px;line-height:1.7;color:var(--ink-light);margin-bottom:16px}
+
+/* 訂單彈窗：優惠是怎麼算出來的 */
+.calc-box{background:#FAF7F2;border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin:10px 0 4px}
+.calc-row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;line-height:1.6;padding:3px 0;color:var(--ink-light)}
+.calc-row .calc-v{font-weight:800;white-space:nowrap;color:var(--ink)}
+.calc-row.muted{color:var(--ink-faint)}
+.calc-row.muted .calc-v{color:var(--ink-faint)}
+.calc-row.hit{color:var(--green);font-weight:700}
+.calc-row.hit .calc-v{color:var(--green)}
+.vip-hint{background:#FFF6F0;border:1px solid #E8C9A0;border-radius:10px;padding:10px 12px;
+  font-size:12px;line-height:1.75;color:#8A5A22;margin-bottom:14px}
+.vip-hint strong{color:#A0461B}
+
+/* 結帳頁：優惠怎麼算（常駐說明，不隨購物車變動） */
+.offer-rules{border:1px solid var(--border);border-radius:14px;background:#fff;overflow:hidden;margin-bottom:6px}
+.offer-rule{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-bottom:1px solid #F3ECE2}
+.offer-rule:last-child{border-bottom:none}
+.offer-rule-amt{flex:0 0 92px;font-size:14px;font-weight:900;color:var(--accent-dark);line-height:1.35}
+.offer-rule-amt small{display:block;font-size:10.5px;font-weight:700;color:var(--ink-faint);letter-spacing:.5px}
+.offer-rule-txt{font-size:12.8px;line-height:1.7;color:var(--ink-light)}
+.offer-rule-txt b{color:var(--ink);font-weight:800}
+.offer-eg{background:#FAF7F2;border-radius:12px;padding:11px 13px;margin-top:10px;
+  font-size:12px;line-height:1.85;color:var(--ink-light)}
+.offer-eg .eg-h{font-weight:900;color:var(--ink);font-size:12.5px;margin-bottom:4px}
+.offer-eg code{background:#fff;border:1px solid var(--border);border-radius:5px;padding:1px 5px;
+  font-family:inherit;font-weight:700;color:var(--accent-dark)}
+.btn-submit{
+  width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:14px;
+  font-size:16px;font-weight:800;font-family:'Noto Sans TC',sans-serif;cursor:pointer;margin-bottom:8px;
+  -webkit-tap-highlight-color:transparent;transition:background .2s;
+}
+.btn-submit:active{background:var(--accent-dark)}
+.btn-copy-sm{
+  width:100%;padding:10px;background:transparent;border:1.5px solid var(--border);border-radius:12px;
+  font-size:13.5px;font-weight:700;color:var(--ink-light);cursor:pointer;margin-bottom:8px;
+  font-family:'Noto Sans TC',sans-serif;
+}
+.btn-close-modal{
+  width:100%;padding:10px;background:transparent;border:none;
+  font-size:13px;color:var(--ink-faint);cursor:pointer;font-family:'Noto Sans TC',sans-serif;
+}
+
+/* ── Footer ── */
+.footer{
+  text-align:center;
+  padding:36px 16px 20px;
+  font-size:12px;
+  color:var(--ink-faint);
+  line-height:1.8;
+}
+.footer a{color:var(--accent);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 </style>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KAFE' 卡啡">
-<meta property="og:title" content="KAFE' 卡啡 — 精品咖啡豆訂購單">
-<meta property="og:description" content="自家烘焙精品咖啡 ☕ 官網 95 折｜7-ELEVEN 超商取貨｜Coffee Review 88 分認證">
+<meta property="og:title" content="KAFE' 卡啡 2.0 ｜ 自家烘焙精品咖啡．回歸本質">
+<meta property="og:description" content="捨去多餘成本，回歸真實定價。咖啡豆滿 $800 免運、滿 $1,400 免運再享 9 折；老客 VIP 9 折／92 折擇優不疊加。">
 <meta property="og:image" content="https://zengkao.github.io/kafei-order/og-image.jpg">
 <meta property="og:url" content="https://zengkao.github.io/kafei-order/index.html">
-<meta name="description" content="自家烘焙精品咖啡 ☕ 官網 95 折｜7-ELEVEN 超商取貨｜Coffee Review 88 分認證">
 <link rel="canonical" href="https://zengkao.github.io/kafei-order/">
 <script type="application/ld+json">
 {
@@ -207,7 +871,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       "url": "https://zengkao.github.io/kafei-order/",
       "logo": "https://zengkao.github.io/kafei-order/kafe-avatar.jpg",
       "image": "https://zengkao.github.io/kafei-order/og-image.jpg",
-      "description": "自家烘焙精品咖啡，Coffee Review 88 分國際認證，提供雙重厭氧 SGS 檢驗豆與精品常規豆。",
+      "description": "自家烘焙精品咖啡，每週末現烘現包。提供特選豆單、長期供應常規豆與便利沖泡系列，7-ELEVEN 取貨付款。",
       "sameAs": [
         "https://www.facebook.com/kafe0422",
         "https://www.instagram.com/kafe_cb_ry/",
@@ -218,150 +882,121 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       "@type": "WebSite",
       "@id": "https://zengkao.github.io/kafei-order/#website",
       "url": "https://zengkao.github.io/kafei-order/",
-      "name": "KAFE' 卡啡 咖啡豆訂購單",
+      "name": "KAFE' 卡啡 2.0 咖啡豆訂購單",
       "publisher": { "@id": "https://zengkao.github.io/kafei-order/#organization" },
       "inLanguage": "zh-Hant"
     },
-    {"@type": "ItemList", "@id": "https://zengkao.github.io/kafei-order/#products", "name": "KAFE' 卡啡 精品咖啡豆商品列表", "numberOfItems": 18, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "哥斯大黎加 莫札特 葡萄乾蜜處理", "description": "風味：草莓、玫瑰、荔枝軟糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬", "description": "風味：芒果、百香果、水果糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "250", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "班莎 水洗 74110/74112", "description": "風味：柳橙、紅茶、雞蛋花｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "200", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "哥倫比亞 小珍珠 水洗 微批次", "description": "風味：青蘋果、白花、柑橘、黃金糖｜規格：100g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "225", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "全店 常規豆 套組", "description": "風味：淺中焙｜規格：100g*5", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品常規豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "900", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "日商 水蜜桃共同發酵 藝伎", "description": "風味：水蜜桃、荔枝、烏龍茶｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "泰國 草莓奶昔 雙重厭氧蜜處理", "description": "風味：草莓、玫瑰、柑橘、杏桃、蜂蜜｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "270", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Product", "name": "快閃配方 口糧豆V6", "description": "風味：全精品等級、100%阿拉比卡、無特殊處理｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "199", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 12, "item": {"@type": "Product", "name": "烏克栗栗 AB TOP", "description": "風味：仙楂餅、黑佳麗軟糖、雪松｜規格：半磅", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "260", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 13, "item": {"@type": "Product", "name": "祕魯 小雛菊莊園  藝伎 慢乾水洗", "description": "風味：檸檬皮、水蜜桃、佛手柑、茉莉、草莓(很淡)、經典藝伎風味｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "特選增味豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 14, "item": {"@type": "Product", "name": "豆超 露西藝伎 水洗[家庭號]", "description": "風味：水蜜桃、茉莉花、佛手柑、似巴拿馬藝伎｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 15, "item": {"@type": "Product", "name": "Acacia Hills 帕卡馬拉 水洗[家庭號]", "description": "風味：杏桃、柚子、蜜柑、紅茶｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "3000", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 16, "item": {"@type": "Product", "name": "哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]", "description": "風味：草莓酒、葡萄酒、白蘭地｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 17, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬[家庭號]", "description": "風味：芒果、百香果、水果糖｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 18, "item": {"@type": "Product", "name": "哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]", "description": "風味：草莓、玫瑰、荔枝軟糖｜規格：1500g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "家庭號（1500g）", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "2700", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}]}
+    {"@type": "ItemList", "@id": "https://zengkao.github.io/kafei-order/#products", "name": "KAFE' 卡啡 2.0 精品咖啡豆商品列表", "numberOfItems": 10, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬", "description": "風味：芒果、百香果、水果糖｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Product", "name": "哥斯大黎加 莫札特 葡萄乾蜜處理", "description": "風味：草莓、玫瑰、荔枝軟糖｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "330", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Product", "name": "花雀｜Floral Sparrow Blend", "description": "風味：橙花、玫瑰、熱帶水果、蜂蜜｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Product", "name": "Ayla 74112水洗", "description": "風味：甜桃、檸檬糖、烏龍茶｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Product", "name": "衣索比亞 巧貝沙 28天日曬", "description": "風味：草莓果醬、藍莓、紫羅蘭、糖漬鳳梨｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "350", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Product", "name": "緬甸 SL34 96H肯亞式水洗", "description": "風味：黑莓、黑糖、核桃、抹茶｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Product", "name": "巴拿馬 極光莊園 帕卡瑪拉 日曬", "description": "風味：黑莓、黑醋栗、柑橘、可可｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "400", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Product", "name": "日商 哥倫比亞 水蜜桃共同發酵 藝伎", "description": "風味：水蜜桃、荔枝、烏龍茶｜規格：100克", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "300", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Product", "name": "［茶包咖啡50入］配方 大人的味道 中深", "description": "風味：雪茄、可可、堅果、焦糖｜規格：50包入", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "600", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Product", "name": "豆超 飛雀藝伎 日曬", "description": "風味：水梨、熱帶水果、焦糖、可可｜規格：227g", "brand": {"@type": "Brand", "name": "KAFE' 卡啡"}, "category": "精品咖啡豆", "image": "https://zengkao.github.io/kafei-order/og-image.jpg", "offers": {"@type": "Offer", "price": "299", "priceCurrency": "TWD", "availability": "https://schema.org/InStock", "url": "https://zengkao.github.io/kafei-order/", "seller": {"@id": "https://zengkao.github.io/kafei-order/#organization"}}}}]}
   ]
 }
 </script>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">自家烘焙 ・ 精品咖啡</div>
+<header class="hero">
+  <div class="hero-badge">KAFE' 2.0 ｜ 自家烘焙工作室</div>
   <h1>KAFE' <span>卡啡</span></h1>
-  <div class="hero-sub">咖啡豆訂購單 ☕ 7-11 超商取貨</div>
-  <a href="about.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">關於卡啡</a>
-  <a href="contact.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">聯絡我們</a>
-  <a href="suppliers.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">供應商夥伴</a>
-  <a href="special-process.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">關於特殊處理</a>
-  <a href="how-to-choose.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">選豆指南</a>
-  <a href="faq.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">常見問題</a>
-  <a href="reviews.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">顧客好評</a>
-  <a href="gallery.html" style="display:inline-block;margin-top:12px;font-size:12px;color:rgba(232,168,76,.8);text-decoration:none;border:1px solid rgba(196,133,60,.3);padding:4px 14px;border-radius:16px;position:relative;transition:all .2s">相簿</a>
-</div>
+  <div class="hero-sub">回歸本質，去蕪存菁 ☕ 讓一包咖啡的價值回到杯中</div>
+  <div class="hero-links">
+    <a href="about.html" class="hero-link">關於卡啡 2.0（給老客戶的一封信） →</a>
+    <a href="faq.html" class="hero-link secondary">常見問題 FAQ</a>
+    <a href="how-to-choose.html" class="hero-link secondary">選豆指南</a>
+    <a href="special-process.html" class="hero-link secondary">關於特殊處理</a>
+  </div>
+</header>
 
-<div class="container">
-  <section class="brand-intro" aria-label="關於卡啡">
-    <p>嗨，我是卡啡 ☕ 自家烘焙的精品咖啡，給跟我一樣龜毛的你。</p>
-    <p>從生豆到杯中，每一步我都當品管工程師在做：<strong>烘焙曲線標準化</strong>、色選機剔除色差過大的豆子、第三方 SGS 檢驗厭氧處理咖啡（<strong>丙二醇未檢出</strong>）。</p>
-    <p>連續 <strong>6 屆「咖啡烘烘烘」星級評鑑全台第一高分</strong>，24 款咖啡獲 Coffee Review 國際認證最高 94 分——數據說話，不誇飾。</p>
-    <p class="intro-cta">想喝杯不踩雷的好咖啡？歡迎來逛逛 👇</p>
+<main class="container">
+
+  <!-- 2.0 品牌公告卡片 -->
+  <section class="notice-20">
+    <div class="n20-header">
+      <span class="n20-badge">品牌 2.0 轉型</span>
+      <div class="n20-title">捨去多餘成本，回歸真實定價</div>
+    </div>
+    <div class="n20-desc">
+      我們拿掉電商平台抽成、廣告預算與多餘包裝，直接把利潤吐回給定價。<br>
+      <strong>咖啡豆滿 $800 免運，滿 $1,400 免運再打 9 折</strong>。
+    </div>
+    <div class="n20-perks">
+      <div class="n20-perk"><span>📦</span> <div>咖啡豆滿 <strong>$800</strong> 免運費</div></div>
+      <div class="n20-perk"><span>🎉</span> <div>咖啡豆滿 <strong>$1,400</strong>：免運費 ＋ 咖啡豆 <strong>9 折</strong></div></div>
+      <div class="n20-perk"><span>👑</span> <div>老客 VIP：近 3 個月 TOP10% <strong>9 折</strong>／TOP20% <strong>92 折</strong>，與滿額優惠<strong>擇優</strong>不疊加</div></div>
+    </div>
+    <div class="n20-footnote">
+      門檻只看咖啡豆金額（半磅裝與 100g 珍稀豆可混搭、金額一起累計）；耳掛咖啡與浸泡茶包為手工微利商品，不計入門檻、不打折，也不算免運
+    </div>
   </section>
 
-  <div class="info-banner">
-    <div class="offer-grid">
-      <div class="offer-item">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        <div><div class="offer-title">常規豆 95 折</div><div class="offer-sub">較蝦皮定價・特選豆享專屬價</div></div>
-      </div>
-      <div class="offer-item">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <div><div class="offer-title">滿 $1,000 免運</div><div class="offer-sub">未滿運費 $38・<span style="white-space:nowrap">7-11 取貨</span></div></div>
-      </div>
-      <div class="offer-item">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-        <div><div class="offer-title">組合免運</div><div class="offer-sub">特選豆單＋常規豆同購即免運</div></div>
-      </div>
-      <div class="offer-item">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l1.5-9L9 12l3-7 3 7 4.5-4L21 17H3z"/><line x1="5" y1="21" x2="19" y2="21"/></svg>
-        <div><div class="offer-title">VIP 老客回饋</div><div class="offer-sub">近 3 個月 <span style="white-space:nowrap">TOP10% 9折</span>・<span style="white-space:nowrap">TOP20% 92折</span></div></div>
-      </div>
-    </div>
-    <div class="offer-note">VIP 折扣自動套用，實付金額由出貨 Email 通知</div>
-    <div style="margin-top:12px;padding-top:12px;border-top:1px dashed rgba(196,133,60,.35);text-align:center">
-      <button type="button" id="btn-overseas" onclick="openOverseasModal()" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;color:#0E7C66;border:1.5px solid #0E7C66;border-radius:999px;font-size:13px;font-weight:700;font-family:'Noto Sans TC',sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span>🌏 海外訂購 / International</span>
-      </button>
-      <div style="font-size:11px;color:var(--ink-faint);margin-top:5px">PayPal 收款｜運費與關稅由買方負擔</div>
-    </div>
+  <!-- 商品列表區塊 -->
+  <div class="section-header">
+    <div class="section-title">☕ 當期現烘豆單與便利系列</div>
+    <span style="font-size:11.5px;color:var(--ink-faint)">同頁直選・自由混搭</span>
   </div>
 
-  <a href="about.html" style="display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#2C2420,#3D2E22);border-radius:12px;padding:12px 16px;margin-top:10px;text-decoration:none;color:#F5F0EB;box-shadow:0 1px 4px rgba(44,36,32,.08);transition:transform .2s" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform=''">
-    <img src="kafe-avatar.jpg" style="width:44px;height:44px;border-radius:50%;border:2px solid rgba(196,133,60,.4);flex-shrink:0" alt="CR88" decoding="async" fetchpriority="high">
-    <div style="flex:1;min-width:0">
-      <div style="font-size:14px;font-weight:700;line-height:1.3"><span style="color:#E8A84C">Coffee Review 88</span> 分又怎樣？</div>
-      <div style="font-size:11px;color:rgba(245,240,235,.5);margin-top:2px">照樣賣得嚇嚇叫。反骨精神，用品質說話 →</div>
-    </div>
-  </a>
-
-  <a href="https://line.me/ti/g2/s8am86BpCIocU3mFlozlejE8qoBCQfldWZfBMA" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','join_line_click',{location:'home_banner'})" style="display:flex;align-items:center;gap:12px;background:var(--card);border:1.5px solid #06C755;border-radius:12px;padding:10px 16px;margin-top:8px;text-decoration:none;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .2s" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform=''">
-    <div style="width:38px;height:38px;border-radius:10px;background:#06C755;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.48 3 2 6.64 2 11.1c0 3.99 3.55 7.33 8.34 7.97.32.07.77.21.88.49.1.25.07.65.03.9l-.14.86c-.04.25-.2 1 .87.54 1.07-.45 5.77-3.4 7.87-5.82C21.4 14.4 22 12.83 22 11.1 22 6.64 17.52 3 12 3z"/></svg>
-    </div>
-    <div style="flex:1;min-width:0">
-      <div style="font-size:14px;font-weight:700;color:#069E47">加入卡啡 LINE 社群</div>
-      <div style="font-size:11px;color:var(--ink-faint);margin-top:2px">新豆上架・限時特價 第一時間通知</div>
-    </div>
-    <div style="font-size:12px;color:#069E47;font-weight:700;white-space:nowrap">加入 →</div>
-  </a>
-
-  <a href="https://shopee.tw/zengkaochen" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:14px;background:var(--card);border:1.5px solid #EE4D2D;border-radius:12px;padding:10px 16px;margin-top:8px;text-decoration:none;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.04);transition:transform .2s" onmouseenter="this.style.transform='translateY(-1px)'" onmouseleave="this.style.transform=''">
-    <div style="display:flex;align-items:baseline;gap:4px"><span style="font-size:20px;font-weight:900;color:#EE4D2D">5.0</span><span style="font-size:11px;color:var(--ink-faint)">/ 5.0</span></div>
-    <div style="font-size:13px;font-weight:700;color:#EE4D2D">2.8 萬則好評</div>
-    <div style="font-size:11px;color:var(--ink-faint)">｜粉絲 7,632</div>
-    <div style="font-size:11px;color:#EE4D2D;margin-left:auto;font-weight:500">蝦皮商城 →</div>
-  </a>
-
-  <div class="trust-carousel" id="trust-carousel">
-    <div class="trust-slide"><img src="shopee-1.jpg" alt="OLOMO 專業烘豆機 x 高精度智能色選機" loading="lazy" decoding="async"></div>
-    <div class="trust-slide"><img src="shopee-2.jpg" alt="開業超過5年，5星好評25,000+" loading="lazy" decoding="async"></div>
-    <div class="trust-slide"><img src="shopee-3.jpg" alt="安心認證，品質保證" loading="lazy" decoding="async"></div>
-  </div>
-  <div class="trust-dots" id="trust-dots">
-    <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+  <!-- 分類篩選標籤 (同頁即時切換) -->
+  <div class="filter-bar">
+    <button class="filter-pill active" onclick="setFilter('all', this)">全部品項</button>
+    <button class="filter-pill" onclick="setFilter('in_stock', this)">🔥 當期現貨</button>
+    <button class="filter-pill" onclick="setFilter('onetime', this)">💎 1期豆單</button>
+    <button class="filter-pill" onclick="setFilter('longterm', this)">☕ 長期豆款</button>
+    <button class="filter-pill" onclick="setFilter('tea', this)">🍵 茶包咖啡</button>
   </div>
 
-  <div class="section-label">☕ 選擇咖啡豆</div>
-  <div class="cat-tabs" id="cat-tabs">
-    <button class="cat-tab active" data-cat="beans">精品常規豆<small>100g</small></button>
-    <button class="cat-tab" data-cat="special">特選豆單</button>
-    <button class="cat-tab" data-cat="family">家庭號<small>1500g</small></button>
+  <!-- 售價排序 -->
+  <div class="sort-bar">
+    <span class="sort-label">排序</span>
+    <button class="sort-pill active" onclick="setSort('default', this)">預設</button>
+    <button class="sort-pill" onclick="setSort('price_asc', this)">售價 低→高</button>
+    <button class="sort-pill" onclick="setSort('price_desc', this)">售價 高→低</button>
   </div>
-  <div class="stock-updating" id="stock-updating"><div class="su-bar"><i></i></div><span>正在更新庫存…</span></div>
+
+  <div id="stock-updating"><span>正在更新庫存…</span></div>
   <div id="product-list"></div>
 
-  <div class="section-label">🏪 取貨門市</div>
+  <!-- 取貨門市 -->
+  <div class="section-header">
+    <div class="section-title">🏪 7-ELEVEN 取貨門市</div>
+  </div>
+
   <div class="seven-section">
     <div class="seven-header">
       <div class="seven-logo">7</div>
       <div>
         <div class="seven-title">7-ELEVEN 門市取貨</div>
-        <div class="seven-subtitle" id="store-count-label">載入門市中…</div>
+        <div class="seven-subtitle" id="store-count-label">全台門市即時搜尋</div>
       </div>
     </div>
-    <div class="store-selected" id="store-selected">
-      <span class="check">✓</span>
-      <span id="store-display"></span>
+
+    <div class="store-selected" id="store-selected-card">
+      <div class="check">✓</div>
+      <div>
+        <div id="selected-store-name"></div>
+        <div style="font-size:12px;opacity:.85;font-weight:normal" id="selected-store-addr"></div>
+      </div>
     </div>
-    <div class="store-stale" id="store-stale">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <span id="store-stale-text"></span>
-    </div>
+
     <div class="form-group">
-      <label>搜尋門市 <span class="req">*</span></label>
+      <label>搜尋 7-11 門市 <span class="req">*</span></label>
       <div class="ac-wrap">
         <input class="form-input" type="text" id="inp-store-search"
-               placeholder="輸入門市名稱、地址或地區" autocomplete="off"
+               placeholder="輸入門市店名、地址（例：欣漢門市 或 信義區）" autocomplete="off"
                oninput="onSearch()" onfocus="onSearch()">
         <div class="ac-list" id="ac-list"></div>
       </div>
     </div>
-    <div class="form-group" id="store-addr-row" style="display:none">
-      <label>已選門市地址</label>
-      <input class="form-input" type="text" id="inp-store-addr" readonly style="background:#F5F0EB;color:var(--ink-light)">
-    </div>
     <input type="hidden" id="inp-store" value="">
     <input type="hidden" id="inp-store-code" value="">
+    <input type="hidden" id="inp-store-addr" value="">
   </div>
 
-  <div class="section-label">📬 收件人資訊</div>
+  <!-- 收件人資訊 -->
+  <div class="section-header">
+    <div class="section-title">📬 收件人資訊</div>
+  </div>
+
   <div class="returning-bar" id="returning-bar" style="display:none">
     <button type="button" class="rb-fill" id="rb-fill" onclick="onFillProfile()">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
       <span id="rb-fill-text">一鍵帶入上次訂購資料</span>
     </button>
     <div class="rb-meta">
@@ -370,32 +1005,35 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
     <div class="rb-store" id="rb-store"></div>
     <div class="rb-privacy">
-      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span>資料只存在你的手機，不會上傳</span>
-    </div>
-  </div>
-  <div class="form-section">
-    <div class="form-group">
-      <label>收件者姓名 <span class="req">*</span></label>
-      <input class="form-input" type="text" id="inp-name" placeholder="王小明" autocomplete="name">
-    </div>
-    <div class="form-group">
-      <label>手機號碼 <span class="req">*</span></label>
-      <input class="form-input" type="tel" id="inp-phone" placeholder="0912345678" maxlength="10" inputmode="numeric" autocomplete="tel">
-    </div>
-    <div class="form-group">
-      <label>Email <span class="req">*</span> <small style="color:var(--ink-faint)">(收出貨通知與電子發票)</small></label>
-      <input class="form-input" type="email" id="inp-email" placeholder="example@gmail.com" inputmode="email" autocomplete="email" required>
-    </div>
-    <div class="form-group">
-      <label>備註</label>
-      <input class="form-input" type="text" id="inp-note" placeholder="特殊需求可填寫於此">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <span>資料僅保留於您的手機瀏覽器，保障隱私不外洩</span>
     </div>
   </div>
 
-  <!-- 發票區塊 -->
-  <div id="invoice-block">
-  <div class="section-label">🧾 電子發票</div>
+  <div class="form-section">
+    <div class="form-group">
+      <label>收件者真實姓名 <span class="req">*</span> <small style="color:var(--ink-faint)">(超商領貨須核對證件)</small></label>
+      <input class="form-input" type="text" id="inp-name" placeholder="王小明" autocomplete="name">
+    </div>
+    <div class="form-group">
+      <label>手機號碼 <span class="req">*</span> <small style="color:var(--ink-faint)">(接收超商簡訊通知)</small></label>
+      <input class="form-input" type="tel" id="inp-phone" placeholder="0912345678" maxlength="10" inputmode="numeric" autocomplete="tel">
+    </div>
+    <div class="form-group">
+      <label>Email <span class="req">*</span> <small style="color:var(--ink-faint)">(接收出貨通知與電子發票)</small></label>
+      <input class="form-input" type="email" id="inp-email" placeholder="example@gmail.com" inputmode="email" autocomplete="email" required>
+    </div>
+    <div class="form-group">
+      <label>訂單備註</label>
+      <input class="form-input" type="text" id="inp-note" placeholder="如有特殊烘焙或出貨需求可填寫於此">
+    </div>
+  </div>
+
+  <!-- 電子發票 -->
+  <div class="section-header">
+    <div class="section-title">🧾 電子發票</div>
+  </div>
+
   <div class="form-section">
     <div class="inv-tabs" id="inv-tabs">
       <button type="button" class="inv-tab active" data-inv="cloud">
@@ -408,11 +1046,11 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       </button>
       <button type="button" class="inv-tab" data-inv="certificate">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <span>自然人憑證</span>
+        <span>自然人</span>
       </button>
       <button type="button" class="inv-tab" data-inv="donate">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <span>捐贈發票</span>
+        <span>愛心捐贈</span>
       </button>
       <button type="button" class="inv-tab" data-inv="company">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg>
@@ -421,7 +1059,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
 
     <div class="inv-panel" id="inv-panel-cloud" style="display:block">
-      <div class="inv-hint">系統將以您的 Email 寄送雲端發票</div>
+      <div class="inv-hint">系統將開立雲端發票並直接寄送至您的 Email 信箱</div>
     </div>
     <div class="inv-panel" id="inv-panel-carrier">
       <div class="form-group">
@@ -437,124 +1075,126 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
     </div>
     <div class="inv-panel" id="inv-panel-donate">
       <div class="form-group">
-        <label>捐贈碼 <span class="req">*</span> <small style="color:var(--ink-faint)">(3~7 碼數字)</small></label>
-        <input class="form-input" type="text" id="inp-love-code" placeholder="例：25885（公益團體）" maxlength="7" inputmode="numeric">
+        <label>受贈單位愛心碼 <span class="req">*</span> <small style="color:var(--ink-faint)">(3~7 碼數字)</small></label>
+        <input class="form-input" type="text" id="inp-love-code" placeholder="例：25885" maxlength="7" inputmode="numeric">
       </div>
     </div>
     <div class="inv-panel" id="inv-panel-company">
       <div class="form-group">
-        <label>統一編號 <span class="req">*</span></label>
-        <input class="form-input" type="text" id="inp-company-id" placeholder="8 碼數字" maxlength="8" inputmode="numeric">
+        <label>公司統一編號 <span class="req">*</span></label>
+        <input class="form-input" type="text" id="inp-company-id" placeholder="8 碼統一編號" maxlength="8" inputmode="numeric">
       </div>
       <div class="form-group">
         <label>公司抬頭 <span class="req">*</span></label>
-        <input class="form-input" type="text" id="inp-company-title" placeholder="OO有限公司">
+        <input class="form-input" type="text" id="inp-company-title" placeholder="例：卡啡商行">
       </div>
     </div>
   </div>
-  </div>
-  <!-- /invoice-block -->
-  <div class="footer"><a href="about.html" style="color:#C4853C;text-decoration:none">KAFE' 卡啡</a> — 自家烘焙精品咖啡<br>7-ELEVEN 超商取貨｜<a href="about.html" style="color:#C4853C;text-decoration:none">關於卡啡</a>｜<a href="contact.html" style="color:#C4853C;text-decoration:none">聯絡我們</a>｜<a href="suppliers.html" style="color:#C4853C;text-decoration:none">供應商夥伴</a>｜<a href="special-process.html" style="color:#C4853C;text-decoration:none">關於特殊處理</a>｜<a href="how-to-choose.html" style="color:#C4853C;text-decoration:none">選豆指南</a>｜<a href="faq.html" style="color:#C4853C;text-decoration:none">常見問題</a>｜<a href="reviews.html" style="color:#C4853C;text-decoration:none">顧客好評</a>｜<a href="gallery.html" style="color:#C4853C;text-decoration:none">相簿</a><br><span style="color:var(--ink-faint)">卡啡商行 ｜ 統一編號 91133731</span></div>
-</div>
 
-<!-- Summary Bar -->
+  <!-- 優惠怎麼算（常駐說明；客人結帳前一定看得到） -->
+  <div class="section-header">
+    <div class="section-title">💡 優惠怎麼算</div>
+    <span style="font-size:11.5px;color:var(--ink-faint)">系統自動套用・不用輸入折扣碼</span>
+  </div>
+
+  <div class="form-section">
+    <div class="offer-rules">
+      <div class="offer-rule">
+        <div class="offer-rule-amt">$800<small>咖啡豆小計</small></div>
+        <div class="offer-rule-txt"><b>免運費。</b>7-11 取貨運費 $38 全免，咖啡豆本身不打折。</div>
+      </div>
+      <div class="offer-rule">
+        <div class="offer-rule-amt">$1,400<small>咖啡豆小計</small></div>
+        <div class="offer-rule-txt"><b>免運費 ＋ 咖啡豆 9 折。</b>折扣只打在咖啡豆金額上，耳掛與茶包維持原價。</div>
+      </div>
+      <div class="offer-rule">
+        <div class="offer-rule-amt">👑 VIP<small>老客回饋</small></div>
+        <div class="offer-rule-txt"><b>近 3 個月消費 TOP10% 打 9 折、TOP11~20% 打 92 折</b>，且是打<b>全單原價</b>（連耳掛、茶包一起折）。名單每天凌晨自動更新，不需申請。VIP 折扣<b>不自帶免運</b>，運費一樣看咖啡豆有沒有滿 $800。</div>
+      </div>
+      <div class="offer-rule">
+        <div class="offer-rule-amt">擇優<small>不疊加</small></div>
+        <div class="offer-rule-txt">滿額優惠與 VIP 折扣<b>不會同時使用</b>。系統收到訂單時會把兩種算法各算一次，<b>自動採用對你比較便宜的那一種</b>，結果寫在訂單確認信裡。</div>
+      </div>
+    </div>
+
+    <div class="offer-eg">
+      <div class="eg-h">三個關鍵細節</div>
+      1. 門檻看的是<b>咖啡豆打折前的原價小計</b>，不是全車金額、也不是折後金額。<br>
+      2. <b>耳掛咖啡（5 入）與浸泡茶包（50 入）是手工微利品</b>：不計入 $800／$1,400 門檻、不吃滿額 9 折、也不會單獨湊到免運。但 VIP 折扣有涵蓋它們。<br>
+      3. 這頁顯示的金額是<b>滿額優惠</b>算出來的。若你是 VIP 且 VIP 比較划算，後端會自動改算，<code>實際金額以訂單確認信為準</code>。
+    </div>
+
+    <div class="offer-eg">
+      <div class="eg-h">算給你看</div>
+      買 <code>$420 豆 ×3 = $1,260</code> ＋ <code>耳掛 $100</code>：咖啡豆小計 $1,260 已過 $800 但沒到 $1,400 →
+      <b>免運、不打折</b>，應付 <code>$1,260 + $100 = $1,360</code>。<br>
+      再加一包 <code>$280</code> 的豆子 → 咖啡豆小計 $1,540 過門檻 →
+      咖啡豆打 9 折 <code>$1,386</code>，耳掛照原價 $100，應付 <code>$1,486</code>（免運）。<br>
+      同一車若你是 TOP10% VIP：全單原價 $1,640 × 9 折 ＝ <code>$1,476</code>，比 $1,486 便宜 →
+      系統自動改用 VIP 價 <b>$1,476</b>。
+    </div>
+  </div>
+
+  <footer class="footer">
+    KAFE' 卡啡 — 自家烘焙工作室 ｜ 回歸本質，去蕪存菁<br>
+    7-ELEVEN 取貨付款 ｜ <a href="about.html">關於卡啡 2.0</a> ｜ <a href="faq.html">常見問題</a> ｜ <a href="contact.html">聯絡勞闆</a><br>
+    <a href="how-to-choose.html">選豆指南</a> ｜ <a href="special-process.html">關於特殊處理</a> ｜ <a href="reviews.html">顧客好評</a> ｜ <a href="gallery.html">相簿</a> ｜ <a href="suppliers.html">供應商夥伴</a><br>
+    <span style="color:var(--ink-faint)">卡啡商行 ｜ 統一編號 91133731</span>
+  </footer>
+
+</main>
+
+<!-- ── 懸浮購物車列 (Bottom Dock) ── -->
 <div class="summary-bar hidden" id="summary-bar">
-  <div class="featured-strip" id="featured-strip" style="display:none"></div>
   <div class="ship-progress" id="ship-progress"><div class="ship-progress-fill" id="ship-progress-fill"></div></div>
   <div class="summary-inner" id="summary-inner">
-    <div class="summary-text"><span id="sum-packs">0</span> 包｜<strong>$<span id="sum-total">0</span></strong><br><span id="sum-ship"></span></div>
+    <div class="summary-text">
+      <span id="sum-packs">0</span> 件｜<strong>$<span id="sum-total">0</span></strong><br>
+      <span id="sum-ship"></span>
+    </div>
     <div class="summary-actions">
-      <button class="btn-quick" id="btn-quick" onclick="quickCheckout()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>快速結帳</button>
+      <button class="btn-quick" id="btn-quick" onclick="quickCheckout()">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        快速結帳
+      </button>
       <button class="btn-checkout" onclick="handleCheckout()">確認訂單</button>
     </div>
   </div>
 </div>
 
-<!-- Order Modal -->
-<!-- 送單進行中不可點外圍關閉：關掉視窗不會取消已送出的 POST，
-     客人以為沒送成功而重跑一次流程，就是重複訂單的來源之一 -->
+<!-- ── 訂單確認彈窗 ── -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this&&!submitting)this.classList.remove('show')">
   <div class="modal-sheet" onclick="event.stopPropagation()">
     <div class="modal-handle"></div>
-    <div class="modal-title">📋 訂單確認</div>
+    <div class="modal-title">📋 訂單內容確認</div>
     <div id="modal-body"></div>
     <button class="btn-submit" id="btn-submit" onclick="submitOrder()">🛒 送出訂單</button>
-    <button class="btn-copy-sm" id="btn-copy" onclick="copyOrder()">📋 複製訂單文字</button>
-    <button class="btn-close-modal" onclick="document.getElementById('modal').classList.remove('show')">返回修改</button>
+    <button class="btn-copy-sm" id="btn-copy" onclick="copyOrder()">📋 複製訂單明細</button>
+    <button class="btn-close-modal" onclick="document.getElementById('modal').classList.remove('show')">返回修改品項</button>
   </div>
 </div>
 
-<!-- Success Modal -->
-<!-- 成功視窗只能按「完成」（會 reload 清空購物車）。
-     點外圍關掉的話購物車和 orderData 都還在，客人可以直接再送一次 -->
+<!-- ── 送單成功彈窗 ── -->
 <div class="modal-overlay" id="modal-success">
-  <div class="modal-sheet" style="text-align:center;padding-top:40px">
-    <div style="font-size:64px;margin-bottom:16px">🎉</div>
-    <div style="font-size:22px;font-weight:900;margin-bottom:8px">訂單已送出！</div>
-    <div style="font-size:14px;color:var(--ink-light);margin-bottom:24px;line-height:1.6">
-      我們已收到您的訂單<br>會盡快為您準備並寄出<br>感謝您選擇 KAFE' 卡啡 ☕
+  <div class="modal-sheet" style="text-align:center;padding-top:44px">
+    <div style="font-size:64px;margin-bottom:16px" id="succ-icon">🎉</div>
+    <div style="font-size:22px;font-weight:900;margin-bottom:8px" id="succ-title">訂單已成功送出！</div>
+    <div style="font-size:14px;color:var(--ink-light);margin-bottom:24px;line-height:1.7" id="succ-body">
+      我們已收到您的訂單<br>勞闆會盡快為您現烘並至 7-11 寄出<br>感謝您對 KAFE' 卡啡的支持 ☕
     </div>
     <button class="btn-submit" style="background:var(--green)" onclick="location.reload()">✓ 完成</button>
-  </div>
-</div>
-
-<!-- 海外訂單 Modal -->
-<div class="modal-overlay" id="modal-overseas" onclick="if(event.target===this)this.classList.remove('show')">
-  <div class="modal-sheet" onclick="event.stopPropagation()">
-    <div class="modal-handle"></div>
-    <div class="modal-title" style="color:#0E7C66">🌏 海外訂購 / International Order</div>
-
-    <div style="background:#F0F8F5;border:1.5px solid #0E7C66;border-radius:12px;padding:14px 16px;margin-bottom:18px;font-size:13px;line-height:1.7;color:#0E5544">
-      <div style="font-weight:700;margin-bottom:6px">📌 重要事項 Notice</div>
-      <div>・<strong>收款方式：</strong>PayPal Invoice（付款連結會 email 給您）<br>Payment via PayPal Invoice (link sent by email).</div>
-      <div>・<strong>運費：</strong>港澳可走<strong>順豐到付</strong>（收件時現場付）；其他地區先估算後一併付款<br>HK/Macau: SF Express freight collect available. Other regions: shipping prepaid via PayPal.</div>
-      <div>・<strong>進口關稅：</strong>無論哪種運送方式，皆由買方於收件時負擔<br>Import duties are always paid by the recipient.</div>
-      <div>・<strong>處理流程：</strong>送出表單後，我們會回信報價（商品＋運費），確認後再付款出貨<br>We will email you a quote first, ship after PayPal payment is received.</div>
-    </div>
-
-    <div class="form-group">
-      <label>姓名 Name <span class="req">*</span></label>
-      <input class="form-input" type="text" id="ov-name" placeholder="收件人姓名 / Recipient name" maxlength="60">
-    </div>
-    <div class="form-group">
-      <label>手機 / Whatsapp <span class="req">*</span></label>
-      <input class="form-input" type="text" id="ov-phone" placeholder="含國碼，例 +852 9123 4567" maxlength="40">
-    </div>
-    <div class="form-group">
-      <label>Email <span class="req">*</span> <small style="color:var(--ink-faint)">(PayPal 付款連結會寄這裡)</small></label>
-      <input class="form-input" type="email" id="ov-email" placeholder="your@email.com" maxlength="120">
-    </div>
-    <div class="form-group">
-      <label>寄送國家 / 地區 Country</label>
-      <input class="form-input" type="text" id="ov-country" placeholder="例：Hong Kong / Singapore / Japan" maxlength="60">
-    </div>
-    <div class="form-group">
-      <label>完整地址 Full Address <span class="req">*</span></label>
-      <textarea class="form-input" id="ov-address" rows="3" placeholder="郵遞區號 + 完整地址（請用該國通用格式）" style="resize:vertical;font-family:inherit"></textarea>
-    </div>
-    <div class="form-group">
-      <label>想要的品項 / 數量 Items</label>
-      <textarea class="form-input" id="ov-items" rows="3" placeholder="例：水洗耶加 ×2 包、蜜處理薇拉沙奇 ×1 包" style="resize:vertical;font-family:inherit"></textarea>
-    </div>
-    <div class="form-group">
-      <label>備註 Note</label>
-      <textarea class="form-input" id="ov-note" rows="2" placeholder="任何特別需求 / Any special request" style="resize:vertical;font-family:inherit"></textarea>
-    </div>
-
-    <button class="btn-submit" id="btn-ov-submit" style="background:#0E7C66" onclick="submitOverseas()">📨 送出詢問 / Submit</button>
-    <button class="btn-close-modal" onclick="document.getElementById('modal-overseas').classList.remove('show')">關閉 / Close</button>
   </div>
 </div>
 
 <script>
 const GAS_URL = "https://script.google.com/macros/s/AKfycbyWcAS56c83kq76RqX1llRjnqNyAhZeNqDpwUhVt4sC1LrVcUlJWKhYTDAxBoqHpHXi/exec";
 let STORES = [];
-// 門市清單 330KB 從 GAS 即時抓很慢（手機/弱網易卡或失敗），故：
-// 1) 開頁先用 localStorage 上次快取 → 搜尋立即可用；2) 背景靜默更新並重試，全失敗有快取就保留不報錯
 const STORE_CACHE_KEY='kafei_stores_v1';
+
 function setStores(data){
   STORES=data;
-  document.getElementById('store-count-label').textContent=`全台 ${STORES.length.toLocaleString()} 間門市，輸入即搜`;
+  const lbl=document.getElementById('store-count-label');
+  if(lbl)lbl.textContent=`全台 ${STORES.length.toLocaleString()} 間門市，輸入店名即搜`;
 }
 function fetchStores(attempt){
   attempt=attempt||0;
@@ -563,14 +1203,10 @@ function fetchStores(attempt){
     if(data.length){
       setStores(data);
       try{localStorage.setItem(STORE_CACHE_KEY,JSON.stringify({ts:Date.now(),data:data}));}catch(e){}
-      try{checkStoreStale();}catch(e){}   // 老客帶入的門市若已停業，清單到齊後才驗得出來
-    }else if(!STORES.length){
-      document.getElementById('store-count-label').textContent='門市清單尚未建立，請至 Google Sheets 執行「更新門市清單」';
     }
     return true;
   }).catch(()=>{
     if(attempt<2)return new Promise(res=>setTimeout(res,800*(attempt+1))).then(()=>fetchStores(attempt+1));
-    if(!STORES.length)document.getElementById('store-count-label').textContent='門市載入失敗，請重新整理頁面';
     return false;
   });
 }
@@ -580,87 +1216,79 @@ function loadStores(){
 }
 loadStores();
 
-const P=[{"id":"莫札特_72","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":225,"stock":192,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"},{"id":"飛雀_72","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":200,"stock":190,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"LU_73","name":"[淺中焙] 豆超 露西藝伎 水洗","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":200,"stock":41,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"FC_75","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":225,"stock":29,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"PA_90","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":250,"stock":14,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"EBS_71","name":"[淺中焙] 班莎 水洗 74110/74112","origin":"","flavors":["柳橙","紅茶","雞蛋花"],"price":200,"stock":11,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商簡介\n衣索比亞 水洗 西達馬 班莎 74110 &74112 G1\nEthiopia Sidamo Bensa 74110 &74112 Washed G1\n研磨開為佛手柑、檸檬皮、柳橙紅茶與蜂蜜香氣。風味以佛手柑、桃子為主軸,中後段\n浮現蜂蜜、大吉嶺紅茶與雞蛋花香餘韻,甜美細緻。"},{"id":"LP_90","name":"[淺中焙] 哥倫比亞 小珍珠 水洗 微批次","origin":"","flavors":["青蘋果","白花","柑橘","黃金糖"],"price":225,"stock":3,"roast":"","category":"beans","unit":"100g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥倫比亞 (Colombia)\n處理法：水洗處理 (Washed)\n風味主調：青蘋果、白花、柑橘、黃金糖"},{"id":"套組0723_448","name":"[淺中焙] 全店 常規豆 套組 20260723","origin":"","flavors":["淺中焙"],"price":900,"stock":2,"roast":"","category":"beans","unit":"100g*5","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"莫札特 葡萄乾蜜處理\n蕭邦 圓舞曲 葡萄乾蜜處理\nAcacia Hills 帕卡馬拉 水洗\n豆超 飛雀藝伎 日曬\n露西藝伎 水洗\n共5支各100克"},{"id":"水蜜桃_150","name":"日商 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":299,"stock":61,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"SW_187","name":"[淺中焙] 泰國 草莓奶昔 雙重厭氧蜜處理","origin":"","flavors":["草莓","玫瑰","柑橘","杏桃","蜂蜜"],"price":270,"stock":14,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家 / 泰國\n產區 / 清萊\n品種 / 卡杜拉\n海拔 / 1400M～1600M \n處理法 / 雙重厭氧蜜處理\n風味筆記 /草莓、玫瑰、柑橘、杏桃、蜂蜜"},{"id":"口糧6_158","name":"[深焙] 快閃配方 口糧豆V6","origin":"","flavors":["全精品等級","100%阿拉比卡","無特殊處理"],"price":199,"stock":4,"roast":"","category":"special","unit":"半磅","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"原產國: 衣索比亞水洗\n全精品等級，100%阿拉比卡，無特殊處理"},{"id":"烏克莉莉_144","name":"[淺中] 烏克栗栗 AB TOP","origin":"","flavors":["仙楂餅","黑佳麗軟糖","雪松"],"price":260,"stock":3,"roast":"","category":"special","unit":"半磅","featured":true,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"肯亞 烏克栗栗/黑莓皇后 AB TOP (祈安布) 26/03 批次\r\nKenya Uklili AB TOP (Kiambu) Lot 26/03\r\n乾香為陳皮梅、烏梅、黑莓及小紅莓香氣。在口中展現煙燻烏梅、\r\n陳皮梅及黑嘉麗軟糖風味，夾帶著仙楂梅餅、手捲菸絲及悠長雪松\r\n餘韻，口感厚實，風味深邃強勁。"},{"id":"三隻猴子_246","name":"[淺中] 祕魯 小雛菊莊園  藝伎 慢乾水洗","origin":"","flavors":["檸檬皮","水蜜桃","佛手柑","茉莉","草莓(很淡)","經典藝伎風味"],"price":299,"stock":1,"roast":"","category":"special","unit":"100克","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n祕魯 庫斯科 三隻猴子 小雛菊莊園 瑰夏/藝伎 暗室慢速乾燥 水洗\nPeru Cusco Three Monkeys La Margarita Geisha DRD Washed Lot GW-2225\n乾香可感受到檸檬皮、水蜜桃、佛手柑與茉莉氣息。入口可感受到檸檬皮、蜂蜜柚子\n茶與水蜜桃風味，中後段浮現茉莉花及山竹甜甜香氣，香甜滑順。"},{"id":"LU_867","name":"[淺中焙] 豆超 露西藝伎 水洗[家庭號]","origin":"","flavors":["水蜜桃","茉莉花","佛手柑","似巴拿馬藝伎"],"price":2400,"stock":99,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"豆商資訊\n風　味：接骨木花、茉莉花、橙花、白玫瑰、百合花、蘋果、野莓果醬、檸檬、百香果\n國　家：Ethiopia 衣索比亞\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\n村　鎮：Gesah 瑰夏\n處理站：Lucy Station 露西處理站\n處理法：Washed 水洗\n等　級：TOP GRADE 1 頂級 G1\n品　種：Geisha 藝伎\n產　季：2026\n海　拔：2280 masl"},{"id":"PA_970","name":"[淺中焙] Acacia Hills 帕卡馬拉 水洗[家庭號]","origin":"","flavors":["杏桃","柚子","蜜柑","紅茶"],"price":3000,"stock":3,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"產地資訊\n\n國家｜坦尚尼亞 Tanzania\n農園｜Acacia Hills\n生產者｜Leon Christianakis\n產區｜奧爾德尼山 Oldeani\n環境｜毗鄰恩戈羅恩戈羅保護區\n\n產地亮點\n・2007 年與夥伴 Mark Stell 重整農園\n・重視品質、永續與社區供水改善\n・Acacia Hills 種植 Kent、SL28、Geisha、Pacamara 等高品質咖啡樹\n・以坦尚尼亞北部精品咖啡為核心，推動微批次與高品質生產\n\n短版文案\n來自坦尚尼亞奧爾德尼山的 Acacia Hills，由 Leon Christianakis 經營。\n農園毗鄰恩戈羅恩戈羅保護區，自 2007 年重整後，持續專注於品質、永續與社區改善，展現坦尚尼亞北部精品咖啡的清晰潛力。"},{"id":"FC15_930","name":"[淺中焙] 哥斯大黎加 蕭邦 圓舞曲 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓酒","葡萄酒","白蘭地"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"國家：哥斯大黎加 Costa Rica\n莊園：卡內特莊園 Canet\n產區：Tarrazú\n品種：Caturra\n種植海拔：1900M\n年雨量：1300 公厘\n年均溫：約 20 度\n土壤種類：火山土壤\n分級標準：SHB"},{"id":"飛雀_867","name":"[淺中焙] 豆超 飛雀藝伎 日曬[家庭號]","origin":"","flavors":["芒果","百香果","水果糖"],"price":2400,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"},{"id":"莫札特_930","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理[家庭號]","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":2700,"stock":2,"roast":"","category":"family","unit":"1500g","featured":false,"salePrice":null,"saleStart":null,"saleEnd":null,"saleQty":null,"desc":"「哥斯大黎加 卡內特莊園 音樂家系列 莫札特（Mozart）」以其經典的「葡萄乾蜜處理」聞名。\n此法先將咖啡果實曬乾呈葡萄乾狀進行初次發酵，再去除果皮保留高比例果膠進行二次發酵，造就出濃郁的花香、甜美的莓果調與如甜白酒般的豐富層次。\n處理法特色：葡萄乾蜜處理「葡萄乾蜜處理」是一種創新的雙重發酵工法：\n\n第一階段： \n採收完全成熟的紅櫻桃咖啡果實，直接進行日曬乾燥，讓果實濃縮至類似葡萄乾的狀態，同時啟動初步發酵。\n\n第二階段： \n接著去除果皮，保留高達 100% 的果膠，進行後續的蜜處理發酵與乾燥。風味表現： 這種雙重發酵能極大化咖啡的甜感與複雜的發酵香氣，擁有極佳的醇厚度與圓潤的酸質。"}];
-const SHIP=38,FREE=1000,DISC=0.95,Q={};
-const SOON=86400000;
-let curCat='beans',stockLoaded=false;
+// build 時烘進 HTML 的商品快照。這是「第一畫」用的，不是真實來源——
+// 真實來源是 Google Sheets「商品庫存2.0」，開頁後由 loadStock() 覆蓋。
+// 每週末換豆單只要改 Sheet，不需要重新 build／push。
+let P = [{"id":"飛雀_160","name":"[淺中焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["芒果","百香果","水果糖"],"price":300,"stock":7,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"芒果、百香果、水果糖"},{"id":"莫札特_160","name":"[淺中焙] 哥斯大黎加 莫札特 葡萄乾蜜處理","origin":"","flavors":["草莓","玫瑰","荔枝軟糖"],"price":330,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"草莓、玫瑰、荔枝軟糖"},{"id":"花雀_160","name":"[增味配方] 花雀｜Floral Sparrow Blend","origin":"","flavors":["橙花","玫瑰","熱帶水果","蜂蜜"],"price":300,"stock":6,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"橙花、玫瑰、熱帶水果、蜂蜜"},{"id":"Ayla_160","name":"[淺中焙] Ayla 74112水洗","origin":"","flavors":["甜桃","檸檬糖","烏龍茶"],"price":300,"stock":20,"roast":"","category":"longterm","unit":"227g","noDiscount":false,"desc":"甜桃、檸檬糖、烏龍茶"},{"id":"一期20260909_230.625","name":"衣索比亞 巧貝沙 28天日曬","origin":"","flavors":["草莓果醬","藍莓","紫羅蘭","糖漬鳳梨"],"price":350,"stock":17,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"草莓果醬、藍莓、紫羅蘭、糖漬鳳梨"},{"id":"一期20260909_158.75","name":"緬甸 SL34 96H肯亞式水洗","origin":"","flavors":["黑莓","黑糖","核桃","抹茶"],"price":300,"stock":18,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑糖、核桃、抹茶"},{"id":"一期20260909_268","name":"巴拿馬 極光莊園 帕卡瑪拉 日曬","origin":"","flavors":["黑莓","黑醋栗","柑橘","可可"],"price":400,"stock":18,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"黑莓、黑醋栗、柑橘、可可"},{"id":"水蜜桃_150","name":"日商 哥倫比亞 水蜜桃共同發酵 藝伎","origin":"","flavors":["水蜜桃","荔枝","烏龍茶"],"price":300,"stock":27,"roast":"","category":"longterm","unit":"100克","noDiscount":false,"desc":"豆商杯測風味:\nJuicy ripe peach takes center stage, supported by floral aromas and candy-like sweetness. The cup is expressive, elegant, and finishes with lasting sweetness."},{"id":"葉門巴西_490","name":"［茶包咖啡50入］配方 大人的味道 中深","origin":"","flavors":["雪茄","可可","堅果","焦糖"],"price":600,"stock":10,"roast":"","category":"tea","unit":"50包入","noDiscount":true,"desc":"配方 大人的味道 中深\n風味 雪茄、可可、堅果、焦糖\n產區 巴西、葉門\n處理法 日曬\n淨重 每包10克 +- 0.5克\n建議水量 150-180ml"},{"id":"飛雀_163","name":"[中深焙] 豆超 飛雀藝伎 日曬","origin":"","flavors":["水梨","熱帶水果","焦糖","可可"],"price":299,"stock":2,"roast":"","category":"onetime","unit":"227g","noDiscount":false,"desc":"🐦 生豆名稱：2026 日曬飛雀藝伎 /  衣索比亞 / 班奇馬吉 / 飛雀處理站 / 頂級 G1 藝伎\r\n\r\n風　味：芒果、百香果、麝香葡萄、蜂蜜、果醬，口感扎實、BODY圓潤絲滑，餘韻帶有細膩的果汁感\r\n\r\n國　家：Ethiopia 衣索比亞\r\n\r\n州 / 區：SNNPR 南方國族部落與人民州 / Bench-maji 班奇馬吉\r\n\r\n村　鎮：Gesha 瑰夏\r\n\r\n處理站：Fair Trade Station 飛雀處理站\r\n\r\n處理法：Natural 日曬\r\n\r\n等　級：TOP GRADE 1 頂級 G1\r\n\r\n品　種：Geisha 藝伎\r\n\r\n產　季：2026\r\n\r\n海　拔：2360 masl\r\n\r\n含水率：10.7 %\r\n\r\n密　度：895 g/L\r\n\r\n水活性：0.5 aw\r\n\r\n土　壤：紅棕色肥沃土"}];
+const SHIP = 38, Q = {};
+let curFilter = 'all';
+let curSort = 'default';
+let stockLoaded = false;
 P.forEach(p=>Q[p.id]=0);
 
-// ── 預約特價 ──
-// 特價狀態：'active'（生效中）/'upcoming'（開始前 24h 內）/null。
-// 依本機時間判斷，到點自動切換不需等後端；限量特價（saleQty）賣完（0）即回原價。
-function saleState(p,t){
-  if(!(p.salePrice>0&&p.salePrice<p.price))return null;
-  if(p.saleQty!=null&&p.saleQty<=0)return null;
-  if(p.saleEnd&&t>p.saleEnd)return null;
-  if(!p.saleStart||t>=p.saleStart)return 'active';
-  if(p.saleStart-t<=SOON)return 'upcoming';
-  return null;
-}
-function effPrice(p,t){return saleState(p,t)==='active'?p.salePrice:p.price;}
-// 限量特價拆分：此品項以特價計的件數（超出剩餘配額的部分照原價）
-function saleUnits(p,qty,t){
-  if(saleState(p,t)!=='active')return 0;
-  return p.saleQty==null?qty:Math.min(qty,p.saleQty);
-}
-function fmtMD(ms){const d=new Date(ms);return (d.getMonth()+1)+'/'+d.getDate();}
-// 整車金額（與後端 processOrder_ 公式逐字一致，差 1 元都不行）：
-// 特價件數照特價原額不再折；其餘件數小計打 95 折（兩段分開、只 floor 一次）；
-// 免運基準＝有效單價總和（特價品按特價、其餘按原價）
-function calcTotals(t){
-  let pk=0,saleSum=0,normSum=0,origSum=0,hasSale=false;
-  P.forEach(p=>{
-    const q=Q[p.id];if(!q)return;
-    pk+=q;
-    const su=saleUnits(p,q,t);
-    if(su>0){saleSum+=p.salePrice*su;hasSale=true;}
-    normSum+=p.price*(q-su);
-    origSum+=p.price*q;
-  });
-  const subtotal=saleSum+Math.floor(normSum*DISC);
-  const effSum=saleSum+normSum;
-  const mixFree=P.some(p=>p.category==='beans'&&Q[p.id]>0)&&P.some(p=>p.category==='special'&&Q[p.id]>0);
-  const fr=effSum>=FREE||mixFree;
-  const ship=fr||!pk?0:SHIP;
-  return{pk:pk,saleSum:saleSum,normSum:normSum,origSum:origSum,effSum:effSum,subtotal:subtotal,hasSale:hasSale,mixFree:mixFree,fr:fr,ship:ship,total:subtotal+ship};
+// 不計折扣（耳掛/茶包）：唯一判準是後端依 Sheet I 欄＋分類算好的 noDiscount。
+// 舊版前端自己看 unit 有沒有「包」或「入」、後端只看「包」，兩邊遲早不一致。
+function isExcluded(p){
+  return p.noDiscount === true;
 }
 
-// ── 從 Google Sheets 讀取完整商品資料（支援 Sheet 新增商品）──
-function mapCat(c){var m={'精品豆':'beans','精品常規豆':'beans','100g':'beans','特選豆單':'special','半磅':'special','家庭號':'family','1500g':'family'};return m[c]||c||'beans';}
-// 把 API 回來的商品陣列併進 P，回傳有沒有變動（開頁用快取、輪詢用網路，兩邊共用這段）
-function mergeProducts(sp){
-    if(!Array.isArray(sp)||!sp.length)return false;
-    var sheetIds={},changed=false;
-    sp.forEach(s=>{
-      sheetIds[s.id]=true;
-      var ex=P.find(p=>p.id===s.id);
-      if(ex){
-        var newDesc=s.description||'';
-        var newFlavors=s.flavors?s.flavors.split(/[、,，]+/).filter(f=>f.trim()).map(f=>f.trim()):ex.flavors;
-        var nsp=s.salePrice==null?null:s.salePrice,nss=s.saleStart==null?null:s.saleStart,nse=s.saleEnd==null?null:s.saleEnd,nsq=s.saleQty==null?null:s.saleQty;
-        if(ex.stock!==s.stock||ex.name!==(s.name||ex.name)||ex.price!==(s.price||ex.price)||ex.desc!==newDesc||ex.flavors.join('|')!==newFlavors.join('|')||(ex.salePrice==null?null:ex.salePrice)!==nsp||(ex.saleStart==null?null:ex.saleStart)!==nss||(ex.saleEnd==null?null:ex.saleEnd)!==nse||(ex.saleQty==null?null:ex.saleQty)!==nsq||(!!ex.featured)!==(!!s.featured))changed=true;
-        ex.stock=s.stock;
-        if(s.name)ex.name=s.name;
-        if(s.price)ex.price=s.price;
-        if(s.unit)ex.unit=s.unit;
-        if(s.category)ex.category=mapCat(s.category);
-        if(s.flavors)ex.flavors=newFlavors;
-        ex.desc=newDesc;
-        ex.salePrice=nsp;ex.saleStart=nss;ex.saleEnd=nse;ex.saleQty=nsq;
-        ex.featured=!!s.featured;
-      }else if(s.stock>0){
-        changed=true;
-        P.push({id:s.id,name:s.name||'',origin:'',flavors:s.flavors?s.flavors.split(/[、,，]+/).filter(f=>f.trim()).map(f=>f.trim()):[],price:s.price||0,stock:s.stock||0,roast:'',category:mapCat(s.category),unit:s.unit||'100g',desc:s.description||'',featured:!!s.featured,salePrice:s.salePrice==null?null:s.salePrice,saleStart:s.saleStart==null?null:s.saleStart,saleEnd:s.saleEnd==null?null:s.saleEnd,saleQty:s.saleQty==null?null:s.saleQty});
-        Q[s.id]=0;
-      }
-    });
-    P.forEach(p=>{if(!sheetIds[p.id]&&p.stock!==0){p.stock=0;changed=true;}});
-    return changed;
+// ⚠ 這張表必須跟 google_apps_script.js 的 normalizeCategory_() 一模一樣，
+//   不一致會讓同一款豆在前後端被分到不同頁籤。
+function mapCat(c){
+  const m={'1期豆款':'onetime','1期豆單':'onetime','一期豆款':'onetime','特選豆單':'onetime',
+           '長期豆款':'longterm','長期豆單':'longterm','常鮮豆單':'longterm',
+           '精品常規豆':'longterm','精品豆':'longterm','常規豆':'longterm',
+           '茶包咖啡':'tea','茶包':'tea','耳掛':'tea','便利沖泡':'tea',
+           '家庭號':'family','1500g':'family'};
+  return m[c]||c||'longterm';
 }
-// 商品快取：GAS Web App 每次固定 1~2 秒（302 轉址+容器啟動，後端已有 CacheService 也省不掉），
-// 開頁只能先畫 build 時烘進 HTML 的舊快照 → 客人看到跳動。
-// 解法同門市清單：把上次成功抓到的商品存 localStorage，回訪開頁先用它畫，再背景更新。
-const PRODUCTS_CACHE_KEY='kafei_products_v1';
+
+// 把 Sheet 回來的資料併進 P，回傳「有沒有真的變動」（沒變就不重繪，避免卡片閃動）
+function mergeProducts(sp){
+  if(!Array.isArray(sp)||!sp.length)return false;
+  const sheetIds={};let changed=false;
+  sp.forEach(s=>{
+    // Sheet J 欄設成不顯示：從畫面上移除。
+    // 不能只靠「後端不回這筆」，因為對 Sheet 上沒有的品項這裡是留著顯示售罄，
+    // 那樣下架的豆子會一直掛在頁面快照裡。
+    if(s.hidden){
+      const i=P.findIndex(p=>p.id===s.id);
+      if(i>=0){P.splice(i,1);delete Q[s.id];changed=true;}
+      return;
+    }
+    sheetIds[s.id]=true;
+    const nf=s.flavors?String(s.flavors).split(/[、,，]+/).map(f=>f.trim()).filter(Boolean):[];
+    const nd=s.description||'';
+    const nx=(s.noDiscount===undefined||s.noDiscount===null)
+              ? (mapCat(s.category)==='convenient') : !!s.noDiscount;
+    const ex=P.find(p=>p.id===s.id);
+    if(ex){
+      if(ex.stock!==s.stock||ex.name!==(s.name||ex.name)||ex.price!==(s.price||ex.price)||
+         ex.desc!==nd||(ex.flavors||[]).join('|')!==nf.join('|')||(!!ex.noDiscount)!==nx)changed=true;
+      ex.stock=s.stock;
+      if(s.name)ex.name=s.name;
+      if(s.price)ex.price=s.price;
+      if(s.unit)ex.unit=s.unit;
+      if(s.category)ex.category=mapCat(s.category);
+      if(s.flavors)ex.flavors=nf;
+      ex.desc=nd;
+      ex.noDiscount=nx;
+    }else{
+      // Sheet 新增的品項：直接進清單（賣完的也要顯示「售罄」，不能整列消失）
+      changed=true;
+      P.push({id:s.id,name:s.name||'',origin:'',flavors:nf,price:s.price||0,stock:s.stock||0,
+              roast:'',category:mapCat(s.category),unit:s.unit||'100g',desc:nd,noDiscount:nx});
+      Q[s.id]=0;
+    }
+  });
+  // Sheet 上已經刪掉的品項 → 庫存歸零（不直接移除，購物車裡可能已經有）
+  P.forEach(p=>{if(!sheetIds[p.id]&&p.stock!==0){p.stock=0;changed=true;}});
+  return changed;
+}
+
+// 商品快取：GAS Web App 每次固定 1~2 秒（302 轉址＋容器啟動，後端已有 CacheService 也省不掉）。
+// 回頭客開頁先用上次成功抓到的資料畫，再背景更新 → 不會盯著舊庫存跳動。
+const PRODUCTS_CACHE_KEY='kafei_products_v2';
 function setUpdating(on){
   const el=document.getElementById('stock-updating');
   if(el)el.classList.toggle('show',!!on);
@@ -682,357 +1310,363 @@ function loadStock(){
     const changed=mergeProducts(sp);
     if(!stockLoaded||changed){stockLoaded=true;render();}
     try{localStorage.setItem(PRODUCTS_CACHE_KEY,JSON.stringify({ts:Date.now(),data:sp}));}catch(e){}
-  }).catch(()=>{/* 讀不到就沿用快取或 HTML 內建的庫存 */})
+  }).catch(()=>{/* 讀不到就沿用快取或 HTML 內建的快照 */})
    .then(()=>{setUpdating(false);});
 }
-loadProductsCache();
-loadStock();
-// 即時推送：定期問一次伺服器版本號（很輕，只回一個數字），版本變了才重抓商品
-// 觸發版本變動的時機：店家在 Sheet 改商品/庫存、按「立即推送」、其他客人下單扣帳、未領退回
+
+// 即時推送：定期問一次版本號（很輕，只回一個數字），版本變了才重抓商品。
+// 觸發時機：勞闆在 Sheet 改商品/庫存、其他客人下單扣帳、未領退回。
 let stockVersion=0;
-// 特價到點切換：每 tick 算一次各商品特價狀態簽章，變了就重繪（純本機判斷，斷網也能切）
-let saleSig='';
-function checkSaleTick(){
-  if(document.hidden)return;
-  const t=Date.now();
-  const sig=P.map(p=>p.id+':'+(saleState(p,t)||'')).join('|');
-  if(sig!==saleSig){const first=!saleSig;saleSig=sig;if(!first)render();}
-}
 async function pollStockVersion(){
   if(document.hidden)return;
   try{
     const r=await fetch(GAS_URL+'?action=stockVersion',{cache:'no-store'});
     const j=await r.json();
     const v=Number(j&&j.version)||0;
-    if(v && v!==stockVersion){
+    if(v&&v!==stockVersion){
       const first=stockVersion===0;
       stockVersion=v;
       if(!first)loadStock();
     }
   }catch(e){}
 }
-// 特價到點判斷是純本機運算，維持 5 秒不花任何後端資源
-checkSaleTick();
-setInterval(checkSaleTick,5000);
-// 版本號輪詢會打 Apps Script。原本每位訪客每 5 秒打一次，尖峰導流時會把
-// 同時執行數/每日執行時間吃掉，連帶讓下單的 POST 一起失敗 → 放寬到 30 秒。
-// 即時性由下面的 visibilitychange（切回前景立刻比對）補足，體感不變。
-pollStockVersion();
-setInterval(pollStockVersion,30000);
-// 頁面切回前景：立即比一次版本 + 重抓（雙保險，避免休眠期間漏接）
-document.addEventListener('visibilitychange',function(){if(!document.hidden){pollStockVersion();loadStock();}});
 
-function switchCat(cat){
-  curCat=cat;
-  document.querySelectorAll('.cat-tab').forEach(t=>{
-    t.classList.toggle('active',t.dataset.cat===cat);
+// ── 卡啡 2.0 滿額優惠 ──
+// 門檻基準＝咖啡豆「原價」小計（打折前），不是整車金額也不是打折後金額。
+//   咖啡豆小計 >= 1400 → 咖啡豆 9 折 ＋ 免運
+//   咖啡豆小計 >=  800 → 免運
+//   其餘                → 運費 $38
+// 耳掛/茶包（noDiscount）不計入門檻、不打折、也不算免運。
+//
+// 另有 VIP 制（近 3 個月 TOP10% 9 折／TOP20% 92 折，打全單原價）與本制擇優，
+// 但前端不知道客人是誰，算不出來——VIP 一律由後端重算，在確認信告知。
+//
+// ⚠ 這組常數與 beanRate() 必須跟 google_apps_script.js 的
+//   FREE_SHIP_MIN_AMT / BEAN_DISCOUNT_AMT / BEAN_DISCOUNT_RATE / SHIPPING_FEE
+//   逐字一致，連 Math.floor 的位置都要一樣——後端會重算並以它為準，
+//   不一致就會收錯錢。
+const FREE_SHIP_MIN_AMT  = 800;
+const BEAN_DISCOUNT_AMT  = 1400;
+const BEAN_DISCOUNT_RATE = 0.90;
+
+function beanRate(beanSum){
+  return beanSum >= BEAN_DISCOUNT_AMT ? BEAN_DISCOUNT_RATE : 1.00;
+}
+// 下一階提示用：回傳 [還差多少錢, 那一階的好處]，已達頂階回 null
+function nextTier(beanSum){
+  if(beanSum < FREE_SHIP_MIN_AMT) return [FREE_SHIP_MIN_AMT - beanSum, '免運'];
+  if(beanSum < BEAN_DISCOUNT_AMT) return [BEAN_DISCOUNT_AMT - beanSum, '9 折'];
+  return null;
+}
+
+function calcTotals(){
+  let totalPacks = 0, beanPacks = 0, beanSum = 0, excludedPacks = 0, excludedSum = 0;
+
+  P.forEach(p => {
+    const q = Q[p.id] || 0;
+    if(!q) return;
+    totalPacks += q;
+    if(isExcluded(p)){
+      excludedPacks += q;
+      excludedSum += p.price * q;
+    } else {
+      beanPacks += q;
+      beanSum += p.price * q;
+    }
   });
+
+  // 先算折後金額，再回推折扣。不可寫成 beanSum * (1 - rate)：
+  // JS 裡 1 - 0.9 === 0.09999999999999998，$1,540 的 9 折會算成折 $153 而不是 $154，
+  // 客人多付 1 元。後端用同一種寫法，兩邊必須一起改。
+  const rate = beanRate(beanSum);
+  const beanAfter = Math.floor(beanSum * rate);
+  const discountAmount = beanSum - beanAfter;
+  const fr = beanSum >= FREE_SHIP_MIN_AMT;
+  const ship = (totalPacks > 0 && !fr) ? SHIP : 0;
+
+  const subtotal = beanAfter + excludedSum;
+
+  return {
+    pk: totalPacks,              // 購物車總件數
+    beanPacks: beanPacks,        // 咖啡豆件數（只用於顯示）
+    excludedPacks: excludedPacks,// 微利不參與優惠件數
+    origSum: beanSum + excludedSum,
+    beanSum: beanSum,            // 咖啡豆原價小計＝所有門檻的判定基準
+    excludedSum: excludedSum,    // 耳掛/茶包小計（原價，不打折）
+    rate: rate,
+    subtotal: subtotal,
+    discountAmount: discountAmount,
+    fr: fr,
+    ship: ship,
+    total: subtotal + ship
+  };
+}
+
+function esc(s){return s?s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'):'';}
+
+function getUnitBadge(p){
+  const u=p.unit||'';
+  if(u==='半磅'||u.indexOf('半磅')>=0||u.indexOf('227')>=0)return '<span class="unit-badge half">半磅 227g</span>';
+  if(u==='100g'||u.indexOf('100')>=0)return '<span class="unit-badge hundred">100g 嚐鮮</span>';
+  if(u.indexOf('50包')>=0||u.indexOf('50入')>=0)return '<span class="unit-badge tea">50包家庭袋</span>';
+  if(u.indexOf('5包')>=0||u.indexOf('5入')>=0)return '<span class="unit-badge drip">5包隨行組</span>';
+  return `<span class="unit-badge">${esc(u)}</span>`;
+}
+
+function cardInner(p){
+  const d=p.desc||'';
+  const unitBadge=getUnitBadge(p);
+  const isOos = p.stock<=0;
+  const stockTag = isOos
+    ? '<span class="oos-badge">本期已售罄</span>'
+    : (p.stock<=5 ? `<span class="low-stock-tag">剩餘 ${p.stock} 件</span>` : '');
+  const isExc = isExcluded(p);
+  const excTag = isExc ? '<span class="no-discount-tag">微利不參與折扣/免運</span>' : '';
+
+  return `
+    ${d?`<div class="desc-icon" onclick="toggleTip(event)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#B87333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+    <div class="desc-tooltip"><div class="dt-title">▎品項風味與產區 ▎</div>${esc(d)}</div>`:''}
+    <div class="product-info">
+      <div class="product-meta-row">${unitBadge}${stockTag}${excTag}</div>
+      <div class="product-name">${esc(p.name)}</div>
+      <div class="product-flavor">${p.flavors.map(f=>`<span class="flavor-tag">${esc(f)}</span>`).join('')}</div>
+    </div>
+    <div class="product-right">
+      <div class="product-price">$${p.price}<small>/${esc(p.unit)}</small></div>
+      <div class="qty-stepper">
+        <button class="qty-btn" onclick="chg('${p.id}',-1)" ${Q[p.id]<=0?'disabled':''}>−</button>
+        <div class="qty-val ${Q[p.id]>0?'active':''}">${Q[p.id]}</div>
+        <button class="qty-btn" onclick="chg('${p.id}',1)" ${isOos||Q[p.id]>=p.stock?'disabled':''}>+</button>
+      </div>
+    </div>`;
+}
+
+function setSort(sortType, btn){
+  curSort=sortType;
+  document.querySelectorAll('.sort-pill').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
   render();
 }
-document.getElementById('cat-tabs').addEventListener('click',e=>{
-  const tab=e.target.closest('.cat-tab');
-  if(tab)switchCat(tab.dataset.cat);
-});
 
-function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-// 卡片簽章：把所有會影響這張卡外觀的欄位串起來，變了才重畫這一張（不整塊重繪＝不閃）
-function cardSig(p,now){
-  return [p.name,p.price,p.unit,p.stock,Q[p.id],p.desc||'',(p.flavors||[]).join(''),
-          p.salePrice,p.saleStart,p.saleEnd,p.saleQty,saleState(p,now)||''].join('');
+function setFilter(filterType, btn){
+  curFilter=filterType;
+  document.querySelectorAll('.filter-pill').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  render();
 }
-function cardClass(p){return 'product-card'+(Q[p.id]>0?' has-qty':'')+(p.desc?' has-desc':'');}
-function cardInner(p,now){
-    const d=p.desc||'';
-    const st=saleState(p,now);
-    const saleTag=st==='active'?`<span class="sale-tag"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>${p.saleEnd?'限時特價':'特價'}${p.saleQty!=null?'・剩 '+p.saleQty:''}</span>`
-      :st==='upcoming'?`<span class="sale-soon-tag"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${fmtMD(p.saleStart)} 起特價 $${p.salePrice}</span>`:'';
-    return`
-      <div class="desc-icon" onclick="toggleTip(event)"><svg viewBox="0 0 24 24" fill="none" stroke="#C4853C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
-      ${d?`<div class="desc-tooltip"><div class="dt-title">▎商品規格 ▎</div>${esc(d)}</div>`:''}
-      <div class="product-info">
-        <div class="product-name">${p.name}</div>
-        <div class="product-flavor">${saleTag}${p.flavors.map(f=>`<span class="flavor-tag">${f}</span>`).join('')}${p.stock<10?`<span class="low-stock-tag">剩餘 ${p.stock}</span>`:''}</div>
-        ${st?`<div class="sale-note">特價品不再享 95 折・老客戶折扣</div>`:''}
-      </div>
-      <div class="product-right">
-        ${st==='active'?`<div class="product-price sale"><span class="orig-price">$${p.price}</span>$${p.salePrice}<small>/${p.unit}</small></div>`:`<div class="product-price">$${p.price}<small>/${p.unit}</small></div>`}
-        <div class="qty-stepper">
-          <button class="qty-btn" onclick="chg('${p.id}',-1)" ${Q[p.id]<=0?'disabled':''}>−</button>
-          <div class="qty-val ${Q[p.id]>0?'active':''}">${Q[p.id]}</div>
-          <button class="qty-btn" onclick="chg('${p.id}',1)" ${Q[p.id]>=p.stock?'disabled':''}>+</button>
-        </div>
-      </div>`;
-}
-// 差異更新：只有簽章變了的卡片才重畫，位置不對才搬 DOM。
-// 這樣 45 秒輪詢／快取換成新資料時，畫面不會整片閃，開著的規格 tooltip 也不會被關掉。
-const _cardEls={},_cardSigs={};
+
 function render(){
   const list=document.getElementById('product-list');
-  const fp=P.filter(p=>p.category===curCat&&(p.stock>0||Q[p.id]>0));
-  const now=Date.now();
-  if(!fp.length){
-    list.innerHTML='<div style="text-align:center;padding:20px;color:var(--ink-light)">此分類暫無商品</div>';
-  }else{
-    if(list.firstElementChild&&!list.firstElementChild.classList.contains('product-card'))list.innerHTML='';
-    const keep={};
-    fp.forEach((p,idx)=>{
-      keep[p.id]=1;
-      const sig=cardSig(p,now);
-      let el=_cardEls[p.id];
-      if(!el){
-        el=document.createElement('div');
-        el.dataset.pid=p.id;
-        el.className=cardClass(p);
-        el.innerHTML=cardInner(p,now);
-        _cardEls[p.id]=el;_cardSigs[p.id]=sig;
-      }else if(_cardSigs[p.id]!==sig){
-        const tipOpen=el.classList.contains('tooltip-active');
-        el.className=cardClass(p)+(tipOpen?' tooltip-active':'');
-        el.innerHTML=cardInner(p,now);
-        _cardSigs[p.id]=sig;
-      }
-      if(list.children[idx]!==el)list.insertBefore(el,list.children[idx]||null);
-    });
-    Array.from(list.children).forEach(el=>{if(!el.dataset||!keep[el.dataset.pid])el.remove();});
+  let items=P.slice();
+
+  if(curFilter==='in_stock'){
+    items=items.filter(p=>p.stock>0||Q[p.id]>0);
+  }else if(curFilter==='onetime'){
+    items=items.filter(p=>p.category==='onetime');
+  }else if(curFilter==='longterm'){
+    items=items.filter(p=>p.category==='longterm');
+  }else if(curFilter==='tea'){
+    items=items.filter(p=>p.category==='tea'||p.category==='convenient');
   }
-  // highlight tabs that have items in cart, hide empty categories
-  document.querySelectorAll('.cat-tab').forEach(t=>{
-    const cat=t.dataset.cat;
-    const hasItems=P.some(p=>p.category===cat&&Q[p.id]>0);
-    const hasStock=P.some(p=>p.category===cat&&p.stock>0);
-    t.classList.toggle('has-qty',hasItems&&cat!==curCat);
-    t.style.display=hasStock||hasItems?'':'none';
+
+  // 現貨排前面，庫存 0 排後面；售價排序只在同一組（現貨/售罄）內作用
+  items.sort((a,b)=>{
+    if((a.stock>0)!==(b.stock>0)) return (b.stock>0)-(a.stock>0);
+    if(curSort==='price_asc') return a.price-b.price;
+    if(curSort==='price_desc') return b.price-a.price;
+    return 0;
   });
+
+  list.innerHTML='';
+  if(!items.length){
+    list.innerHTML='<div style="text-align:center;padding:36px;color:var(--ink-faint)">目前無符合條件之品項</div>';
+    return;
+  }
+
+  items.forEach(p=>{
+    const el=document.createElement('div');
+    el.dataset.pid=p.id;
+    el.className='product-card'+(Q[p.id]>0?' has-qty':'')+(p.desc?' has-desc':'')+(p.stock<=0?' oos':'');
+    el.innerHTML=cardInner(p);
+    list.appendChild(el);
+  });
+
   updateBar();
 }
-function chg(id,d){const p=P.find(x=>x.id===id);const before=Q[id];Q[id]=Math.max(0,Math.min(p.stock,Q[id]+d));render();if(d>0&&Q[id]>before&&typeof gtag==='function'){const ep=effPrice(p,Date.now());gtag('event','add_to_cart',{currency:'TWD',value:ep,items:[{item_id:p.id,item_name:p.name,item_category:p.category,price:ep,quantity:1}]});}}
+
+function chg(id,d){
+  const p=P.find(x=>x.id===id);if(!p)return;
+  const before=Q[id];
+  Q[id]=Math.max(0,Math.min(p.stock,Q[id]+d));
+  render();
+  if(d>0&&Q[id]>before&&typeof gtag==='function'){
+    gtag('event','add_to_cart',{currency:'TWD',value:p.price,items:[{item_id:p.id,item_name:p.name,price:p.price,quantity:1}]});
+  }
+}
+
 function updateBar(){
-  const c=calcTotals(Date.now());
-  const lbl=c.hasSale?'優惠後':'95折';
+  const c=calcTotals();
   document.getElementById('sum-packs').textContent=c.pk;
   document.getElementById('sum-total').textContent=c.total.toLocaleString();
   const s=document.getElementById('sum-ship');
   const fill=document.getElementById('ship-progress-fill');
-  if(!c.pk){s.innerHTML='';fill.style.width='0';fill.classList.remove('done');}
-  else if(c.fr){s.innerHTML='<span class="free-ship">'+lbl+' $'+c.subtotal.toLocaleString()+(c.mixFree?' ✓ 免運 📦':' ✓ 免運')+'</span>';fill.style.width='100%';fill.classList.add('done');}
-  else{s.innerHTML=`<span class="ship-cost">${lbl} $${c.subtotal.toLocaleString()}＋運費 $${SHIP}</span><span class="ship-need">再 $${(FREE-c.effSum).toLocaleString()} 免運</span>`;fill.style.width=Math.min(100,Math.round(c.effSum/FREE*100))+'%';fill.classList.remove('done');}
-  // 本週主打加購：Sheet M 欄打 V 的商品（有庫存且尚未加入購物車）才顯示
-  const fpf=P.find(p=>p.featured&&p.stock>0);
-  const showF=!!(fpf&&Q[fpf.id]<=0);
-  const fbar=document.getElementById('featured-strip');
-  if(showF){fbar.style.display='';fbar.innerHTML=`<span class="fs-label"><svg viewBox="0 0 24 24" width="13" height="13" fill="#E8B873" stroke="#E8B873" stroke-width="1" stroke-linejoin="round"><polygon points="12 2 15 9 22 9.3 16.5 14 18.5 21 12 17 5.5 21 7.5 14 2 9.3 9 9"/></svg>本週主打</span><span class="fs-name">${esc(fpf.name)}</span><span class="fs-price">$${effPrice(fpf,Date.now())}</span><button class="fs-add" onclick="addFeatured('${fpf.id}')">＋加入</button>`;}
-  else{fbar.style.display='none';}
-  document.getElementById('ship-progress').style.display=c.pk?'':'none';
-  document.getElementById('summary-inner').style.display=c.pk?'':'none';
-  document.getElementById('summary-bar').classList.toggle('hidden',!(c.pk||showF));
-  // 老客快速結帳鈕：記得住資料且購物車非空才出現（此時確認訂單降為外框鈕）
+  if(!c.pk){
+    s.innerHTML='';
+    fill.style.width='0';
+    fill.classList.remove('done');
+  }else{
+    const nt=nextTier(c.beanSum);
+    const note=c.excludedPacks>0?'（耳掛/茶包不計入）':'';
+    fill.style.width=Math.round((Math.min(c.beanSum,BEAN_DISCOUNT_AMT)/BEAN_DISCOUNT_AMT)*100)+'%';
+    fill.classList.toggle('done',c.beanSum>=BEAN_DISCOUNT_AMT);
+    if(!nt){
+      s.innerHTML=`<span class="free-ship">咖啡豆滿 $${BEAN_DISCOUNT_AMT.toLocaleString()}，已享 9 折 ＋ 免運（省 $${c.discountAmount.toLocaleString()}）</span>`;
+    }else if(c.fr){
+      s.innerHTML=`<span class="free-ship">✓ 咖啡豆滿 $${FREE_SHIP_MIN_AMT.toLocaleString()}，已享免運</span><span class="ship-need">咖啡豆再 $${nt[0].toLocaleString()} 享 ${nt[1]}</span>`;
+    }else{
+      s.innerHTML=`<span class="ship-cost">小計 $${c.subtotal.toLocaleString()}＋運費 $${SHIP}</span><span class="ship-need">咖啡豆再 $${nt[0].toLocaleString()} 即免運${note}</span>`;
+    }
+  }
+  document.getElementById('summary-bar').classList.toggle('hidden',!c.pk);
   const showQ=!!(c.pk&&readProfile());
   document.getElementById('btn-quick').classList.toggle('show',showQ);
-  document.getElementById('summary-inner').classList.toggle('has-quick',showQ);
 }
-// 一鍵加購主打商品（chg 內含上限保護 + GA add_to_cart 事件）
-function addFeatured(id){chg(id,1);}
 
-// ── Autocomplete ──
+// ── 門市搜尋 Autocomplete ──
 let acIdx=-1;
 function onSearch(){
-  const raw=document.getElementById('inp-store-search').value.trim();
+  const inp=document.getElementById('inp-store-search');
+  const q=inp.value.trim().toLowerCase();
   const list=document.getElementById('ac-list');
-  if(raw.length<1){list.classList.remove('open');return;}
-  if(!STORES.length){list.innerHTML='<div class="ac-count">門市載入中，請稍候…</div>';list.classList.add('open');return;}
-  const terms=raw.toLowerCase().split(/\s+/);
-  const res=[];
-  for(let i=0;i<STORES.length&&res.length<50;i++){
-    const s=STORES[i],hay=(s[0]+s[1]+s[2]).toLowerCase();
-    if(terms.every(t=>hay.includes(t)))res.push(i);
-  }
-  if(!res.length){list.innerHTML='<div class="ac-count">找不到符合的門市</div>';list.classList.add('open');return;}
-  let h=`<div class="ac-count">找到 ${res.length} 間${res.length>=50?' (前50筆)':''}</div>`;
-  res.forEach((si,idx)=>{const s=STORES[si];
-    h+=`<div class="ac-item" onclick="pick(${si})" onmouseenter="acIdx=${idx}">
-      <div class="ac-item-name">${hl(s[0],terms)} <span class="ac-item-area">${s[2]}</span></div>
-      <div class="ac-item-addr">${hl(s[1],terms)}</div></div>`;
+  if(!q){list.classList.remove('open');return;}
+  const m=STORES.filter(s=>s[0].toLowerCase().includes(q)||s[1].toLowerCase().includes(q)||s[2].toLowerCase().includes(q)||s[3].toLowerCase().includes(q)).slice(0,25);
+  if(!m.length){list.innerHTML='<div class="ac-item" style="color:var(--ink-faint);text-align:center">查無相符門市</div>';list.classList.add('open');return;}
+  let h=`<div class="ac-count">找到 ${m.length} 間相符門市（點擊選取）</div>`;
+  m.forEach(s=>{
+    const nm=highlight(s[0],q);
+    const ad=highlight(s[1],q);
+    h+=`<div class="ac-item" onclick="pickStore('${esc(s[0])}','${esc(s[3])}','${esc(s[1])}')">
+      <div class="ac-item-name">${nm} <span class="ac-item-area">[${esc(s[2])}]</span></div>
+      <div class="ac-item-addr">${ad}</div>
+    </div>`;
   });
-  list.innerHTML=h;list.classList.add('open');acIdx=-1;
+  list.innerHTML=h;
+  list.classList.add('open');
 }
-function hl(t,terms){let r=t;terms.forEach(w=>{if(!w)return;r=r.replace(new RegExp(w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),m=>`<mark>${m}</mark>`);});return r;}
-// 門市欄位統一由此寫入（pick 與老客資料帶入共用，避免兩份邏輯漂移）
-function setStoreFields(name,code,addr,area){
+function highlight(text,q){
+  if(!text||!q)return esc(text||'');
+  const reg=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return esc(text).replace(reg,'<mark>$1</mark>');
+}
+function pickStore(name,code,addr){
   document.getElementById('inp-store').value=name;
-  document.getElementById('inp-store-code').value=code||'';
+  document.getElementById('inp-store-code').value=code;
+  document.getElementById('inp-store-addr').value=addr;
   document.getElementById('inp-store-search').value=name;
-  document.getElementById('inp-store-addr').value=addr||'';
-  document.getElementById('store-addr-row').style.display=addr?'':'none';
-  document.getElementById('store-display').textContent='7-ELEVEN '+name+(area?'（'+area+'）':'');
-  document.getElementById('store-selected').classList.add('show');
-  document.getElementById('store-stale').classList.remove('show');
-  window._storeArea=area||'';   // 行政區沒有對應輸入欄，記在這裡供老客資料存檔用
-}
-function clearStoreFields(){
-  ['inp-store','inp-store-code','inp-store-search','inp-store-addr'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('store-addr-row').style.display='none';
-  document.getElementById('store-selected').classList.remove('show');
-  window._storeArea='';
-}
-function pick(i){
-  const s=STORES[i];
-  setStoreFields(s[0],s[3]||'',s[1],s[2]);
+  document.getElementById('selected-store-name').textContent='7-ELEVEN '+name+' 門市 ('+code+')';
+  document.getElementById('selected-store-addr').textContent=addr;
+  document.getElementById('store-selected-card').classList.add('show');
   document.getElementById('ac-list').classList.remove('open');
 }
-document.getElementById('inp-store-search').addEventListener('keydown',e=>{
-  const items=document.getElementById('ac-list').querySelectorAll('.ac-item');
-  if(!items.length)return;
-  if(e.key==='ArrowDown'){e.preventDefault();acIdx=Math.min(acIdx+1,items.length-1);mka(items);}
-  else if(e.key==='ArrowUp'){e.preventDefault();acIdx=Math.max(acIdx-1,0);mka(items);}
-  else if(e.key==='Enter'&&acIdx>=0){e.preventDefault();items[acIdx].click();}
-});
-function mka(items){items.forEach((el,i)=>{el.classList.toggle('active',i===acIdx);if(i===acIdx)el.scrollIntoView({block:'nearest'});});}
 document.addEventListener('click',e=>{if(!e.target.closest('.ac-wrap'))document.getElementById('ac-list').classList.remove('open');});
 
-// ── Invoice selector ──
+// ── 發票分頁切換 ──
 let invType='cloud';
-document.getElementById('inv-tabs').addEventListener('click',e=>{
-  const tab=e.target.closest('.inv-tab');
-  if(!tab)return;
-  invType=tab.dataset.inv;
-  document.querySelectorAll('.inv-tab').forEach(t=>t.classList.toggle('active',t===tab));
-  document.querySelectorAll('.inv-panel').forEach(p=>p.style.display='none');
-  document.getElementById('inv-panel-'+invType).style.display='block';
+document.querySelectorAll('.inv-tab').forEach(tab=>{
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.inv-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.inv-panel').forEach(p=>p.style.display='none');
+    this.classList.add('active');
+    invType=this.dataset.inv;
+    document.getElementById('inv-panel-'+invType).style.display='block';
+  });
 });
 
-// ── 老客資料記憶（只存在客人自己的瀏覽器，不進後端）──
-// 存檔時機在 handleCheckout 通過所有驗證之後，故存下的一定是合法資料；
-// 也涵蓋「開了確認頁又放棄」的客人，下次回來不用重打。備註每單不同，不存。
-const PROFILE_KEY='kafei_profile_v1';
-let profileApplied=false;
-function readProfile(){
+// ── 老客 LocalStorage 記憶資料 ──
+const PROFILE_KEY='kafei_customer_profile_v2';
+function saveProfile(od,inv){
   try{
-    const p=JSON.parse(localStorage.getItem(PROFILE_KEY)||'null');
-    if(!p||p.v!==1||!p.phone||!p.email)return null;
-    return p;
-  }catch(e){return null;}
-}
-function saveProfile(d,inv){
-  try{
-    localStorage.setItem(PROFILE_KEY,JSON.stringify({
-      v:1,ts:Date.now(),
-      name:d.name,phone:d.phone,email:d.email,
-      store:{name:d.store,code:d.storeCode,addr:d.storeAddr,area:window._storeArea||''},
+    const prof={
+      name:od.name,phone:od.phone,email:od.email,
+      store:{name:od.store,code:od.storeCode,addr:od.storeAddr},
       inv:{type:inv.type,carrierNum:inv.carrierNum,certNum:inv.certNum,loveCode:inv.loveCode,companyId:inv.companyId,companyTitle:inv.companyTitle}
-    }));
+    };
+    localStorage.setItem(PROFILE_KEY,JSON.stringify(prof));
   }catch(e){}
 }
-function maskPhone(p){return p&&p.length===10?p.slice(0,4)+'***'+p.slice(7):(p||'');}
-function setInvType(t){
-  const tab=document.querySelector('.inv-tab[data-inv="'+t+'"]');
-  if(!tab)return;
-  invType=t;
-  document.querySelectorAll('.inv-tab').forEach(x=>x.classList.toggle('active',x===tab));
-  document.querySelectorAll('.inv-panel').forEach(p=>p.style.display='none');
-  document.getElementById('inv-panel-'+t).style.display='block';
-}
-// 帶入上次資料。門市用存下的快照還原，不等 330KB 門市清單載入完
-function applyProfile(){
-  const p=readProfile();
-  if(!p||profileApplied)return !!p;
-  document.getElementById('inp-name').value=p.name||'';
-  document.getElementById('inp-phone').value=p.phone||'';
-  document.getElementById('inp-email').value=p.email||'';
-  if(p.store&&p.store.name){
-    setStoreFields(p.store.name,p.store.code,p.store.addr,p.store.area);
-    checkStoreStale();   // 清單還沒載入完就先跳過，fetchStores 成功後會再驗一次
-  }
-  const iv=p.inv||{};
-  if(iv.type){
-    setInvType(iv.type);
-    if(iv.carrierNum)document.getElementById('inp-carrier-num').value=iv.carrierNum;
-    if(iv.certNum)document.getElementById('inp-cert-num').value=iv.certNum;
-    if(iv.loveCode)document.getElementById('inp-love-code').value=iv.loveCode;
-    if(iv.companyId)document.getElementById('inp-company-id').value=iv.companyId;
-    if(iv.companyTitle)document.getElementById('inp-company-title').value=iv.companyTitle;
-  }
-  profileApplied=true;
-  const btn=document.getElementById('rb-fill');
-  btn.classList.add('done');btn.disabled=true;
-  document.getElementById('rb-fill-text').textContent='已帶入上次資料';
-  return true;
-}
-// 門市可能已停業／改名：清單載入後比對店號，對不上就清掉請客人重選
-function checkStoreStale(){
-  if(!STORES.length)return;
-  const code=document.getElementById('inp-store-code').value.trim();
-  const name=document.getElementById('inp-store').value.trim();
-  if(!name)return;
-  const hit=STORES.some(s=>code?String(s[3])===code:s[0]===name);
-  if(hit)return;
-  clearStoreFields();
-  document.getElementById('store-stale-text').textContent='上次的門市（'+name+'）目前查不到，請重新搜尋選擇取貨門市';
-  document.getElementById('store-stale').classList.add('show');
+function readProfile(){
+  try{
+    const cur=localStorage.getItem(PROFILE_KEY);
+    if(cur)return JSON.parse(cur);
+    // 1.0 用的是 kafei_profile_v1，換 key 會讓所有老客的一鍵帶入歸零 → 遷移一次
+    const old=localStorage.getItem('kafei_profile_v1');
+    if(old){localStorage.setItem(PROFILE_KEY,old);return JSON.parse(old);}
+    return null;
+  }catch(e){return null;}
 }
 function renderReturningBar(){
   const p=readProfile();
-  const bar=document.getElementById('returning-bar');
-  if(!p){bar.style.display='none';return;}
-  bar.style.display='';
-  const parts=[];
-  if(p.name)parts.push(p.name);
-  if(p.phone)parts.push(maskPhone(p.phone));
-  document.getElementById('rb-last').textContent='上次：'+parts.join('・');
-  const st=p.store&&p.store.name?'取貨門市：7-ELEVEN '+p.store.name+(p.store.area?'（'+p.store.area+'）':''):'';
-  document.getElementById('rb-store').textContent=st;
-  document.getElementById('rb-store').style.display=st?'':'none';
+  if(!p||!p.name||!p.phone)return;
+  document.getElementById('returning-bar').style.display='block';
+  document.getElementById('rb-last').textContent='上次：'+p.name+'・'+p.phone.slice(0,4)+'***'+p.phone.slice(7);
+  if(p.store&&p.store.name){
+    document.getElementById('rb-store').textContent='取貨門市：7-ELEVEN '+p.store.name;
+  }
 }
 function onFillProfile(){
-  if(!applyProfile())return;
-  if(typeof gtag==='function')gtag('event','profile_autofill_click',{location:'recipient_form'});
+  const p=readProfile();
+  if(!p)return;
+  if(p.name)document.getElementById('inp-name').value=p.name;
+  if(p.phone)document.getElementById('inp-phone').value=p.phone;
+  if(p.email)document.getElementById('inp-email').value=p.email;
+  if(p.store&&p.store.name)pickStore(p.store.name,p.store.code,p.store.addr);
+  if(p.inv&&p.inv.type){
+    const tab=document.querySelector(`.inv-tab[data-inv="${p.inv.type}"]`);
+    if(tab)tab.click();
+    if(p.inv.carrierNum)document.getElementById('inp-carrier-num').value=p.inv.carrierNum;
+    if(p.inv.certNum)document.getElementById('inp-cert-num').value=p.inv.certNum;
+    if(p.inv.loveCode)document.getElementById('inp-love-code').value=p.inv.loveCode;
+    if(p.inv.companyId)document.getElementById('inp-company-id').value=p.inv.companyId;
+    if(p.inv.companyTitle)document.getElementById('inp-company-title').value=p.inv.companyTitle;
+  }
+  const btn=document.getElementById('rb-fill');
+  btn.classList.add('done');
+  document.getElementById('rb-fill-text').textContent='✓ 資料已帶入';
 }
 function onClearProfile(){
   try{localStorage.removeItem(PROFILE_KEY);}catch(e){}
-  ['inp-name','inp-phone','inp-email','inp-carrier-num','inp-cert-num','inp-love-code','inp-company-id','inp-company-title'].forEach(id=>document.getElementById(id).value='');
-  clearStoreFields();
-  document.getElementById('store-stale').classList.remove('show');
-  setInvType('cloud');
-  profileApplied=false;
-  const btn=document.getElementById('rb-fill');
-  btn.classList.remove('done');btn.disabled=false;
-  document.getElementById('rb-fill-text').textContent='一鍵帶入上次訂購資料';
   document.getElementById('returning-bar').style.display='none';
   updateBar();
 }
-// 捲到第一個還沒填的必填欄（門市失效或資料不全時用，不要只丟 alert 讓客人在購物車列乾等）
-function scrollToMissing(){
-  const miss=['inp-store-search','inp-name','inp-phone','inp-email'].find(id=>{
-    const src=id==='inp-store-search'?'inp-store':id;
-    return !document.getElementById(src).value.trim();
-  });
-  if(!miss)return;
-  const el=document.getElementById(miss);
-  el.scrollIntoView({behavior:'smooth',block:'center'});
-  setTimeout(()=>{try{el.focus({preventScroll:true});}catch(e){el.focus();}},400);
-}
-// 購物車列的「快速結帳」：帶入資料後直接開確認視窗，客人送出前仍看得到完整明細
+
 function quickCheckout(){
-  applyProfile();
-  if(typeof gtag==='function')gtag('event','quick_checkout_click',{location:'summary_bar'});
+  onFillProfile();
   const ready=document.getElementById('inp-store').value.trim()&&document.getElementById('inp-name').value.trim()
     &&document.getElementById('inp-phone').value.trim()&&document.getElementById('inp-email').value.trim();
-  if(!ready){scrollToMissing();return;}
+  if(!ready){
+    alert('請先填妥門市與收件資訊');
+    return;
+  }
   handleCheckout();
 }
 
-// ── Checkout ──
-let orderData=null;
-let submitting=false;      // 送單進行中：擋連點、也擋確認視窗被點外圍關掉
-// 冪等單號：同一份訂單內容不論重開確認視窗幾次、重送幾次，都沿用同一個 orderId，
-// 後端 processOrder_ 靠它擋掉重複寫入。內容變了（改數量/換門市/換收件人/金額變動）
-// 才會換一個新單號——那本來就是另一張單。
-let pendingOrderId=null,pendingOrderSig='';
+// ── 結帳與送單 ──
+let orderData=null,submitting=false;
+// 內容簽章 → 穩定單號。同樣的購物車＋收件資料永遠得到同一個 KAFE-xxxx。
+let _oidCache={};
 function orderIdFor(sig){
-  if(sig===pendingOrderSig&&pendingOrderId)return pendingOrderId;
-  pendingOrderSig=sig;
-  pendingOrderId='KAFE-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);
-  return pendingOrderId;
+  if(_oidCache[sig])return _oidCache[sig];
+  let h1=0x811c9dc5,h2=0x01000193;
+  for(let i=0;i<sig.length;i++){
+    const c=sig.charCodeAt(i);
+    h1=(h1^c)*16777619>>>0;
+    h2=(h2+c*(i+7))>>>0;
+  }
+  const id='KAFE-'+h1.toString(36).toUpperCase()+'-'+h2.toString(36).toUpperCase();
+  _oidCache[sig]=id;
+  return id;
 }
+
 function handleCheckout(){
   const name=document.getElementById('inp-name').value.trim();
   const phone=document.getElementById('inp-phone').value.trim();
@@ -1042,24 +1676,22 @@ function handleCheckout(){
   const addr=document.getElementById('inp-store-addr').value.trim();
   const note=document.getElementById('inp-note').value.trim();
   let pk=0;P.forEach(p=>pk+=Q[p.id]);
-  if(!pk){alert('請至少選擇一款咖啡豆');return;}
+  if(!pk){alert('請至少選擇一款咖啡豆或商品');return;}
   if(!store){alert('請搜尋並選擇 7-11 取貨門市');return;}
   if(!name){alert('請填寫收件者姓名');return;}
   if(!phone||!/^09\d{8}$/.test(phone)){alert('請填寫正確手機號碼（09開頭10碼）');return;}
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('請填寫 Email，電子發票將寄到此信箱');document.getElementById('inp-email').focus();return;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('請填寫完整 Email 信箱');return;}
 
-  // ── 發票資料驗證 ──
   const inv={type:invType,carrierNum:'',certNum:'',loveCode:'',companyId:'',companyTitle:''};
   if(invType==='carrier'){
-    inv.carrierNum=document.getElementById('inp-carrier-num').value.trim();
-    if(!/^\/[A-Z0-9+\-.]{7}$/i.test(inv.carrierNum)){alert('手機條碼格式：「／」開頭 + 7 碼英數字（含 +-.）');return;}
-    inv.carrierNum=inv.carrierNum.toUpperCase();
+    inv.carrierNum=document.getElementById('inp-carrier-num').value.trim().toUpperCase();
+    if(!/^\/[A-Z0-9+\-.]{7}$/i.test(inv.carrierNum)){alert('手機條碼格式錯誤（例：/ABC+123）');return;}
   }else if(invType==='certificate'){
     inv.certNum=document.getElementById('inp-cert-num').value.trim().toUpperCase();
-    if(!/^[A-Z]{2}\d{14}$/.test(inv.certNum)){alert('自然人憑證格式：前 2 碼英文 + 14 碼數字');return;}
+    if(!/^[A-Z]{2}\d{14}$/.test(inv.certNum)){alert('自然人憑證格式錯誤');return;}
   }else if(invType==='donate'){
     inv.loveCode=document.getElementById('inp-love-code').value.trim();
-    if(!/^\d{3,7}$/.test(inv.loveCode)){alert('捐贈碼為 3~7 碼數字');return;}
+    if(!/^\d{3,7}$/.test(inv.loveCode)){alert('愛心碼為 3~7 碼數字');return;}
   }else if(invType==='company'){
     inv.companyId=document.getElementById('inp-company-id').value.trim();
     inv.companyTitle=document.getElementById('inp-company-title').value.trim();
@@ -1067,196 +1699,187 @@ function handleCheckout(){
     if(!inv.companyTitle){alert('請填寫公司抬頭');return;}
   }
 
-  // 整車計算統一走 calcTotals（特價感知，與後端公式一致）
-  const ct=Date.now(),c=calcTotals(ct);
+  const c=calcTotals();
   const packs=c.pk,fr=c.fr,ship=c.ship,total=c.total;
-  const saved=c.normSum-Math.floor(c.normSum*DISC);   // 95 折省額（只算非特價段）
-  const saleSaved=c.origSum-c.effSum;                  // 特價省額
   const items=[];
   P.forEach(p=>{if(Q[p.id]>0){
-    const q=Q[p.id],su=saleUnits(p,q,ct);
-    items.push({n:p.name,q:q,s:q*p.price,u:p.unit,su:su});  // 行金額照原價列，折扣另列折讓行
+    items.push({n:p.name,q:Q[p.id],s:Q[p.id]*p.price,u:p.unit});
   }});
-  const saleMark=i=>i.su>0?(i.su===i.q?'(特價)':`(特價${i.su}件)`):'';
 
   orderData={name,phone,email,store,storeCode,storeAddr:addr,note,packs,subtotal:c.subtotal,shipping:ship,total,
-    items:items.map(i=>`${i.n}(${i.u})×${i.q}${saleMark(i)}`).join('、'),
-    cartItems:P.filter(p=>Q[p.id]>0).map(p=>{const su=saleUnits(p,Q[p.id],ct);return{id:p.id,qty:Q[p.id],name:p.name,unit:p.unit,price:p.price,salePrice:su>0?p.salePrice:null,saleUnits:su};}),
-    invoiceType:inv.type,carrierNum:inv.carrierNum,certNum:inv.certNum,loveCode:inv.loveCode,companyId:inv.companyId,companyTitle:inv.companyTitle};
-  // 單號取決於訂單內容，內容沒變就沿用同一個（見 orderIdFor）
-  orderData.orderId=orderIdFor(JSON.stringify([orderData.cartItems,orderData.name,orderData.phone,
-    orderData.email,orderData.storeCode,orderData.invoiceType,orderData.total]));
+    items:items.map(i=>`${i.n}(${i.u})×${i.q}`).join('、'),
+    cartItems:P.filter(p=>Q[p.id]>0).map(p=>({id:p.id,qty:Q[p.id],name:p.name,unit:p.unit,price:p.price})),
+    invoiceType:inv.type,carrierNum:inv.carrierNum,certNum:inv.certNum,loveCode:inv.loveCode,companyId:inv.companyId,companyTitle:inv.companyTitle,
+    orderId:''};
+  // 冪等單號：單號由「訂單內容」決定，內容沒變就沿用同一個。
+  // 後端靠 V 欄查重擋重複下單，這裡每次產新號等於把那道防線關掉。
+  orderData.orderId=orderIdFor(JSON.stringify([orderData.cartItems,orderData.name,
+    orderData.phone,orderData.email,orderData.storeCode,orderData.note,
+    orderData.invoiceType,orderData.carrierNum,orderData.certNum,
+    orderData.loveCode,orderData.companyId,orderData.companyTitle,orderData.total]));
 
-  // 記住這次填的收件/發票資料（資料已通過上面所有驗證），下次回訪可一鍵帶入
   saveProfile(orderData,inv);
 
-  // GA4 ecommerce: begin_checkout
+  let h='';
+  items.forEach(i=>h+=`<div class="order-line"><span class="ol-name">${esc(i.n)} (${esc(i.u)}) × ${i.q}</span><span class="ol-detail">$${i.s.toLocaleString()}</span></div>`);
+
+  // ── 優惠怎麼算：把門檻基準攤開，客人才知道折扣是從哪個數字算出來的 ──
+  h+=`<div class="calc-box">
+    <div class="calc-row"><span>咖啡豆小計（優惠門檻看這個數字）</span><span class="calc-v">$${c.beanSum.toLocaleString()}</span></div>`;
+  if(c.excludedSum>0){
+    h+=`<div class="calc-row muted"><span>耳掛／茶包小計（不計入門檻、不打折）</span><span class="calc-v">$${c.excludedSum.toLocaleString()}</span></div>`;
+  }
+  if(c.discountAmount>0){
+    h+=`<div class="calc-row hit"><span>✓ 咖啡豆滿 $${BEAN_DISCOUNT_AMT.toLocaleString()} → 咖啡豆 9 折</span><span class="calc-v">−$${c.discountAmount.toLocaleString()}</span></div>`;
+    h+=`<div class="calc-row hit"><span>✓ 咖啡豆滿 $${BEAN_DISCOUNT_AMT.toLocaleString()} → 免運費</span><span class="calc-v">−$${SHIP}</span></div>`;
+  }else if(c.fr){
+    h+=`<div class="calc-row hit"><span>✓ 咖啡豆滿 $${FREE_SHIP_MIN_AMT.toLocaleString()} → 免運費</span><span class="calc-v">−$${SHIP}</span></div>`;
+  }
+  h+=`</div>`;
+
+  h+=`<div class="order-line"><span class="ol-name">7-11 運費</span><span class="ol-detail">${fr?'免運費 🎉':'$'+SHIP}</span></div>`;
+  h+=`<div class="order-total"><span>合計 ${packs} 件</span><span class="ot-val">$${total.toLocaleString()}</span></div>`;
+  const _nt = nextTier(c.beanSum);
+  let shipInfoText = '';
+  if(!_nt){
+    shipInfoText = `咖啡豆已滿 $${BEAN_DISCOUNT_AMT.toLocaleString()}，享 9 折 ＋ 免運 🎉`;
+  } else if(c.fr){
+    shipInfoText = `已享免運；咖啡豆再 $${_nt[0].toLocaleString()} 即享 ${_nt[1]}`;
+  } else {
+    shipInfoText = `咖啡豆再 $${_nt[0].toLocaleString()} 即享免運（耳掛/茶包不計入）`;
+  }
+  h+=`<div class="order-ship-info">${shipInfoText}</div>`;
+  h+=`<div class="vip-hint">👑 老客人請看：若您是近 3 個月消費 TOP 20% 的客人，系統會在收到訂單時自動改用 VIP 折扣（TOP10% 9 折／TOP20% 92 折，打全單含耳掛茶包）計價，與上面的滿額優惠<strong>取較便宜的一種</strong>，不重複計算。實際金額以訂單確認信為準。</div>`;
+  const invLabel={cloud:'雲端發票（寄至 Email）',carrier:'手機條碼 '+inv.carrierNum,certificate:'自然人憑證 '+inv.certNum,donate:'捐贈 '+inv.loveCode,company:'統編 '+inv.companyId+' '+inv.companyTitle}[invType];
+  h+=`<div class="order-recipient">🏪 7-ELEVEN ${esc(store)} (${esc(storeCode)})<br>📍 ${esc(addr)}<br>👤 ${esc(name)} ｜ 📱 ${esc(phone)}<br>✉️ ${esc(email)}<br>🧾 ${esc(invLabel)}${note?'<br>📝 備註：'+esc(note):''}</div>`;
+
   if(typeof gtag==='function'){
-    gtag('event','begin_checkout',{currency:'TWD',value:total,items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.salePrice||i.price,quantity:i.qty}))});
+    gtag('event','begin_checkout',{currency:'TWD',value:c.total,
+      items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.price,quantity:i.qty}))});
   }
 
-  let h='';
-  items.forEach(i=>h+=`<div class="order-line"><span class="ol-name">${i.n}(${i.u}) × ${i.q}${i.su>0?' <span style="color:#D32F2F;font-weight:700">'+saleMark(i)+'</span>':''}</span><span class="ol-detail">$${i.s.toLocaleString()}</span></div>`);
-  if(saleSaved>0)h+=`<div class="order-line"><span class="ol-name">限時特價</span><span class="ol-detail" style="color:var(--green)">−$${saleSaved.toLocaleString()}</span></div>`;
-  if(saved>0)h+=`<div class="order-line"><span class="ol-name">官網 95 折${c.hasSale?'（一般品項）':''}</span><span class="ol-detail" style="color:var(--green)">−$${saved.toLocaleString()}</span></div>`;
-  if(c.hasSale)h+=`<div class="order-line"><span class="ol-name" style="font-size:11px;color:#B71C1C">特價品不再享 95 折・老客戶折扣</span><span class="ol-detail"></span></div>`;
-  h+=`<div class="order-line"><span class="ol-name">運費</span><span class="ol-detail">${fr?'免運費 🎉':'$'+SHIP}</span></div>`;
-  h+=`<div class="order-total"><span>合計 ${packs} 包</span><span class="ot-val">$${total.toLocaleString()}</span></div>`;
-  h+=`<div class="order-ship-info">${fr?(c.mixFree?'特選豆單＋精品常規豆組合 📦 免運':'已達免運門檻'):'差 $'+(FREE-c.effSum)+' 即享免運'}</div>`;
-  const invLabel={cloud:'雲端發票（寄至 Email）',carrier:'手機條碼 '+inv.carrierNum,certificate:'自然人憑證 '+inv.certNum,donate:'捐贈 '+inv.loveCode,company:'統編 '+inv.companyId+'　'+inv.companyTitle}[invType];
-  // 收件資訊全部走 esc()：這些是客人自由輸入的字串，直接塞進 innerHTML 會被當 HTML 解析
-  h+=`<div class="order-recipient">🏪 7-ELEVEN ${esc(store)}${addr?'<br>📍 '+esc(addr):''}<br>👤 ${esc(name)}<br>📱 ${esc(phone)}<br>✉️ ${esc(email)}<br>🧾 ${esc(invLabel)}${note?'<br>📝 '+esc(note):''}</div>`;
-
   document.getElementById('modal-body').innerHTML=h;
-  const btn=document.getElementById('btn-submit');btn.disabled=false;btn.className='btn-submit';btn.innerHTML='🛒 送出訂單';
-  const cp=document.getElementById('btn-copy');cp.className='btn-copy-sm';cp.textContent='📋 複製訂單文字';
+  document.getElementById('btn-submit').disabled=false;
+  document.getElementById('btn-submit').innerHTML='🛒 送出訂單';
   document.getElementById('modal').classList.add('show');
 
-  // Build copy text
-  let t='【KAFE\' 卡啡 訂單】\n━━━━━━━━━━━━━━\n';
-  items.forEach(i=>t+=`${i.n}(${i.u}) × ${i.q}${saleMark(i)}　$${i.s.toLocaleString()}\n`);
+  let t='【KAFE\' 卡啡 2.0 訂單】\n━━━━━━━━━━━━━━\n';
+  items.forEach(i=>t+=`${i.n}(${i.u}) × ${i.q}　$${i.s.toLocaleString()}\n`);
   t+='━━━━━━━━━━━━━━\n';
-  if(saleSaved>0)t+=`限時特價：−$${saleSaved.toLocaleString()}\n`;
-  if(saved>0)t+=`官網 95 折${c.hasSale?'（一般品項）':''}：−$${saved.toLocaleString()}\n`;
-  t+=`運費：${fr?'免運費':'$'+SHIP}\n合計：${packs} 包　$${total.toLocaleString()}\n━━━━━━━━━━━━━━\n`;
-  t+=`取貨門市：7-ELEVEN ${store}\n`;if(addr)t+=`門市地址：${addr}\n`;
-  t+=`收件者：${name}\n手機：${phone}\n`;if(note)t+=`備註：${note}\n`;
+  t+=`咖啡豆小計：$${c.beanSum.toLocaleString()}\n`;
+  if(c.excludedSum>0)t+=`耳掛/茶包小計（不打折）：$${c.excludedSum.toLocaleString()}\n`;
+  if(c.discountAmount>0)t+=`咖啡豆滿 $${BEAN_DISCOUNT_AMT.toLocaleString()} 打 9 折：−$${c.discountAmount.toLocaleString()}\n`;
+  t+=`運費：${fr?'免運費':'$'+SHIP}\n合計：${packs} 件　$${total.toLocaleString()}\n━━━━━━━━━━━━━━\n`;
+  t+=`取貨門市：7-ELEVEN ${store} (${storeCode})\n門市地址：${addr}\n收件者：${name}\n手機：${phone}\n`;
+  if(note)t+=`備註：${note}\n`;
   window._ot=t;
+}
+
+function copyOrder(){
+  if(!window._ot)return;
+  navigator.clipboard.writeText(window._ot).then(()=>{
+    const b=document.getElementById('btn-copy');
+    b.textContent='✓ 已複製訂單文字';
+    setTimeout(()=>{b.textContent='📋 複製訂單明細';},2000);
+  });
 }
 
 function resetSubmitBtn(){
   const btn=document.getElementById('btn-submit');
-  btn.disabled=false;btn.className='btn-submit';btn.innerHTML='🛒 送出訂單';
+  submitting=false;
+  btn.disabled=false;
+  btn.innerHTML='🛒 送出訂單';
 }
-async function showOversoldAndRefresh(items){
-  const msg=items.map(o=>`・${o.name}（剩 ${o.available}，您要 ${o.requested}）`).join('\n');
-  alert('以下品項剛剛被買走或庫存不足：\n\n'+msg+'\n\n商品列表將自動刷新，請重新選購。');
-  try{await loadStock();}catch(e){}
+
+// 被別人買走時：告訴客人是哪幾款、重抓庫存、把購物車修正到買得到的數量
+async function showOversoldAndRefresh(list){
   document.getElementById('modal').classList.remove('show');
+  try{await loadStock();}catch(e){}
+  (list||[]).forEach(o=>{
+    const avail=Number(o.available)||0;
+    if(Q[o.id]!==undefined)Q[o.id]=Math.min(Q[o.id],avail);
+  });
+  render();
+  const lines=(list||[]).map(o=>`・${o.name}：您要 ${o.requested} 件，目前只剩 ${Number(o.available)||0} 件`).join('\n');
+  alert('不好意思，下面的品項在您結帳前剛被買走：\n\n'+lines+'\n\n購物車數量已為您更新，請確認後重新送出。');
   resetSubmitBtn();
 }
+
 async function submitOrder(){
-  const btn=document.getElementById('btn-submit');
-  if(submitting)return;                 // 連點保護（disabled 之外再擋一層）
-  // 送出成功後 orderData 會被清掉；此時再按只可能是重複送單，直接關掉視窗
+  if(submitting)return;
+  // 送出成功後 orderData 會清掉；此時再按只可能是重複送單，直接關視窗
   if(!orderData){document.getElementById('modal').classList.remove('show');return;}
   submitting=true;
-  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>訂單送出中...';
+  const btn=document.getElementById('btn-submit');
+  btn.disabled=true;btn.innerHTML='訂單處理中，請稍候...';
 
   try{
-    // 1) 送出前先撈即時庫存比對（雙保險，擋下慢半拍的搶單）
+    // 1) 送出前先撈即時庫存比對（擋下慢半拍的搶單，週末推送尖峰特別容易發生）
     const cart=orderData.cartItems||[];
     if(cart.length){
-      const liveStock=await fetch(GAS_URL+'?action=stock',{cache:'no-store'}).then(r=>r.json()).catch(()=>null);
-      if(liveStock&&typeof liveStock==='object'){
-        const insuf=cart.filter(it=>(Number(liveStock[it.id])||0)<it.qty)
-          .map(it=>({name:it.name,requested:it.qty,available:Number(liveStock[it.id])||0}));
+      const live=await fetch(GAS_URL+'?action=stock',{cache:'no-store'}).then(r=>r.json()).catch(()=>null);
+      if(live&&typeof live==='object'){
+        const insuf=cart.filter(it=>(Number(live[it.id])||0)<it.qty)
+                        .map(it=>({id:it.id,name:it.name,requested:it.qty,available:Number(live[it.id])||0}));
         if(insuf.length){await showOversoldAndRefresh(insuf);return;}
       }
-      // 1.5) 價格重驗：確認頁可能開很久，跨過特價開始/結束或限量被買完
-      //（超出後端 10 分鐘 grace 會被按新價收費），金額變了就請客人重新確認
-      const v=calcTotals(Date.now());
+      // 1.5) 金額重驗：確認頁可能開很久，期間庫存/價格可能已變
+      const v=calcTotals();
       if(v.subtotal!==orderData.subtotal||v.ship!==orderData.shipping){
-        alert('部分商品的特價時段或限量名額已變動，金額已更新，請重新確認訂單。');
-        try{await loadStock();}catch(e){}
+        alert('商品內容或優惠級距已變動，金額已更新，請重新確認訂單。');
         resetSubmitBtn();
         handleCheckout();
         return;
       }
     }
 
-    // 2) 真正送出（cors 模式才能讀回應；text/plain 是 simple request、不會觸發 preflight）
-    const resp=await fetch(GAS_URL,{method:'POST',mode:'cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(orderData)});
+    // 2) 真正送出。用 cors 才讀得到回應；text/plain 是 simple request，不會觸發 preflight。
+    //    舊版用 mode:'no-cors' 且 catch 也秀成功 → 後端整單拒絕時客人照樣看到「訂單已成功送出」。
+    const resp=await fetch(GAS_URL,{method:'POST',mode:'cors',
+      headers:{'Content-Type':'text/plain'},body:JSON.stringify(orderData)});
     const result=await resp.json().catch(()=>({status:'unknown'}));
 
-    if(result.status==='oversold'){
-      await showOversoldAndRefresh(result.oversold||[]);
-      return;
-    }
-    if(result.status!=='ok'){
+    if(result.status==='oversold'){await showOversoldAndRefresh(result.oversold||[]);return;}
+    if(result.status!=='ok'&&result.status!=='unknown'){
       throw new Error(result.message||'送單失敗');
     }
-    // result.duplicate===true 代表這張單先前就已經寫進去了（客人重送、或斷線重試），
-    // 後端沒有再寫第二列、也沒有再扣一次庫存 → 這裡一樣當成功收尾。
 
-    // GA4 ecommerce: purchase（transaction_id 用後端同一個 orderId，GA 與 Sheet 才對得起來）
-    if(typeof gtag==='function'){
-      gtag('event','purchase',{transaction_id:orderData.orderId,currency:'TWD',value:orderData.total,shipping:orderData.shipping||0,items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.salePrice||i.price,quantity:i.qty}))});
+    // 後端判定是重送（10 分鐘內同內容）時走另一套文案：
+    // 講清楚「已經收到、沒有重複建立」，客人才不會再送第三次，也不會誤以為被打槍。
+    const dupId=result.duplicate?(result.orderId||orderData.orderId||''):'';
+    const succIcon=document.getElementById('succ-icon');
+    const succTitle=document.getElementById('succ-title');
+    const succBody=document.getElementById('succ-body');
+    if(result.duplicate){
+      succIcon.textContent='📬';
+      succTitle.textContent='這筆訂單我們已經收到了';
+      succBody.innerHTML='系統偵測到相同內容的訂單，<b>沒有重複建立</b>，也不會重複出貨或重複扣款。'+
+        (dupId?'<br>訂單編號 '+esc(dupId):'')+
+        '<br>如果您是真的想再訂一份，請於 10 分鐘後再送出，或改一下備註再送。';
+    }else{
+      succIcon.textContent='🎉';
+      succTitle.textContent='訂單已成功送出！';
+      succBody.innerHTML="我們已收到您的訂單<br>勞闆會盡快為您現烘並至 7-11 寄出<br>感謝您對 KAFE' 卡啡的支持 ☕";
     }
 
-    // 送出成功就把這份訂單作廢，避免同一份資料被二次送出
-    orderData=null;pendingOrderId=null;pendingOrderSig='';
-    btn.className='btn-submit success';btn.innerHTML='✅ 訂單已送出！';
-    setTimeout(()=>{
-      document.getElementById('modal').classList.remove('show');
-      document.getElementById('modal-success').classList.add('show');
-    },800);
+    // 重送不算一筆新營收，duplicate 時不能再打一次 purchase 事件
+    if(!result.duplicate&&typeof gtag==='function'){
+      gtag('event','purchase',{transaction_id:orderData.orderId,currency:'TWD',
+        value:orderData.total,shipping:orderData.shipping||0,
+        items:orderData.cartItems.map(i=>({item_id:i.id,item_name:i.name,price:i.price,quantity:i.qty}))});
+    }
+
+    orderData=null;
+    document.getElementById('modal').classList.remove('show');
+    document.getElementById('modal-success').classList.add('show');
+    try{loadStock();}catch(e){}
   }catch(err){
-    // 後端說得出原因就照實顯示（例如「系統忙碌中，請稍後再試」），
-    // 不要一律叫客人聯繫店家——那會讓可以安全重試的情況變成人工補單。
-    const msg=String((err&&err.message)||'');
-    const retryable=msg.indexOf('稍後再試')>=0||msg.indexOf('忙碌')>=0;
-    btn.className='btn-submit error';
-    btn.innerHTML=retryable?('⏳ '+msg):'❌ 送出失敗，請複製訂單文字聯繫店家';
-    btn.disabled=false;
-    console.error(err);
-  }finally{
-    submitting=false;
+    alert('訂單送出失敗：'+(err&&err.message?err.message:'網路異常')+
+          '\n\n您的訂單「沒有」成立，請稍後再試一次。\n若持續失敗請直接私訊勞闆，不會重複下單。');
+    resetSubmitBtn();
   }
 }
 
-function copyOrder(){
-  const t=window._ot;
-  navigator.clipboard.writeText(t).then(()=>{
-    const b=document.getElementById('btn-copy');b.textContent='✅ 已複製';b.classList.add('copied');
-  }).catch(()=>{
-    const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');document.body.removeChild(a);
-    const b=document.getElementById('btn-copy');b.textContent='✅ 已複製';b.classList.add('copied');
-  });
-}
-
-// ── 海外訂單（PayPal 報價式）──
-function openOverseasModal(){
-  document.getElementById('modal-overseas').classList.add('show');
-}
-async function submitOverseas(){
-  const btn=document.getElementById('btn-ov-submit');
-  const v=id=>document.getElementById(id).value.trim();
-  const name=v('ov-name'),phone=v('ov-phone'),email=v('ov-email'),address=v('ov-address');
-  if(!name||!phone||!email||!address){
-    alert('姓名、手機、Email、地址為必填\nName, phone, email, address are required.');
-    return;
-  }
-  if(email.indexOf('@')<0){alert('請填寫有效 Email / Please enter a valid email');return;}
-  btn.disabled=true;btn.innerHTML='<span class="spinner"></span>送出中...';
-  const payload={
-    action:'overseasOrder',
-    name,phone,email,address,
-    country:v('ov-country'),
-    items:v('ov-items'),
-    note:v('ov-note')
-  };
-  try{
-    const resp=await fetch(GAS_URL,{method:'POST',mode:'cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
-    const r=await resp.json().catch(()=>({status:'unknown'}));
-    if(r.status!=='ok')throw new Error(r.message||'submit failed');
-    btn.className='btn-submit success';btn.style.background='var(--green)';btn.innerHTML='✅ 已送出 / Submitted';
-    setTimeout(()=>{
-      alert('已收到您的詢問！我們會在 1-2 個工作日內回信報價。\nWe received your request and will reply with a quote within 1-2 business days.');
-      document.getElementById('modal-overseas').classList.remove('show');
-      ['ov-name','ov-phone','ov-email','ov-country','ov-address','ov-items','ov-note'].forEach(id=>document.getElementById(id).value='');
-      btn.disabled=false;btn.className='btn-submit';btn.style.background='#0E7C66';btn.innerHTML='📨 送出詢問 / Submit';
-    },600);
-  }catch(err){
-    btn.disabled=false;btn.className='btn-submit error';btn.innerHTML='❌ 送出失敗 / Failed';
-    console.error(err);
-    setTimeout(()=>{btn.className='btn-submit';btn.style.background='#0E7C66';btn.innerHTML='📨 送出詢問 / Submit';},2500);
-  }
-}
-// 從 email 連結帶 #overseas 進來時自動開啟
-if(location.hash==='#overseas'){setTimeout(openOverseasModal,400);}
-
-// ── Tooltip（手機點擊切換）──
 function toggleTip(e){
   e.stopPropagation();
   const card=e.target.closest('.product-card');
@@ -1269,18 +1892,17 @@ document.addEventListener('click',e=>{if(!e.target.closest('.desc-tooltip')&&!e.
 renderReturningBar();
 render();
 
-/* Trust carousel dot indicator */
-(function(){
-  const carousel=document.getElementById('trust-carousel');
-  const dots=document.querySelectorAll('#trust-dots .dot');
-  if(!carousel||!dots.length)return;
-  carousel.addEventListener('scroll',function(){
-    const scrollLeft=carousel.scrollLeft;
-    const slideW=carousel.querySelector('.trust-slide').offsetWidth+10;
-    const idx=Math.round(scrollLeft/slideW);
-    dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
-  });
-})();
+// ── 開頁流程：先畫快取 → 抓 Sheet → 之後靠版本號輪詢跟前景切換保持新鮮 ──
+loadProductsCache();
+loadStock();
+pollStockVersion();
+// 版本輪詢會打 Apps Script。每位訪客每 5 秒打一次，在週末推送的尖峰會把
+// 同時執行數吃掉、連帶讓下單的 POST 一起失敗 → 放寬到 30 秒，
+// 即時性由下面的 visibilitychange（切回前景立刻比對）補足。
+setInterval(pollStockVersion,30000);
+document.addEventListener('visibilitychange',function(){
+  if(!document.hidden){pollStockVersion();loadStock();}
+});
 </script>
 </body>
 </html>
